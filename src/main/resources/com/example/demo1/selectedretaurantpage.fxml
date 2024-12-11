@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="firstScrollPane_id" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.selectedrestrauntpageController">
+    <children>
+        <ImageView fx:id="backGround_id" fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../background.jpg" />
+            </image>
+        </ImageView>
+        <StackPane fx:id="secondStackPane_id" prefHeight="150.0" prefWidth="200.0" StackPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="square_id" fitHeight="800.0" fitWidth="1400.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../restrauntPage.png" />
+                    </image>
+                </ImageView>
+                <ScrollPane fx:id="scroll_id" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="1026.0" vbarPolicy="ALWAYS" StackPane.alignment="CENTER">
+                    <StackPane.margin>
+                        <Insets left="200.0" top="70.0" />
+                    </StackPane.margin>
+                    <content>
+                        <GridPane fx:id="grid_id" prefHeight="0.0" prefWidth="0.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                        </GridPane>
+                    </content>
+                </ScrollPane>
+            </children>
+        </StackPane>
+    </children>
+</StackPane>

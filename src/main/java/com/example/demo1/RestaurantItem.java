@@ -1,12 +1,19 @@
 package com.example.demo1;
 
 import Entities.Restaurant;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +34,20 @@ public class RestaurantItem implements Initializable {
     private ImageView restrauntImage;
 
     private Restaurant restaurant;
+    private Parent root;
+    private Scene scene;
+    private Stage stage;
 
-    public void myFunction() {
-        System.out.println("Zobry Manga");
+    public void myFunction(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("selectedrestaurantpage.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
     }
+
+
 
     public void setData(Restaurant takenRestaurant) {
 
