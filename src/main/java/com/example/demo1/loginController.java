@@ -19,11 +19,14 @@ import java.io.IOException;
 public class loginController {
 
     public Button signUp;
+    public Label noUserNameAlert;
+    public Label  UserNameNotFoundAlert;
+    public Label IncorrectPasswordAlert;
     private Parent root;
     private Scene scene;
     private Stage stage;
 
-    public TextField email;
+    public TextField User;
     public TextField passwordTextField;
     public Button loginButton;
     public ImageView adminLogin;
@@ -31,7 +34,7 @@ public class loginController {
 
     public void initialize() {
 
-        email.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
+        User.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
         passwordTextField.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
 
 
@@ -51,12 +54,41 @@ public class loginController {
     }
 
     public void switchToMainPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-       // stage.setFullScreen(true);
-        stage.show();
+        if(String.valueOf(User.getText().toString()).isEmpty())
+        {
+            IncorrectPasswordAlert.setVisible(false);
+            noUserNameAlert.setVisible(true);
+            UserNameNotFoundAlert.setVisible(false);
+        }
+        else if(!SignupController.users.containsKey(String.valueOf(User.getText().toString())))
+        {
+            System.out.println("User is not found");
+            UserNameNotFoundAlert.setVisible(true);
+            IncorrectPasswordAlert.setVisible(false);
+            noUserNameAlert.setVisible(false);
+        }
+        else if(!passwordTextField.getText().equals(SignupController.users.get(User.getText())))
+        {
+            IncorrectPasswordAlert.setVisible(true);
+            noUserNameAlert.setVisible(false);
+            UserNameNotFoundAlert.setVisible(false);
+        }
+
+        else if (passwordTextField.getText().equals(SignupController.users.get(User.getText())))
+        {
+            IncorrectPasswordAlert.setVisible(false);
+            noUserNameAlert.setVisible(false);
+            root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setFullScreen(true);
+            stage.show();
+        }
+
+
+
+
     }
 
     public void myFunction()

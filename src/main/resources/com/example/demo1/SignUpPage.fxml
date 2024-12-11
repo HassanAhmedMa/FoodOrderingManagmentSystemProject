@@ -25,7 +25,7 @@
                 <Cursor fx:constant="DEFAULT" />
             </cursor>
         </ImageView>
-        <TextField fx:id="Phonenumber" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="408.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TextField fx:id="Email" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="408.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
             <StackPane.margin>
                 <Insets bottom="430.0" left="120.0" />
             </StackPane.margin>
@@ -36,7 +36,7 @@
                 <Blend />
             </effect>
         </TextField>
-        <TextField fx:id="ConfirmPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TextField fx:id="Password" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
             <StackPane.margin>
                 <Insets bottom="310.0" left="210.0" right="40.0" />
             </StackPane.margin>
@@ -47,7 +47,7 @@
                 <Blend />
             </effect>
         </TextField>
-        <TextField fx:id="Password" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TextField fx:id="ConfirmPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
             <StackPane.margin>
                 <Insets bottom="195.0" left="210.0" right="40.0" />
             </StackPane.margin>
@@ -58,7 +58,7 @@
                 <Blend />
             </effect>
         </TextField>
-        <TextField fx:id="email" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TextField fx:id="Username" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
             <StackPane.margin>
                 <Insets bottom="95.0" left="210.0" right="40.0" />
             </StackPane.margin>
@@ -79,7 +79,7 @@
                 <Insets left="100.0" top="163.0" />
             </StackPane.margin>
         </ComboBox>
-        <TextField fx:id="Username" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="268.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TextField fx:id="PhoneNumber" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="268.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
             <StackPane.margin>
                 <Insets left="240.0" right="5.0" top="265.0" />
             </StackPane.margin>

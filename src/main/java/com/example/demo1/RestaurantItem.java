@@ -2,14 +2,17 @@ package com.example.demo1;
 
 import Entities.Restaurant;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class RestaurantItem {
+public class RestaurantItem implements Initializable {
     public Label Area;
     @FXML
     private Label category;
@@ -25,9 +28,8 @@ public class RestaurantItem {
 
     private Restaurant restaurant;
 
-    public void myFunction()
-    {
-        setData(new Restaurant("Mcnald's", "Cairo", List.of("Nozha" , "Sheraton", "5th-Setelment") , new ArrayList<String>(List.of("Burger" , "Salad", "Frwwasdies"))));
+    public void myFunction() {
+        System.out.println("Zobry Manga");
     }
 
     public void setData(Restaurant takenRestaurant) {
@@ -63,6 +65,12 @@ public class RestaurantItem {
 
         restrauntImage.setImage(image);
 
+
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 }
