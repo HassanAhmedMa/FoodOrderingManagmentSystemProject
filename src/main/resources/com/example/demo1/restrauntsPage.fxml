@@ -57,12 +57,12 @@
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField alignment="CENTER" prefHeight="37.0" prefWidth="242.0" promptText="Enter Restaurant Name" style="-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5); -fx-background-radius: 35; -fx-background-color: #a1a1a1;" VBox.vgrow="ALWAYS">
+                        <TextField fx:id="searchByName" alignment="CENTER" prefHeight="37.0" prefWidth="242.0" promptText="Enter Restaurant Name" style="-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5); -fx-background-radius: 35; -fx-background-color: #a1a1a1;" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets left="70.0" right="70.0" />
                            </VBox.margin>
                         </TextField>
-                        <Button id="GoButtonRestrauntSearch" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="162.0" text="GO" textFill="WHITE" VBox.vgrow="ALWAYS">
+                        <Button id="GoButtonRestrauntSearch" fx:id="searchByRestaurantButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="162.0" text="GO" textFill="WHITE" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets left="110.0" right="110.0" top="20.0" />
                            </VBox.margin>

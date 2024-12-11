@@ -8,7 +8,9 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -23,6 +25,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class RestrauntsPage implements Initializable {
+    public TextField searchByName;
+    public Button searchByRestaurantButton;
     @FXML
     private GridPane grid;
     @FXML
@@ -44,7 +48,10 @@ public class RestrauntsPage implements Initializable {
     }
 
 
+    public void Search()
+    {
 
+    }
 
 
     List<String> restrauntNames = new ArrayList<>();

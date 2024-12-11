@@ -71,11 +71,14 @@ public class selectedrestrauntpageController implements Initializable {
 
                 FooditemController controller = loader.getController();
 
-                //controller.setData(foods.get(i++));
+                controller.setData(foods.get(i++));
 
 
 
                 grid_id.add(pane, column, row++);
+                GridPane.setMargin(pane, new Insets(10,10,10,10));
+
+
 
 
             }

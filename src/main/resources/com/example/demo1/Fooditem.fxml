@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="124.0" prefWidth="979.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.FooditemController">
     <children>
-        <ImageView fitHeight="176.0" fitWidth="979.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="124.0" fitWidth="986.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../RectangleFoodItem.png" />
             </image>
@@ -18,7 +18,6 @@
                 <Image url="@../../../Item.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="Fooditem" fitHeight="150.0" fitWidth="200.0" layoutX="-15.0" layoutY="-98.0" pickOnBounds="true" preserveRatio="true" />
         <ImageView fx:id="AddButton" fitHeight="58.0" fitWidth="52.0" layoutX="901.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../Addbutton.png" />
