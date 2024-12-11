@@ -1,0 +1,36 @@
+.button{
+    -fx-text-fill: white; /* Text color */
+    -fx-background-color: black; /* Background color */
+    -fx-background-radius: 35px; /* Rounded corners */
+    -fx-border-radius: 35px; /* Rounded corners for the border */
+    -fx-border-color: black; /* Border color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-padding: 0px 0px; /* Padding around text */
+    -fx-cursor: hand; /* Pointer cursor on hover */
+}
+
+.button:hover {
+    -fx-text-fill: black; /* Change text color on hover */
+    -fx-background-color: white; /* Change background color on hover */
+    -fx-border-color: black; /* Change border color on hover */
+}
+
+
+#GoButtonRestrauntSearch,#ApplyFilterButton{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);
+}
+
+
+.combo-box .text {
+    -fx-fill: white; /* Change the text color */
+    -fx-font-size: 14px; /* Change the font size */
+    -fx-font-style: italic; /* Make it italic */
+}
+.combo-box{
+    -fx-background-color: black;
+    -fx-background-radius: 30;
+}
+
+.combo-box:hover .text {
+    -fx-fill: darkgray; /* Change color on hover */
+}

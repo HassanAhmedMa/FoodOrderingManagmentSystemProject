@@ -1,0 +1,15 @@
+#restraunts{
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-padding: 10; /* Optional: Adjust padding */
+}
+
+
+#dontHaveAnAccount:hover,#alreadyhaveanaccount:hover{
+    -fx-text-fill: #b10000;
+
+}
+
+
+

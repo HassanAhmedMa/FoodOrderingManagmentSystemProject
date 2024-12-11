@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HomePage">
+   <children>
+      <VBox layoutX="910.0" layoutY="434.0" prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="1080.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="1080.0" prefWidth="2044.0" vbarPolicy="NEVER">
+                     <content>
+                        <GridPane prefHeight="1822.0" prefWidth="1920.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="1810.0" minWidth="10.0" prefWidth="161.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="1810.0" minWidth="0.0" percentWidth="0.0" prefWidth="300.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="0.0" percentWidth="0.0" prefWidth="300.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="0.0" percentWidth="0.0" prefWidth="300.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="0.0" percentWidth="0.0" prefWidth="300.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="0.0" percentWidth="0.0" prefWidth="0.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="10.0" percentWidth="0.0" prefWidth="300.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="10.0" prefWidth="54.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="307.0" minHeight="10.0" prefHeight="125.99999618530273" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="307.0" minHeight="10.0" prefHeight="11.000003814697266" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="307.0" minHeight="0.0" prefHeight="154.3333282470703" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="516.0" minHeight="10.0" prefHeight="24.666671752929688" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="587.0" minHeight="0.0" prefHeight="96.00001525878906" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="673.0" minHeight="0.0" prefHeight="40.666656494140625" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="755.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="822.0" minHeight="0.0" prefHeight="88.33334350585938" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="896.0" minHeight="0.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="1165.0" minHeight="10.0" prefHeight="1015.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ImageView fitHeight="2050.0" fitWidth="1916.0" pickOnBounds="true" preserveRatio="true" GridPane.rowSpan="2147483647">
+                                 <image>
+                                    <Image url="@../../../homePage.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Hello {UserName}" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="System Bold Italic" size="71.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField prefHeight="45.0" prefWidth="1148.0" promptText="Location" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="HomePageGoButton" mnemonicParsing="false" onAction="#SwtichToRestraunts" prefHeight="52.0" prefWidth="333.0" text="Button" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="50.0" />
+                                 </GridPane.margin>
+                              </Button>
+                              <Label text="What are you craving today?" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="System Bold Italic" size="27.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="206.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <image>
+                                    <Image url="@../../../pizza-pizza-filled-with-tomatoes-salami-olives.jpg" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                              <ImageView fitHeight="206.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                                 <image>
+                                    <Image url="@../../../pizza-pizza-filled-with-tomatoes-salami-olives.jpg" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                              <ImageView fitHeight="206.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                                 <image>
+                                    <Image url="@../../../pizza-pizza-filled-with-tomatoes-salami-olives.jpg" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                              <ImageView fitHeight="206.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                                 <image>
+                                    <Image url="@../../../pizza-pizza-filled-with-tomatoes-salami-olives.jpg" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                              <ImageView fitHeight="206.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                                 <image>
+                                    <Image url="@../../../pizza-pizza-filled-with-tomatoes-salami-olives.jpg" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                              <ImageView fitHeight="61.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                                 <GridPane.margin>
+                                    <Insets bottom="20.0" left="20.0" top="20.0" />
+                                 </GridPane.margin>
+                                 <image>
+                                    <Image url="@../../../hamburgerButton.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.RestrauntsPage">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../background.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="924.0" layoutY="442.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane prefHeight="1080.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="0.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="621.0" minWidth="0.0" prefWidth="372.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1510.0" minWidth="0.0" prefWidth="13.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1434.0" minWidth="10.0" prefWidth="1416.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="789.0" minHeight="10.0" prefHeight="108.00000381469727" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="968.0000038146973" minHeight="0.0" prefHeight="890.9999961853027" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="291.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fitHeight="884.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../../../SearchResaurantRectangle.png" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="847.0" prefWidth="382.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="376.0" text="Search Restaurant" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Cairo SemiBold" size="28.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField alignment="CENTER" prefHeight="37.0" prefWidth="242.0" promptText="Enter Restaurant Name" style="-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5); -fx-background-radius: 35; -fx-background-color: #a1a1a1;" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets left="70.0" right="70.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button id="GoButtonRestrauntSearch" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="162.0" text="GO" textFill="WHITE" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets left="110.0" right="110.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Cairo SemiBold" size="30.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-10.0" top="-10.0" />
+                           </padding>
+                           <stylesheets>
+                              <URL value="@myStyle.css" />
+                              <URL value="@styles.css" />
+                           </stylesheets>
+                        </Button>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="382.0" text="CUISINES" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets top="80.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Cairo SemiBold" size="25.0" />
+                           </font>
+                        </Label>
+                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Pizza" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Burger" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Shawerma" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Salad" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Chiciken" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Meat" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="89.0" prefWidth="382.0" text="Filter by:">
+                           <font>
+                              <Font name="Cairo SemiBold" size="25.0" />
+                           </font>
+                        </Label>
+                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Top Rated">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Free Delivery">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="70.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <Button id="ApplyFilterButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="47.0" prefWidth="162.0" stylesheets="@styles.css" text="Apply" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="110.0" right="110.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Cairo SemiBold" size="31.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-10.0" top="-10.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <StackPane focusTraversable="true" prefHeight="941.0" prefWidth="1420.0" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                     <children>
+                        <ImageView fitHeight="911.0" fitWidth="1402.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../restraunts.png" />
+                           </image>
+                        </ImageView>
+                        <HBox prefHeight="941.0" prefWidth="1420.0">
+                           <children>
+                              <ScrollPane id="restraunts" fx:id="scroll" prefHeight="941.0" prefWidth="1420.0" HBox.hgrow="ALWAYS">
+                                 <content>
+                                    <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                       <effect>
+                                          <Blend />
+                                       </effect>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <StackPane.margin>
+                              <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                           </StackPane.margin>
+                        </HBox>
+                     </children>
+                  </StackPane>
+               </children>
+            </GridPane>
+         </children></VBox>
+      <ImageView fitHeight="105.0" fitWidth="99.0" onMouseClicked="#SwitchToHomePage" onMousePressed="#SwitchToHomePage" onMouseReleased="#SwitchToHomePage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
