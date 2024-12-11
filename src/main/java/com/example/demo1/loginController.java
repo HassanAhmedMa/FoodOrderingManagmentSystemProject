@@ -76,6 +76,7 @@ public class loginController {
 
         else if (passwordTextField.getText().equals(SignupController.users.get(User.getText())))
         {
+            HelloApplication.LoggedInUserName = User.getText();
             IncorrectPasswordAlert.setVisible(false);
             noUserNameAlert.setVisible(false);
             root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -84,6 +85,7 @@ public class loginController {
             stage.setScene(scene);
             stage.setFullScreen(true);
             stage.show();
+
         }
 
 
