@@ -30,10 +30,16 @@ public class HelloApplication extends Application {
 
     public void start(Stage stage) throws IOException {
 
+        try{
+            Files.loadAll("src/main/resources/RestaurantNames.txt","src/main/resources/RestaurantCategories.txt","src/main/resources/Governorate.txt","src/main/resources/Areas.txt","src/main/resources/RestaurantsImages.txt");
+            Files.printALlData();
+        }catch (IOException e){
+            e.printStackTrace();
+
+        }
 
 
-
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("restrauntsPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
 
@@ -46,6 +52,9 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.setFullScreen(false);
+
+
+
 
         stage.resizableProperty().setValue(Boolean.FALSE);
 

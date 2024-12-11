@@ -14,6 +14,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -41,60 +43,48 @@ public class RestrauntsPage implements Initializable {
 
     }
 
+
+
+
+
+    List<String> restrauntNames = new ArrayList<>();
+
+
     private List<Restaurant> listOfRestraunts = new ArrayList<Restaurant>();
 
-    private List<Restaurant> getData()
-
-    {
+    private List<Restaurant> getData() throws FileNotFoundException {
+        System.out.println(Files.RestaurantnamesList);
         Restaurant restaurant;
         List<Restaurant> restaurants = new ArrayList<>();
-        try{
-            List<String> restaurantNames = new ArrayList<String>(List.of("Mc Donald's", "Pizza hut"));
-            List<String> restaurantGovernorate = new ArrayList<String>(List.of("Cairo", "Cairo"));
-            List<String> restaurantArea = new ArrayList<String>(List.of("Nozha", "sheraton"));
-            List<Float> restaurantRating = new ArrayList<>(List.of(4.2f,3.1f));
+        int i = 0;
+        for(String name : Files.RestaurantnamesList)
+        {
 
-            List<List<String>> categoriesList = new ArrayList<>(List.of(List.of("Burger", "Salad", "Appetizers", "Soft Drinks"),List.of("Pizza", "Salad", "Appetizers")));
+            restaurant = new Restaurant(name,Files.listOfGovernorate.get(i),Files.listOfAreas.get(i), Files.CategoriesList.get(i));
+            restaurant.setImgLocation(Files.listOfImagesPath.get(i));
+            restaurants.add(restaurant);
+            i++;
 
-
-            List<String> imageLocationList = new ArrayList<>(List.of("McDonalds-logo.png" , "Pizza-Hut-Logo.png"));
-
-
-
-
-
-            int i = 0;
-            for(String restaurantName : restaurantNames)
-            {
-                restaurant = new Restaurant(restaurantNames.get(i) ,restaurantGovernorate.get(i), restaurantArea.get(i),categoriesList.get(i));
-                restaurants.add(restaurant);
-                restaurants.get(i).setImgLocation(imageLocationList.get(i));
-                restaurants.get(i).setRating(restaurantRating.get(i));
-                i++;
-
-            }
-          //  for(Restaurant restaurant1 : restaurants)
-          //  {
-          //      System.out.println(restaurant1.getName());
-          //      System.out.println(restaurant1.getCategories());
-          //  }
-        }catch (Exception e){
-            System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
         }
+
+
 
 
         return restaurants;
     }
 
     public void initialize(URL location, ResourceBundle resources) {
+
         int column = 0;
         int row = 0;
         int i = 0;
-        for (Restaurant restaurant : getData())
-        {
-            listOfRestraunts.add(restaurant);
-
-
+        try {
+            for (Restaurant restaurant : getData())
+            {
+                listOfRestraunts.add(restaurant);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
         }
 
         try {

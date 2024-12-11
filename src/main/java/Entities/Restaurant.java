@@ -7,7 +7,7 @@ public class Restaurant {
     private final String Name;
     //private String Location; //location da al mafrod ykon fy governmenet wl address al costumer hy 7addhom ashan ytla3lo list of all avaliable resturants (ziad )
     private String governorate;
-    private String area;
+    private List<String> area =  new ArrayList<>();
     private List<String> categories = new ArrayList<>();
     private List<FoodItem> MenuItems = new ArrayList<>();
     private String imgLocation;
@@ -40,10 +40,13 @@ public class Restaurant {
 
      * @param categories The category or type of the restaurant.
      */
-    public Restaurant(String name, String governorate, String area, List<String> categories) {
+    public Restaurant(String name, String governorate, List<String> areas, List<String> categories) {
+
         this.Name = name;
         this.governorate = governorate;
-        this.area = area;
+        for(String area : areas) {
+            this.area.add(area);
+        }
         this.categories = new ArrayList<>(categories);
     }
 
@@ -83,7 +86,7 @@ public class Restaurant {
         return governorate;
     }
 
-    public String getArea() {
+    public List<String> getArea() {
         return area;
     }
     /**

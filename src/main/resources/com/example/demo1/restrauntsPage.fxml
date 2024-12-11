@@ -28,7 +28,7 @@
       </ImageView>
       <VBox layoutX="924.0" layoutY="442.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <GridPane prefHeight="1080.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
+            <GridPane id="scroll" prefHeight="1080.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="0.0" prefWidth="50.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="621.0" minWidth="0.0" prefWidth="372.0" />
@@ -176,7 +176,7 @@
                         </ImageView>
                         <HBox prefHeight="941.0" prefWidth="1420.0">
                            <children>
-                              <ScrollPane id="restraunts" fx:id="scroll" prefHeight="941.0" prefWidth="1420.0" HBox.hgrow="ALWAYS">
+                              <ScrollPane id="ScrollPaneCss" fx:id="scroll" prefHeight="941.0" prefWidth="1420.0" stylesheets="@myStyle.css" HBox.hgrow="ALWAYS">
                                  <content>
                                     <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
                                       <columnConstraints>

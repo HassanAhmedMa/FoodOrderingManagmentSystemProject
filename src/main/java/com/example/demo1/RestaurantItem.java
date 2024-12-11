@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RestaurantItem {
+    public Label Area;
     @FXML
     private Label category;
 
@@ -26,37 +27,38 @@ public class RestaurantItem {
 
     public void myFunction()
     {
-        setData(new Restaurant("Mcnald's", "Cairo", "Nozha" , new ArrayList<String>(List.of("Burger" , "Salad", "Frwwasdies"))));
+        setData(new Restaurant("Mcnald's", "Cairo", List.of("Nozha" , "Sheraton", "5th-Setelment") , new ArrayList<String>(List.of("Burger" , "Salad", "Frwwasdies"))));
     }
 
     public void setData(Restaurant takenRestaurant) {
 
 
-        this.restaurant = new Restaurant(takenRestaurant.getName(), takenRestaurant.getGovernorate(), takenRestaurant.getArea(), takenRestaurant.getCategories());
-        this.restaurant.setImgLocation(takenRestaurant.getImgLocation());
+        restaurant = new Restaurant(takenRestaurant.getName(), takenRestaurant.getGovernorate(), takenRestaurant.getArea(), takenRestaurant.getCategories());
+        restaurant.setImgLocation(takenRestaurant.getImgLocation());
         String concatinated = "";
 
         restaurantName.setText(this.restaurant.getName());
         Image image = new Image(restaurant.getImgLocation());
 
-        if(takenRestaurant.getRating() > 4)
-        {
-            concatinated = "Amazing";
-        }
-        else if(takenRestaurant.getRating() > 3)
-        {
-            concatinated = "Very Good";
-        }
-        else if(takenRestaurant.getRating() > 2)
-        {
-            concatinated = "Good";
-        }
-        else if(takenRestaurant.getRating() > 1)
-        {
-            concatinated = "Poor";
-        }
+      // if(takenRestaurant.getRating() > 4)
+      // {
+      //     concatinated = "Amazing";
+      // }
+      // else if(takenRestaurant.getRating() > 3)
+      // {
+      //     concatinated = "Very Good";
+      // }
+      // else if(takenRestaurant.getRating() > 2)
+      // {
+      //     concatinated = "Good";
+      // }
+      // else if(takenRestaurant.getRating() > 1)
+      // {
+      //     concatinated = "Poor";
+      // }
         category.setText(takenRestaurant.getCategories().toString().substring(1,takenRestaurant.getCategories().toString().length()-1));
-        rating.setText(concatinated);
+        Area.setText(takenRestaurant.getArea().toString().substring(1,takenRestaurant.getArea().toString().length()-1));
+       // rating.setText(concatinated);
 
 
         restrauntImage.setImage(image);

@@ -1,9 +1,10 @@
-#restraunts{
-    -fx-background: transparent;
+#ScrollPaneCss{
     -fx-background-color: transparent;
-    -fx-control-inner-background: transparent;
-    -fx-padding: 10; /* Optional: Adjust padding */
+    -fx-border: none;
+    -fx-background: none;
 }
+
+
 
 
 #dontHaveAnAccount:hover,#alreadyhaveanaccount:hover{
