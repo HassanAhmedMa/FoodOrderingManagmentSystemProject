@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,8 +39,10 @@ public class RestaurantItem implements Initializable {
     private Scene scene;
     private Stage stage;
 
-    public void myFunction(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("selectedrestaurantpage.fxml"));
+    @FXML
+
+    public void myFunction(MouseEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("selectedretaurantpage.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
