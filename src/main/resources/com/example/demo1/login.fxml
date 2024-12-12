@@ -20,7 +20,7 @@
             <Insets />
          </StackPane.margin>
       </ImageView>
-      <TextField fx:id="User" blendMode="SRC_ATOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#centreImage" prefHeight="40.0" prefWidth="417.0">
+      <TextField fx:id="User" blendMode="SRC_ATOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="417.0">
          <StackPane.margin>
             <Insets bottom="75.0" left="80.0" />
          </StackPane.margin>
@@ -49,7 +49,7 @@
             <Insets bottom="20.0" right="20.0" />
          </StackPane.margin>
          <image>
-            <Image url="@../../../adminLoginButton.png" />
+            <Image url="@../../../addtoCartButton.png" />
          </image>
       </ImageView>
       <Button id="dontHaveAnAccount" fx:id="SignUpButton" mnemonicParsing="false" onAction="#SwitchToSignUp" prefHeight="16.0" prefWidth="171.0" style="-fx-background-color: transparent; -fx-cursor: hand;" stylesheets="@myStyle.css" text="Don't have an account?" StackPane.alignment="CENTER">

@@ -42,7 +42,7 @@ public class HelloApplication extends Application {
         Files.setFoodItems("src/main/resources/FoodItems.txt");
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
 
