@@ -1,0 +1,23 @@
+#McDonald's
+*Big-Mac 150f Burger +
+*Chicken-Nuggets 60f Appetizers +
+*Fries 35f Appetizers +
+*McFlurry 50f Dessert +
+*Cheeseburger 90f Burger +
+*Fish-O-Fillet 120f Burger +
+*Apple-Pie 50f Dessert +
+*Egg-McMuffin 70f Breakfast +
+*Hash-Brown 90f Breakfast +
+*Chocolate-Shake 80f Drink +
+.............................
+#PizzaHut
+*Pepperoni-Pizza 129.99f Pizza +
+*Margherita-Pizza 109.99f Pizza +
+*BBQ-Chicken-Pizza 139.99f Pizza +
+*Hawaiian-Pizza 119.99f Pizza +
+*Veggie-Lovers 115.99f Pizza +
+*Cheese-Sticks 49.99f Side +
+*Garlic-Bread 39.99f Side +
+*Chocolate-Lava-Cake 59.99f Dessert +
+*Buffalo-Wings 84.99f Side +
+*Pepsi 19.99f Drink +

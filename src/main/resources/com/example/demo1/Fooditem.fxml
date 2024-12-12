@@ -18,9 +18,9 @@
                 <Image url="@../../../pngwing.com.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="AddButton" fitHeight="58.0" fitWidth="52.0" layoutX="901.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="AddButton" fitHeight="58.0" fitWidth="52.0" layoutX="1204.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../Addbutton.png" />
+                <Image url="@../../../addtoCartButton.png" />
             </image>
         </ImageView>
         <Label fx:id="FoodName" layoutX="166.0" layoutY="3.0" prefHeight="47.0" prefWidth="157.0" text="Potato wedges">

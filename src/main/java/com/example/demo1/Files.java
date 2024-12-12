@@ -1,12 +1,15 @@
 package com.example.demo1;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import Entities.FoodItem;
+import Entities.Restaurant;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Files {
+    public static List<Restaurant> restaurants = new ArrayList<>();
     public static List<String> RestaurantnamesList = new ArrayList<>();
     public static List<Float> RatingList = new ArrayList<>();
    // public static List<String> RestaurantnamesList = new ArrayList<>();
@@ -24,6 +27,106 @@ public class Files {
         RestaurantnamesList.addAll(names);
 
     }
+
+    public static void setFoodItems(String fileName) throws FileNotFoundException
+    {
+        Restaurant TempRestaurant = new Restaurant("","",List.of("",""),List.of("",""));
+        List<FoodItem> listOfFoodItems = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName)))
+        {
+
+            String line;
+            while ((line = reader.readLine()) != null)
+            {
+                if(!line.isEmpty() && line.startsWith("#"))
+                {
+                    TempRestaurant  = returnByName(line.substring(1).toLowerCase());
+                    listOfFoodItems = new ArrayList<>();
+                    System.out.println(line.substring(1));
+
+
+                }
+                else if(line.startsWith("*") && !line.isEmpty())
+                {
+                    String[] parts = line.substring(1).split(" ");
+                    if (parts.length >= 4) {
+                        String FoodName = parts[0];
+                        Float Price = Float.parseFloat(parts[1].replace("f", ""));
+                        String FoodType = parts[2];
+                        String ImgSrc;
+                        if(parts[3].equalsIgnoreCase("+"))
+                        {
+                            ImgSrc = "NoImageAvailable.png";
+                        }
+                        else{
+                            ImgSrc = parts[3];
+                        }
+
+                        listOfFoodItems.add(new FoodItem(FoodName, Price, FoodType , ImgSrc));
+                        System.out.println("  Food Item: " + FoodName + ", Price: " + Price + ", Type: " + FoodType + ", ImgSrc: " + ImgSrc);
+                    }
+                }
+                TempRestaurant.setMenuItems(listOfFoodItems);
+            }
+
+        }catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
+    private static Restaurant returnByName(String RestaurantToFindByName)
+    {
+        List<String> lowerCaseRestaurantNamesList = new ArrayList<>();
+        for(String restaurant : RestaurantnamesList)
+        {
+            lowerCaseRestaurantNamesList.add(restaurant.toLowerCase());
+        }
+        if(lowerCaseRestaurantNamesList.contains(RestaurantToFindByName.toLowerCase()))
+        {
+            System.out.println("Required Restaurant : " + RestaurantToFindByName);
+            for(Restaurant r : restaurants)
+            {
+                System.out.println("Restraunt : " + r.getName());
+                if(r.getName().equalsIgnoreCase(RestaurantToFindByName))
+                {
+                    return r;
+                }
+            }
+        }
+        else
+        {
+            System.out.println("RESTAURANT NOT FOUND 5555555555!!");
+        }
+        return null;
+    }
+
+
+
+
+
+
+    public static void setRestaurantNamesList() {
+        System.out.println(Files.RestaurantnamesList);
+        Restaurant restaurant;
+        int i = 0;
+        for(String name : Files.RestaurantnamesList)
+        {
+
+            restaurant = new Restaurant(name,Files.listOfGovernorate.get(i),Files.listOfAreas.get(i), Files.CategoriesList.get(i));
+            restaurant.setImgLocation(Files.listOfImagesPath.get(i));
+            restaurants.add(restaurant);
+            i++;
+
+        }
+    }
+    public static List<Restaurant> getRestaurants() {
+        return restaurants;
+    }
+
+
+
     public static void loadRating(String fileName) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(fileName));
 
@@ -87,6 +190,7 @@ public class Files {
         loadGovernorate(GovernorateLocation);
         loadAreas(AreaLocation);
         loadImages(ImagesLocation);
+        setRestaurantNamesList();
 
 
 

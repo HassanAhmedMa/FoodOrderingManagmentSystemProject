@@ -5,11 +5,22 @@ public class FoodItem {
     private String type;
     private float price;
 
+    public String getImageSrc() {
+        return ImageSrc;
+    }
 
-    public FoodItem(String name, float price, String type) {
+    public void setImageSrc(String imageSrc) {
+        ImageSrc = imageSrc;
+    }
+
+    private String ImageSrc;
+
+
+    public FoodItem(String name, float price, String type, String imageSrc) {
         this.name = name;
         this.price = price;
         this.type = type;
+        this.ImageSrc = imageSrc;
     }
 
 

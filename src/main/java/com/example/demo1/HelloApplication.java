@@ -33,11 +33,13 @@ public class HelloApplication extends Application {
 
         try{
             Files.loadAll("src/main/resources/RestaurantNames.txt","src/main/resources/RestaurantCategories.txt","src/main/resources/Governorate.txt","src/main/resources/Areas.txt","src/main/resources/RestaurantsImages.txt");
-            Files.printALlData();
+            //Files.printALlData();
         }catch (IOException e){
             e.printStackTrace();
 
         }
+        //Files.setRestaurantNamesList();
+        Files.setFoodItems("src/main/resources/FoodItems.txt");
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));

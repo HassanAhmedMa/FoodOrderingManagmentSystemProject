@@ -59,40 +59,20 @@ public class RestrauntsPage implements Initializable {
 
     private List<Restaurant> listOfRestraunts = new ArrayList<Restaurant>();
 
-    private List<Restaurant> getData() throws FileNotFoundException {
-        System.out.println(Files.RestaurantnamesList);
-        Restaurant restaurant;
-        List<Restaurant> restaurants = new ArrayList<>();
-        int i = 0;
-        for(String name : Files.RestaurantnamesList)
-        {
-
-            restaurant = new Restaurant(name,Files.listOfGovernorate.get(i),Files.listOfAreas.get(i), Files.CategoriesList.get(i));
-            restaurant.setImgLocation(Files.listOfImagesPath.get(i));
-            restaurants.add(restaurant);
-            i++;
-
-        }
-
-
-
-
-        return restaurants;
-    }
 
     public void initialize(URL location, ResourceBundle resources) {
 
         int column = 0;
         int row = 0;
         int i = 0;
-        try {
-            for (Restaurant restaurant : getData())
+
+            for (Restaurant restaurant : Files.getRestaurants())
             {
                 listOfRestraunts.add(restaurant);
             }
-        } catch (FileNotFoundException e) {
+
             System.out.println("File not found");
-        }
+
 
         try {
             for (Restaurant restaurant : listOfRestraunts)
@@ -108,6 +88,7 @@ public class RestrauntsPage implements Initializable {
 
 
             grid.add(pane, column, row++);
+
 
 
         }
