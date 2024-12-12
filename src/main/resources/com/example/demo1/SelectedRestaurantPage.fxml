@@ -34,12 +34,23 @@
                         </GridPane>
                     </content>
                 </ScrollPane>
+            <ImageView fx:id="cart" fitHeight="81.0" fitWidth="81.0" onMousePressed="#goToCart" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <image>
+                  <Image url="@../../../img_1.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets right="20.0" top="20.0" />
+               </StackPane.margin>
+            </ImageView>
             </children>
         </StackPane>
         <ImageView fx:id="ReturnButton" fitHeight="91.0" fitWidth="91.0" onMousePressed="#ReturnToResturant" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
             <image>
                 <Image url="@../../../img.png" />
             </image>
+         <StackPane.margin>
+            <Insets top="10.0" />
+         </StackPane.margin>
         </ImageView>
     </children>
 </StackPane>

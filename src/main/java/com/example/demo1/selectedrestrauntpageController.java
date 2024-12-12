@@ -3,6 +3,7 @@ package com.example.demo1;
 import Entities.FoodItem;
 import Entities.Restaurant;
 import com.fasterxml.jackson.core.json.DupDetector;
+import javafx.event.ActionEvent;
 import javafx.event.EventTarget;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +28,7 @@ import java.util.ResourceBundle;
 
 public class selectedrestrauntpageController implements Initializable {
 
+    public ImageView cart;
     @FXML
     private ImageView backGround_id;
 
@@ -60,7 +62,14 @@ public class selectedrestrauntpageController implements Initializable {
         return foods;
     }
 
-
+    public void goToCart(MouseEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("cartPage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
