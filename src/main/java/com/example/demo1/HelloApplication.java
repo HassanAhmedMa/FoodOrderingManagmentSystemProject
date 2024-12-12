@@ -27,7 +27,7 @@ public class HelloApplication extends Application {
         launch();
     }
 
-    public static String LoggedInUserName;
+    public static String LoggedInUserName="";
     @Override
     public void start(Stage stage) throws IOException {
 
