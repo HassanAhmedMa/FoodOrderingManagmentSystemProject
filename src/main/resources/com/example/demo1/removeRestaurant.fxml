@@ -33,7 +33,7 @@
                         <Font size="27.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="removeButton" mnemonicParsing="false" text="remove" textAlignment="CENTER">
+                  <Button fx:id="removeButton" mnemonicParsing="false" onMousePressed="#removeRestaurant" text="remove" textAlignment="CENTER">
                      <font>
                         <Font size="33.0" />
                      </font>
@@ -54,6 +54,11 @@
                   </Button>
                </children>
             </VBox>
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMousePressed="#backToAdminPage" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <image>
+                  <Image url="@../../../../../../../../Downloads/backButton.png" />
+               </image>
+            </ImageView>
          </children>
       </StackPane>
    </children>
