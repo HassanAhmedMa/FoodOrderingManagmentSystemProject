@@ -10,21 +10,22 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Paint;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 
 public class loginController {
 
-    public Button signUp;
+    public Button SignUpButton;
     public Label noUserNameAlert;
     public Label  UserNameNotFoundAlert;
     public Label IncorrectPasswordAlert;
+
     private Parent root;
     private Scene scene;
     private Stage stage;
+
 
     public TextField User;
     public TextField passwordTextField;
@@ -47,11 +48,6 @@ public class loginController {
         System.out.println("centre Image Function is working !");
     }
 
-    public void centreImage()
-    {
-
-
-    }
 
     public void switchToMainPage(ActionEvent event) throws IOException {
         if(String.valueOf(User.getText().toString()).isEmpty())
@@ -108,7 +104,7 @@ public class loginController {
     }
 
 
-    public void SwitchToAdminPage(ActionEvent event) throws IOException {
+    public void SwitchToAdminPage(MouseEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("AdminPage.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
