@@ -1,4 +1,4 @@
-#ScrollPaneCss{
+.scroll-pane{
     -fx-background-color: transparent;
     -fx-border: none;
     -fx-background: none;
@@ -11,6 +11,5 @@
     -fx-text-fill: #b10000;
 
 }
-
 
 
