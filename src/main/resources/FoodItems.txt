@@ -1,26 +1,26 @@
 #McDonald's
-*Big-Mac 150f Burger +
-*Chicken-Nuggets 60f Appetizers +
-*Fries 35f Appetizers +
-*McFlurry 50f Dessert +
+*Big-Tastey 150f Burger bigTastey.png
+*Chicken-Nuggets 60f Appetizers nuggies.png
+*Fries 35f Appetizers fries.png
+*McFlurry 50f Dessert oreo.png
 *Cheeseburger 90f Burger +
 *Fish-O-Fillet 120f Burger +
-*Apple-Pie 50f Dessert +
-*Egg-McMuffin 70f Breakfast +
+*Apple-Pie 50f Dessert applepie.png
+*Egg-McMuffin 70f Breakfast mcmuffin.png
 *Hash-Brown 90f Breakfast +
-*Chocolate-Shake 80f Drink +
+*Chocolate-Shake 80f Drink chocolateMilkShakeMC.png
 .............................
 #PizzaHut
-*Pepperoni-Pizza 129.99f Pizza +
-*Margherita-Pizza 109.99f Pizza +
-*BBQ-Chicken-Pizza 139.99f Pizza +
+*Pepperoni-Pizza 129.99f Pizza peperoni.png
+*Margherita-Pizza 109.99f Pizza Margherita.png
+*BBQ-Chicken-Pizza 139.99f Pizza BBQChickenPizza.png
 *Hawaiian-Pizza 119.99f Pizza +
-*Veggie-Lovers 115.99f Pizza +
+*Veggie-Lovers 115.99f Pizza VeggiesLovers.png
 *Cheese-Sticks 49.99f Side +
-*Garlic-Bread 39.99f Side +
-*Chocolate-Lava-Cake 59.99f Dessert +
-*Buffalo-Wings 84.99f Side +
-*Pepsi 19.99f Drink +
+*Garlic-Bread 39.99f Side GarlicBread.png
+*Chocolate-Lava-Cake 59.99f Dessert chocolateCake.png
+*Buffalo-Wings 84.99f Side buffaloWing.png
+*Pepsi 19.99f Drink pepsi.png
 .............................
 #Cook-door
 *Chicken-Sub 99.99 Sandwich +

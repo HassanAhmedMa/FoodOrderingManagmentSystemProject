@@ -61,6 +61,7 @@ public class Files {
                         }
                         else{
                             ImgSrc = parts[3];
+                            System.out.println(ImgSrc);
                         }
 
                         FoodItemToAdd = new FoodItem(FoodName, Price, FoodType , ImgSrc);
