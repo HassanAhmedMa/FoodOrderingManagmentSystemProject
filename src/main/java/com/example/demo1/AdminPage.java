@@ -35,7 +35,7 @@ public class AdminPage {
 
     public void switchToAddPage(MouseEvent event) throws IOException, IOException {
 
-        root = FXMLLoader.load(getClass().getResource("AddRestaurant.fxml"));
+        root = FXMLLoader.load(getClass().getResource("addRestaurant.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -47,7 +47,18 @@ public class AdminPage {
 
     public void switchToRemovePage(MouseEvent event) throws IOException {
 
-        root = FXMLLoader.load(getClass().getResource("RemoveRestaurant.fxml"));
+        root = FXMLLoader.load(getClass().getResource("removeRestaurant.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
+
+
+    public void switchToUpdatePage(MouseEvent event) throws IOException {
+
+        root = FXMLLoader.load(getClass().getResource("updateRestaurant.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

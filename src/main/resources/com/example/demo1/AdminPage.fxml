@@ -52,7 +52,7 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Button fx:id="updateRestaurantButton" blendMode="COLOR_BURN" mnemonicParsing="false" prefHeight="133.0" prefWidth="442.0" text="Edit Restaurant" textAlignment="CENTER" textFill="#0804ff">
+                  <Button fx:id="updateRestaurantButton" blendMode="COLOR_BURN" mnemonicParsing="false" onMousePressed="#switchToUpdatePage" prefHeight="133.0" prefWidth="442.0" text="Edit Restaurant" textAlignment="CENTER" textFill="#0804ff">
                      <StackPane.margin>
                         <Insets top="400.0" />
                      </StackPane.margin>

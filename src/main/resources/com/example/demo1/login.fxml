@@ -44,7 +44,7 @@
             <Font name="Cairo ExtraBold" size="20.0" />
          </font>
       </Button>
-      <ImageView id="adminLogin" fx:id="adminLogin" fitHeight="77.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" StackPane.alignment="BOTTOM_RIGHT">
+      <ImageView id="adminLogin" fx:id="adminLogin" fitHeight="77.0" fitWidth="119.0" onMousePressed="#SwitchToAdminPage" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" StackPane.alignment="BOTTOM_RIGHT">
          <StackPane.margin>
             <Insets bottom="20.0" right="20.0" />
          </StackPane.margin>

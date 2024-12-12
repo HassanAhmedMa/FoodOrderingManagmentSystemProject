@@ -108,5 +108,15 @@ public class loginController {
     }
 
 
+    public void SwitchToAdminPage(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("AdminPage.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
+
+
 
 }
