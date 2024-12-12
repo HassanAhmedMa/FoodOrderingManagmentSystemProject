@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import Entities.FoodItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -9,6 +10,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class FooditemController {
+    public ImageView FoodItemPicture;
+    public Label FoodType;
     @FXML
     private ImageView AddButton;
 
@@ -21,17 +24,19 @@ public class FooditemController {
     @FXML
     private ImageView Fooditem;
 
-    private Food food;
+    private FoodItem food;
 
-    public void setData( Food takenfood) {
+    public void setData(FoodItem takenfood) {
 
 
-        this.food = new Food(takenfood.getFoodName(), takenfood.getFoodPrice(), takenfood.getImgsrc());
-        String concatinated = "";
+        this.food = new FoodItem(takenfood.getName(), takenfood.getPrice(), takenfood.getType(), takenfood.getImageSrc());
 
-        FoodName.setText(this.food.getFoodName());
-        // Image image = new Image(food.get());
-        FoodPrice.setText(this.food.getFoodPrice().toString());
+
+        FoodName.setText(takenfood.getName());
+        Image image = new Image(takenfood.getImageSrc());
+        FoodPrice.setText(((Float)takenfood.getPrice()).toString());
+        FoodItemPicture.setImage(image);
+        FoodType.setText(takenfood.getType());
 
 
 

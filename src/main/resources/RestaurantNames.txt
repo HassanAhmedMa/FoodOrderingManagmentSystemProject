@@ -1,7 +1,7 @@
 McDonald's
 PizzaHut
-Cook door
+Cook-door
 Hardee's
-Krispy Kreme
-Garnell Sushi
-Karam El Sham
+Krispy-Kreme
+Garnell-Sushi
+Karam-El-Sham

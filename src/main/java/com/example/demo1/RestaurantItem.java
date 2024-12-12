@@ -40,14 +40,36 @@ public class RestaurantItem implements Initializable {
     private Stage stage;
 
     @FXML
+    private static String selectedRestaurantName;
 
+    public static String getSelectedRestaurantName() {
+        return selectedRestaurantName;
+    }
+
+    public static void setSelectedRestaurantName(String name) {
+        selectedRestaurantName = name;
+    }
     public void myFunction(MouseEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("selectedretaurantpage.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+        selectedRestaurantName = restaurant.getName().toLowerCase();
+        System.out.println(selectedRestaurantName);
+        System.out.println(selectedRestaurantName);
+        try{
+            root = FXMLLoader.load(getClass().getResource("SelectedRestaurantPage.fxml"));
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            //stage.setFullScreen(true);
+            stage.show();
+            //selectedRestaurantName = restaurantName.getText();
+
+
+            //System.out.println(selectedRestaurantName);
+
+        }catch (Exception e){
+            e.getStackTrace();
+        }
+
+
     }
 
 

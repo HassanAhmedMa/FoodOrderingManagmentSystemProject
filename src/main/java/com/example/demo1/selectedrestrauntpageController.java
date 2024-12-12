@@ -1,5 +1,7 @@
 package com.example.demo1;
 
+import Entities.FoodItem;
+import Entities.Restaurant;
 import com.fasterxml.jackson.core.json.DupDetector;
 import javafx.event.EventTarget;
 import javafx.fxml.FXML;
@@ -43,36 +45,33 @@ public class selectedrestrauntpageController implements Initializable {
     @FXML
     private ImageView square_id;
 
-    private List<Food> foods=new ArrayList<>();
+    //private List<FoodItem> foods=new ArrayList<>();
 
-
-    private List<Food> getData(){
-        List<Food> foods=new ArrayList<>();
-        Food food;
+    private List<FoodItem> getData(){
+        List<FoodItem> foods=new ArrayList<>();
+        FoodItem food;
 
         for(int i=0; i<10;i++){
-            food=new Food("Potato wedges",10.00F,"");
+            food=new FoodItem("Potato wedges",10.00F,"", "NoImageAvailable.png");
 
-            //food.setImgsrc("/img/item.png");
+
             foods.add(food);
         }
         return foods;
     }
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         int column = 0;
         int row = 0;
         int i = 0;
-        for (Food food : getData())
-        {
-            foods.add(food);
-
-
-        }
+        Restaurant restaurant = Files.returnByName(RestaurantItem.getSelectedRestaurantName());
+        List<FoodItem> ListOfFoodItems = restaurant.getMenuItems();
 
         try {
-            for ( Food food : foods )
+            for ( FoodItem food : ListOfFoodItems )
             {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Fooditem.fxml"));
                 AnchorPane pane = (AnchorPane) loader.load();
@@ -80,7 +79,7 @@ public class selectedrestrauntpageController implements Initializable {
 
                 FooditemController controller = loader.getController();
 
-                controller.setData(foods.get(i++));
+                controller.setData(food);
 
 
 
@@ -107,7 +106,7 @@ public class selectedrestrauntpageController implements Initializable {
         stage.setScene(scene);
         stage.setFullScreen(true);
         stage.show();
-
+        //System.out.println("SelectedRestaurant Is Made Successfully");
     }
 
 }

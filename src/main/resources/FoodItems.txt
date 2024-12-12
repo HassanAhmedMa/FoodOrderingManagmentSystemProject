@@ -21,3 +21,63 @@
 *Chocolate-Lava-Cake 59.99f Dessert +
 *Buffalo-Wings 84.99f Side +
 *Pepsi 19.99f Drink +
+.............................
+#Cook-door
+*Chicken-Sub 99.99 Sandwich +
+*Beef-Sub 89.99 Sandwich +
+*Spicy-Fries 34.99 Side +
+*Coleslaw 19.99 Salad +
+*Chocolate-Milkshake 49.99 Drink +
+*Grilled-Chicken-Plate 129.99 Plate +
+*Buffalo-Wings 79.99 Side +
+*Caesar-Salad 59.99 Salad +
+*Garlic-Bread 29.99 Side +
+*Coke 19.99 Drink +
+.............................
+#Hardee's
+*Thickburger 149.99 Burger +
+*Crispy-Chicken-Sandwich 119.99 Sandwich +
+*Curly-Fries 39.99 Side +
+*Onion-Rings 44.99 Side +
+*Vanilla-Milkshake 54.99 Drink +
+*Chicken-Strips 89.99 Side +
+*Big-Chicken-Bowl 129.99 Bowl +
+*Cheese-Fries 49.99 Side +
+*Root-Beer 24.99 Drink +
+*Chocolate-Chip-Cookie 29.99 Dessert +
+.............................
+#Krispy-Kreme
+*Original-Glazed 19.99 Donut +
+*Chocolate-Iced-Glazed 24.99 Donut +
+*Strawberry-Filled 29.99 Donut +
+*Apple-Fritter 34.99 Pastry +
+*Coffee 14.99 Drink +
+*Chocolate-Latte 24.99 Drink +
+*Blueberry-Muffin 29.99 Pastry +
+*Cinnamon-Roll 39.99 Pastry +
+*Hot-Chocolate 19.99 Drink +
+*Vanilla-Cream-Filled 24.99 Donut +
+.............................
+#Garnell-Sushi
+*California-Roll 149.99 Sushi +
+*Spicy-Tuna-Roll 169.99 Sushi +
+*Dragon-Roll 199.99 Sushi +
+*Shrimp-Tempura-Roll 179.99 Sushi +
+*Miso-Soup 59.99 Soup +
+*Edamame 39.99 Appetizer +
+*Salmon-Sashimi 129.99 Sashimi +
+*Avocado-Salad 74.99 Salad +
+*Green-Tea 19.99 Drink +
+*Gyoza-Dumplings 89.99 Appetizer +
+.............................
+#Karam-El-Sham
+*Chicken-Shawarma 79.99 Wrap +
+*Beef-Shawarma 89.99 Wrap +
+*Falafel 29.99 Side +
+*Hummus 39.99 Dip +
+*Fattoush 59.99 Salad +
+*Stuffed-Grape-Leaves 69.99 Appetizer +
+*Lentil-Soup 49.99 Soup +
+*Baklava 34.99 Dessert +
+*Mint-Lemonade 19.99 Drink +
+*Kunafa 39.99 Dessert +

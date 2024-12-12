@@ -5,6 +5,7 @@ import Entities.Restaurant;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,8 +31,8 @@ public class Files {
 
     public static void setFoodItems(String fileName) throws FileNotFoundException
     {
-        Restaurant TempRestaurant = new Restaurant("","",List.of("",""),List.of("",""));
-        List<FoodItem> listOfFoodItems = new ArrayList<>();
+        Restaurant RestaurantToAddFoodItemsIn = new Restaurant("","",List.of("",""),List.of("",""));
+        FoodItem FoodItemToAdd = null;
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName)))
         {
 
@@ -40,9 +41,9 @@ public class Files {
             {
                 if(!line.isEmpty() && line.startsWith("#"))
                 {
-                    TempRestaurant  = returnByName(line.substring(1).toLowerCase());
-                    listOfFoodItems = new ArrayList<>();
-                    System.out.println(line.substring(1));
+                    RestaurantToAddFoodItemsIn  = returnByName(line.substring(1).toLowerCase());
+
+                    //System.out.println(line.substring(1));
 
 
                 }
@@ -62,12 +63,20 @@ public class Files {
                             ImgSrc = parts[3];
                         }
 
-                        listOfFoodItems.add(new FoodItem(FoodName, Price, FoodType , ImgSrc));
-                        System.out.println("  Food Item: " + FoodName + ", Price: " + Price + ", Type: " + FoodType + ", ImgSrc: " + ImgSrc);
+                        FoodItemToAdd = new FoodItem(FoodName, Price, FoodType , ImgSrc);
+                        //System.out.println("  Food Item: " + FoodName + ", Price: " + Price + ", Type: " + FoodType + ", ImgSrc: " + ImgSrc);
                     }
                 }
-                TempRestaurant.setMenuItems(listOfFoodItems);
+                if(FoodItemToAdd != null)
+                {
+                    RestaurantToAddFoodItemsIn.addFoodItem(FoodItemToAdd);
+                    FoodItemToAdd = null;
+                }
+
+
+
             }
+
 
         }catch(IOException e)
         {
@@ -76,7 +85,17 @@ public class Files {
 
     }
 
-    private static Restaurant returnByName(String RestaurantToFindByName)
+    public static void GetMenuItemsForEachRestaurant() {
+        for(Restaurant tempRestaurant : restaurants)
+        {
+            for(FoodItem foodItem : tempRestaurant.getMenuItems())
+            {
+                System.out.println(foodItem.getName());
+            }
+        }
+    }
+
+    protected static Restaurant returnByName(String RestaurantToFindByName)
     {
         List<String> lowerCaseRestaurantNamesList = new ArrayList<>();
         for(String restaurant : RestaurantnamesList)
@@ -85,10 +104,10 @@ public class Files {
         }
         if(lowerCaseRestaurantNamesList.contains(RestaurantToFindByName.toLowerCase()))
         {
-            System.out.println("Required Restaurant : " + RestaurantToFindByName);
+            //System.out.println("Required Restaurant : " + RestaurantToFindByName);
             for(Restaurant r : restaurants)
             {
-                System.out.println("Restraunt : " + r.getName());
+                //System.out.println("Restraunt : " + r.getName());
                 if(r.getName().equalsIgnoreCase(RestaurantToFindByName))
                 {
                     return r;

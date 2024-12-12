@@ -1,5 +1,7 @@
 package com.example.demo1;
 
+import Entities.FoodItem;
+import Entities.Restaurant;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,9 +42,9 @@ public class HelloApplication extends Application {
         }
         //Files.setRestaurantNamesList();
         Files.setFoodItems("src/main/resources/FoodItems.txt");
+        Files.GetMenuItemsForEachRestaurant();
 
-
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
 
