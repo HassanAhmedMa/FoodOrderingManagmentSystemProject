@@ -10,14 +10,14 @@ public class Customer extends Person {
     private String password;
     private List<Order> orderHistory;
     private userCart usercart;
-    private userCart userCart; // hatkon temporary b7es lma al order ytlb a3rf afadyha.
+    private userCart TempuserCart; // hatkon temporary b7es lma al order ytlb a3rf afadyha.
 
     public Customer(String username, String password, String firstName, String lastName, String email, String phoneNumber) {
         super(firstName, lastName, email, phoneNumber);
         this.username = username;
         this.password = password;
         this.orderHistory = new ArrayList<>();
-        this.userCart = new userCart(); // Assuming userCart is implemented elsewhere.
+        this.TempuserCart = new userCart(); // Assuming userCart is implemented elsewhere.
     }
 
     //customer can filter the restaurants by 2 wayss => location ya food category (ziad)
@@ -27,6 +27,7 @@ public class Customer extends Person {
     public void displayInfo() {
         System.out.println("Customer Info:");
         System.out.println("Username: " + username);
+        System.out.println("Password: " + password);
         System.out.println("Name: " + getFirstName() + " " + getLastName());
         System.out.println("Email: " + getEmail());
         System.out.println("Phone: " + getPhoneNumber());

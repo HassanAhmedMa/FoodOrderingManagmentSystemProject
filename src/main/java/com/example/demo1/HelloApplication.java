@@ -42,7 +42,9 @@ public class HelloApplication extends Application {
         }
         //Files.setRestaurantNamesList();
         Files.setFoodItems("src/main/resources/FoodItems.txt");
-        Files.GetMenuItemsForEachRestaurant();
+        //Files.GetMenuItemsForEachRestaurant();
+        Files.loadListOfCustomers("src/main/resources/CustomerData.txt");
+        Files.printCustomersData();
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
         Parent root = fxmlLoader.load();

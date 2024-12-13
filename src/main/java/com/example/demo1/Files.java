@@ -2,6 +2,7 @@ package com.example.demo1;
 
 import Entities.FoodItem;
 import Entities.Restaurant;
+import Personchild.Customer;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -86,7 +87,66 @@ public class Files {
 
     }
 
-    public static void GetMenuItemsForEachRestaurant() {
+    public static List<Customer> listOfCustomers = new ArrayList<>();
+
+    public static void loadListOfCustomers(String fileName) throws FileNotFoundException {
+        Customer customerToAdd = null;
+        String TempUserName = "";
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName)))
+        {
+
+            String line;
+            while ((line = reader.readLine()) != null)
+            {
+                if(!line.isEmpty() && line.startsWith("#"))
+                {
+
+                    TempUserName = line.substring(1).toLowerCase();
+                    //System.out.println(line.substring(1));
+
+
+                }
+                else if(line.startsWith("*") && !line.isEmpty())
+                {
+                    String[] parts = line.substring(1).split(" ");
+                    if (parts.length >= 5) {
+                        String Password = parts[0];
+                        String firstName = parts[1];
+                        String LastName = parts[2];
+                        String email = parts[3];
+                        String phoneNumber = parts[4];
+
+                        customerToAdd = new Customer(TempUserName, Password, firstName, LastName, email, phoneNumber);
+                        TempUserName = "";
+
+
+                        //System.out.println("  Food Item: " + FoodName + ", Price: " + Price + ", Type: " + FoodType + ", ImgSrc: " + ImgSrc);
+                    }
+
+
+                    listOfCustomers.add(customerToAdd);
+
+
+                }
+
+
+
+
+            }
+            } catch (IOException e) {
+            throw new RuntimeException(e);
+        }}
+
+        public static void printCustomersData()
+        {
+            for(Customer customer : listOfCustomers)
+            {
+                customer.displayInfo();
+            }
+        }
+
+
+        public static void GetMenuItemsForEachRestaurant() {
         for(Restaurant tempRestaurant : restaurants)
         {
             for(FoodItem foodItem : tempRestaurant.getMenuItems())
