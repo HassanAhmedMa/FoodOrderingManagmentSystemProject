@@ -17,7 +17,7 @@
         <ImageView fx:id="background" blendMode="SRC_ATOP" fitHeight="1271.0" fitWidth="2032.0">
             <Image url="@../../../supermarketBackGround.jpg" />
         </ImageView>
-        <ImageView fitHeight="733.0" fitWidth="633.0" pickOnBounds="true">
+        <ImageView fitHeight="733.0" fitWidth="633.0" onMousePressed="#SwitchToLogin2" pickOnBounds="true">
             <image>
                 <Image url="@../../../SignUp.png" />
             </image>
@@ -25,7 +25,7 @@
                 <Cursor fx:constant="DEFAULT" />
             </cursor>
         </ImageView>
-        <TextField fx:id="Email" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="408.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TextField fx:id="Email" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#validateEmail" prefHeight="37.0" prefWidth="408.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
             <StackPane.margin>
                 <Insets bottom="430.0" left="120.0" />
             </StackPane.margin>
@@ -36,7 +36,7 @@
                 <Blend />
             </effect>
         </TextField>
-        <TextField fx:id="Password" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TextField fx:id="Password" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#validatePassword" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
             <StackPane.margin>
                 <Insets bottom="310.0" left="210.0" right="40.0" />
             </StackPane.margin>
@@ -47,7 +47,7 @@
                 <Blend />
             </effect>
         </TextField>
-        <TextField fx:id="ConfirmPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TextField fx:id="ConfirmPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#validateConfirmPassword" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
             <StackPane.margin>
                 <Insets bottom="195.0" left="210.0" right="40.0" />
             </StackPane.margin>
@@ -58,7 +58,7 @@
                 <Blend />
             </effect>
         </TextField>
-        <TextField fx:id="Username" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TextField fx:id="Username" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#validateUsername" prefHeight="39.0" prefWidth="346.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
             <StackPane.margin>
                 <Insets bottom="95.0" left="210.0" right="40.0" />
             </StackPane.margin>
@@ -79,7 +79,7 @@
                 <Insets left="100.0" top="163.0" />
             </StackPane.margin>
         </ComboBox>
-        <TextField fx:id="PhoneNumber" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="268.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+        <TextField fx:id="PhoneNumber" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#validatePhoneNumber" prefHeight="40.0" prefWidth="268.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
             <StackPane.margin>
                 <Insets left="240.0" right="5.0" top="265.0" />
             </StackPane.margin>
@@ -102,7 +102,7 @@
             <!--                <URL value="@../../../../../src/main/resources/com/example/demo1/styles.css" />-->
             <!--            </stylesheets>-->
         </Button>
-      <Button id="alreadyhaveanaccount" mnemonicParsing="false" onAction="#SwitchToLogin" prefHeight="31.0" prefWidth="210.0" style="-fx-background-color: transparent;" stylesheets="@myStyle.css" text="Already Have an account?">
+      <Button id="alreadyhaveanaccount" mnemonicParsing="false" onAction="#SwitchToLogin2" onMousePressed="#SwitchToLogin2" prefHeight="31.0" prefWidth="210.0" style="-fx-background-color: transparent;" stylesheets="@myStyle.css" text="Already Have an account?">
          <StackPane.margin>
             <Insets top="540.0" />
          </StackPane.margin>
@@ -110,12 +110,44 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Label fx:id="test" text="Passwords do not match!" textFill="RED" visible="false">
+      <Label fx:id="confirmPasswordError" text="Passwords do not match!" textFill="RED" visible="false">
          <font>
             <Font size="14.0" />
          </font>
          <StackPane.margin>
-            <Insets left="350.0" top="-240.0" />
+            <Insets left="350.0" top="-125.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="phoneNumberError" layoutX="1067.0" layoutY="420.0" prefHeight="20.0" prefWidth="482.0" text="phone number must start with 010-012-011-015 ,  and exactly 11 digits" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets left="45.0" top="330.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="emailError" layoutX="872.0" layoutY="705.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="371.0" text="email must contain (@) and end with (.com)" textAlignment="RIGHT" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="365.0" left="155.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="passwordError" layoutX="1067.0" layoutY="478.0" prefHeight="20.0" prefWidth="488.0" text="password must contains special character and be at least 8 digits" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="240.0" left="128.0" />
+         </StackPane.margin>
+      </Label>
+      <Label fx:id="usernameError" layoutX="1067.0" layoutY="478.0" text="Passwords do not match!" textAlignment="RIGHT" textFill="RED" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <StackPane.margin>
+            <Insets bottom="30.0" left="350.0" />
          </StackPane.margin>
       </Label>
     </children>

@@ -46,7 +46,7 @@ public class HelloApplication extends Application {
         Files.loadListOfCustomers("src/main/resources/CustomerData.txt");
         Files.printCustomersData();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HomePage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login .fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
 
