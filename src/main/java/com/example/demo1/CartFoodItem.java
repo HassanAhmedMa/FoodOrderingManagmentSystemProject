@@ -40,6 +40,9 @@ public class CartFoodItem {
     List<FoodItem> customerCart = customer.getCart();
     @FXML
     private void decrementQt() {
+        if(!customerCart.contains(foodItem)) {
+            cartPageController.removeItemFromGrid(foodItem);
+        }
         qt--;
         customer.DecrementFromTotal(foodItem.getName());
         updateQuantity();

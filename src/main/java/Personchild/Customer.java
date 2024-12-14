@@ -13,6 +13,14 @@ public class Customer extends Person {
     private userCart TempuserCart; // hatkon temporary b7es lma al order ytlb a3rf afadyha.
     private List<FoodItem> cart = new ArrayList<>();
 
+    private void removeFromCart(FoodItem item)
+    {
+        if(item.getQuantityInCart() == 1)
+        {
+            cart.remove(item);
+        }
+    }
+
     public Float getTotal() {
         return total;
     }
@@ -20,8 +28,10 @@ public class Customer extends Person {
     public void DecrementFromTotal(String foodName) {
         for(FoodItem foodItem : cart)
         {
+
             if(foodItem.getName().equalsIgnoreCase(foodName))
             {
+                removeFromCart(foodItem);
                 foodItem.decrementQuantityInCart();
 
             }

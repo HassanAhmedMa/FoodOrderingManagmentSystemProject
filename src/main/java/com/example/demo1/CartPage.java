@@ -15,6 +15,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -39,6 +40,23 @@ public class CartPage implements Initializable {
         Customer customer = Files.returnCustomerByName(HelloApplication.LoggedInUserName);
         System.out.println("Trying to update total price");
         TotalPrice.setText("Total Price : " + customer.calculateTotal().toString());
+
+
+
+    }
+    public void removeItemFromGrid(FoodItem foodItem)
+    {
+        for (Node node : grid.getChildren()) {
+            if (node instanceof Pane) {
+                Pane pane = (Pane) node;
+
+                // Check if this pane's controller matches the foodItem
+                CartFoodItem controller = (CartFoodItem) pane.getUserData(); // Assuming you set the controller as user data
+                if (controller != null && controller.foodItem.getName().equalsIgnoreCase(foodItem.getName())) {
+                    grid.getChildren().remove(pane);
+                }
+            }
+        }
     }
 
     public static boolean isFoodItemAlreadyInCart(FoodItem foodItem)
@@ -70,11 +88,11 @@ public class CartPage implements Initializable {
             stage.show();
 
     }
-
+    Customer TempCustomer = Files.returnCustomerByName(HelloApplication.LoggedInUserName);
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            Customer TempCustomer = Files.returnCustomerByName(HelloApplication.LoggedInUserName);
+
 
             System.out.println(TempCustomer.getUsername());
 
@@ -93,7 +111,7 @@ public class CartPage implements Initializable {
 
                 //foodItem.setQuantityInCart(1);
                 CartFoodItemController.setData(foodItem, this);
-
+                pane.setUserData(CartFoodItemController);
 
 
 

@@ -20,11 +20,6 @@
                   <Image url="@../../../CartPage.png" />
                </image>
             </ImageView>
-            <Button layoutX="1341.0" layoutY="490.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-font-weight: bold;" stylesheets="@styles.css" text="Order Now">
-               <font>
-                  <Font size="29.0" />
-               </font>
-            </Button>
             <Label fx:id="TotalPrice" alignment="CENTER" contentDisplay="CENTER" layoutX="1252.0" layoutY="422.0" prefHeight="79.0" prefWidth="433.0" text="Total Price :">
                <font>
                   <Font name="System Bold" size="35.0" />
@@ -44,6 +39,11 @@
                   <Image url="@../../../img.png" />
                </image>
             </ImageView>
+            <Button id="orderNow" layoutX="1341.0" layoutY="490.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-font-weight: bold;" stylesheets="@styles.css" text="Order Now">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
