@@ -1,8 +1,11 @@
 package com.example.demo1;
 
 import Entities.FoodItem;
+import Entities.Order;
 import Entities.Restaurant;
 import Personchild.Customer;
+import Personchild.DeliveryStaff;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,6 +13,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
@@ -20,9 +25,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class CartPage implements Initializable {
     @FXML
@@ -31,10 +34,17 @@ public class CartPage implements Initializable {
     @FXML
     public ScrollPane scroll;
     public Label TotalPrice;
+    public Button OrderNow;
     private int column =0;
     private int row =0;
     public static List<FoodItem> foodItems = new ArrayList<FoodItem>();
    // public FoodItem foodItem = new FoodItem("demo",123f,"demoType","McDonalds-logo.png");
+
+
+
+
+
+
     public void updateTotalPrice()
     {
         Customer customer = Files.returnCustomerByName(HelloApplication.LoggedInUserName);
@@ -44,6 +54,26 @@ public class CartPage implements Initializable {
 
 
     }
+    @FXML
+    public void OrderNowAction(ActionEvent event) throws IOException {
+        Order order = new Order(HelloApplication.orderID++,1,TempCustomer.getCart(),TempCustomer.getUsername());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION); // You can use other types: CONFIRMATION, WARNING, ERROR
+        alert.setTitle("Order Alert");
+        alert.setHeaderText("Order is in progress");
+        alert.setContentText("Go check your orders !");
+        alert.showAndWait();
+        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+        //Show the alert
+
+
+    }
+
+
     public void removeItemFromGrid(FoodItem foodItem)
     {
         for (Node node : grid.getChildren()) {
@@ -73,6 +103,7 @@ public class CartPage implements Initializable {
         return false;
 
     }
+
     private Parent root;
     private Stage stage;
     private Scene scene;

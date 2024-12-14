@@ -1,21 +1,28 @@
 package com.example.demo1;
 
 import Entities.FoodItem;
+import Entities.Order;
 import Entities.Restaurant;
 import Personchild.Customer;
+import Personchild.DeliveryStaff;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class Files {
+    public static List<DeliveryStaff> deliveryStaffList = new ArrayList<>();
     public static List<Restaurant> restaurants = new ArrayList<>();
     public static List<String> RestaurantnamesList = new ArrayList<>();
     public static List<Float> RatingList = new ArrayList<>();
    // public static List<String> RestaurantnamesList = new ArrayList<>();
     public static void loadNames(String fileName) throws FileNotFoundException {
+
+
+
+
+
         Scanner sc = new Scanner(new File(fileName));
 
         ArrayList<String> names = new ArrayList<String>();
@@ -28,6 +35,77 @@ public class Files {
         }
         RestaurantnamesList.addAll(names);
 
+    }
+
+    public static void setDeliveryStaffList(String fileName) throws FileNotFoundException{
+
+        DeliveryStaff currentStaff = null;
+
+        try (Scanner scanner = new Scanner(new File(fileName))) {
+            String line;
+
+            while (scanner.hasNextLine()) {
+                line = scanner.nextLine().trim();
+
+                if (line.startsWith("*")) {
+                    currentStaff = new DeliveryStaff(line.substring(1).split(" "));
+                    deliveryStaffList.add(currentStaff);
+                }
+                else if (line.startsWith("=")) {
+                    String[] parts = line.substring(1).split("\\s", 5);
+                    //System.out.println(parts[1]);
+                    int orderId = Integer.parseInt(parts[0]);
+                    String foodData = parts[1].substring(1, parts[1].length() - 1); // Remove parentheses
+                    List<FoodItem> foodItems = new ArrayList<>();
+
+                    //System.out.println("Order ID: " + orderId);
+                    //System.out.println("Food Data: " + foodData);
+                    //System.out.println("Customer Name: " + parts[2]);
+                    //System.out.println("Order Status: " + parts[3]);
+//
+// Parse food data//
+                    //System.out.println(foodData);
+                    for (String item : foodData.split(",")) {
+                        item = item.trim(); // Clean up whitespace around each food item
+                        System.out.println("Raw Item: " + item); // Debugging
+
+                        // Use a regex to split the name, price, and type
+                        String[] foodParts = item.split("\\|"); // Split on space before a number
+
+
+                        String name = foodParts[0].trim(); // First part is the name
+                        float price = Float.parseFloat(foodParts[1].replace("f", ""));
+                        String type = foodParts[2].trim();
+                        int quantity = Integer.parseInt(foodParts[3].trim());
+                        FoodItem foodItem = new FoodItem(name, price, type, "NoImageAvailable");
+                        foodItem.setQuantityInCart(quantity);
+                        foodItems.add(foodItem);
+
+                        //System.out.println("Parsed Food Item: " + name + ", " + price + ", " + type);
+
+                    }
+                    Order TempOrder = new Order(orderId,Integer.parseInt(parts[3]) ,foodItems,parts[2]);
+                    TempOrder.setOrderPrice(Float.parseFloat(parts[4]));
+                    currentStaff.addOrder(TempOrder);
+
+                }
+
+        }
+            System.out.println(deliveryStaffList);
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+
+
+    public static DeliveryStaff getDeliveryStaff(String deliveryStaffName ) {
+        for(DeliveryStaff deliveryStaff : deliveryStaffList){
+            if(deliveryStaff.getFirstName().equals(deliveryStaffName)){
+                return deliveryStaff;
+            }
+        }
+        return null;
     }
 
     public static void setFoodItems(String fileName) throws FileNotFoundException

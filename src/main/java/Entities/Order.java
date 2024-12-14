@@ -1,21 +1,39 @@
 package Entities;
-import Personchild.Customer;
 
 import java.util.List;
 import java.util.ArrayList;
 public class Order{
-    private int orderId;
+    private int OrderIDColumn;
+    private int OrderStatusColumn; // Use an enum for better readability
+
+    public int getOrderIDColumn() {
+        return OrderIDColumn;
+    }
+
+    public void setOrderIDColumn(int orderIDColumn) {
+        this.OrderIDColumn = orderIDColumn;
+    }
+
+    public int getOrderStatusColumn() {
+        return OrderStatusColumn;
+    }
+
+    public void setOrderStatusColumn(int orderStatusColumn) {
+        this.OrderStatusColumn = orderStatusColumn;
+    }
+
     private int orderDate;
     private float orderPrice;
     private String orderLocation;
-    private int orderState;
-    private List<FoodItem> orderedFoodItems=new ArrayList<>();
-    private Customer whoOrdered;
 
-public Order(int orderId, int orderState, List<FoodItem> orderedFoodItems) {
-        this.orderId = orderId;
-        this.orderState = orderState;
+    private List<FoodItem> orderedFoodItems=new ArrayList<>();
+    private String whoOrdered;
+
+public Order(int OrderIDColumn, int orderState, List<FoodItem> orderedFoodItems, String whoOrdered) {
+        this.OrderIDColumn = OrderIDColumn;
+        this.OrderStatusColumn = orderState;
         this.orderedFoodItems = orderedFoodItems;
+        this.whoOrdered = whoOrdered;
     }
     enum status {
         PREPARING,
@@ -40,12 +58,7 @@ public Order(int orderId, int orderState, List<FoodItem> orderedFoodItems) {
 
 
 
-    public int getOrderId() {
-        return orderId;
-    }
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
+
     ////////////////////////////////////
     public int getOrderDate() {
         return orderDate;
@@ -68,12 +81,7 @@ public Order(int orderId, int orderState, List<FoodItem> orderedFoodItems) {
         this.orderLocation = orderLocation;
     }
     ////////////////////////////////////
-    public int getOrderState() {
-        return orderState;
-    }
-    public void setOrderState(int orderState) {
-        this.orderState = orderState;
-    }
+
     /////////////////////////////////////
     public List<FoodItem> getOrderedFoodItems() {
         return orderedFoodItems;
@@ -90,7 +98,7 @@ public Order(int orderId, int orderState, List<FoodItem> orderedFoodItems) {
      */
  public float TotalOrderPrice() {
         if (orderedFoodItems==null){
-            return orderState;
+            return OrderStatusColumn;
         }
         float totalPrice = 0;
         for (FoodItem foodItem : orderedFoodItems) {

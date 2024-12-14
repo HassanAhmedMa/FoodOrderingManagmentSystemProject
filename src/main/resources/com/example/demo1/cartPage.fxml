@@ -39,9 +39,9 @@
                   <Image url="@../../../img.png" />
                </image>
             </ImageView>
-            <Button id="orderNow" layoutX="1341.0" layoutY="490.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" style="-fx-font-weight: bold;" stylesheets="@styles.css" text="Order Now">
+            <Button id="orderNow" fx:id="OrderNow" layoutX="1341.0" layoutY="490.0" mnemonicParsing="false" onAction="#OrderNowAction" prefHeight="60.0" prefWidth="250.0" stylesheets="@styles.css" text="Order Now">
                <font>
-                  <Font size="29.0" />
+                  <Font size="38.0" />
                </font>
             </Button>
          </children>

@@ -27,11 +27,12 @@ public class CartFoodItem {
 
     @FXML
     private Label quantity;
-    public Integer qt;
+
     @FXML
     private void incrementQt() {
-        qt++;
         customer.IncrementFromTotal(foodItem.getName());
+        foodItem.incrementQuantityInCart();
+
         updateQuantity();
         cartPageController.updateTotalPrice();
     }
@@ -41,13 +42,17 @@ public class CartFoodItem {
     @FXML
     private void decrementQt() {
 
-        if(customerCart.contains(foodItem)) {
-            cartPageController.removeItemFromGrid(foodItem);
-        }
-        qt--;
+        foodItem.decrementQuantityInCart();
         customer.DecrementFromTotal(foodItem.getName());
-        updateQuantity();
         cartPageController.updateTotalPrice();
+        if(!customerCart.contains(foodItem) && foodItem.getQuantityInCart() < 1) {
+            cartPageController.removeItemFromGrid(foodItem);
+
+        }
+
+
+
+        updateQuantity();
 
 
     }
@@ -58,21 +63,25 @@ public class CartFoodItem {
     public void setData(FoodItem takenfood, CartPage cartPage) {
         cartPageController = cartPage;
         System.out.println("Loading Cart Food Items");
-        this.foodItem = new FoodItem(takenfood.getName(), takenfood.getPrice(), takenfood.getType(), takenfood.getImageSrc());
+        this.foodItem = new FoodItem(takenfood.getName(),takenfood.getPrice(),takenfood.getType(),takenfood.getImageSrc());
+        foodItem.setQuantityInCart(takenfood.getQuantityInCart());
+
         ItemName.setText(takenfood.getName());
         Image image = new Image(takenfood.getImageSrc());
         Price.setText(((Float)takenfood.getPrice()).toString());
         ItemImage.setImage(image);
         System.out.println("Loading is Successful");
         System.out.println("TAKEN FOOD GET QUANITY IN CAR IS : " + takenfood.getQuantityInCart());
-        qt = takenfood.getQuantityInCart();
-        quantity.setText(qt.toString());
+        quantity.setText("Qt: " +  ((Integer)foodItem.getQuantityInCart()).toString());
+
 
 
     }
     public void updateQuantity()
     {
-        quantity.setText(qt.toString());
+        System.out.println("Updated Quantity on screen to : " + foodItem.getQuantityInCart());
+        quantity.setText("Qt: " +  ((Integer)foodItem.getQuantityInCart()).toString());
+        System.out.println(customer.getCart());
     }
 
 

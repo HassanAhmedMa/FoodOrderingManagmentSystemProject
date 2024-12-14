@@ -3,7 +3,6 @@ import Abstractpackages.Person;
 import java.util.ArrayList;
 import java.util.List;
 import Entities.*;
-import java.util.Scanner;  // ana asf y hassan bs kont bgrb al class (ziad)
 
 public class Customer extends Person {
     private String username;
@@ -26,15 +25,28 @@ public class Customer extends Person {
     }
 
     public void DecrementFromTotal(String foodName) {
-        for(FoodItem foodItem : cart)
+        if(!cart.isEmpty())
         {
-
-            if(foodItem.getName().equalsIgnoreCase(foodName))
+            for(FoodItem foodItem : cart)
             {
-                removeFromCart(foodItem);
-                foodItem.decrementQuantityInCart();
 
+                if(foodItem.getName().equalsIgnoreCase(foodName))
+                {
+                    if(foodItem.getQuantityInCart() == 1)
+                    {
+                        removeFromCart(foodItem);
+                        break;
+                    }
+                    else
+                    {
+                        foodItem.decrementQuantityInCart();
+                        break;
+                    }
+
+
+                }
             }
+
         }
         calculateTotal();
 
@@ -56,8 +68,10 @@ public class Customer extends Person {
         Float total = 0.0f;
         for(FoodItem item : cart )
         {
+            System.out.println("FoodItem name : " + item.getName() + " Food Items price : " + item.getPrice() + "Food Items quantity : " + item.getQuantityInCart());
             total+=item.getPrice()* item.getQuantityInCart();
         }
+        this.total = total;
         return total;
     }
 
@@ -123,71 +137,7 @@ public class Customer extends Person {
         return orderHistory;
     }
 
-    public void createOrder(Restaurant restaurant) {
-        Scanner scanner = new Scanner(System.in);   //   hassan lw mhndl al input ha4lha
-        List<FoodItem> selectedItems = new ArrayList<>();
 
-        System.out.println("creating order gded y3m lnas :)");
-        restaurant.viewMenu(); // meeeeeen al 3aml al menu!!!!!!!
-
-        boolean addMoreItems = true; //lw al g3an lsa g3an
-        while (addMoreItems) {
-            System.out.println("enter the name of the food item to add to your order:"); //hy5tar al food item mn al mneu
-            String itemName = scanner.nextLine();  //   hassan lw mhndl al input ha4lha
-
-            System.out.println("Enter the quantity:"); //hay7add al 3dd al hwa 3ayzo mn al food item al y5taro
-            int quantity = scanner.nextInt();   //   hassan lw mhndl al input ha4lha
-            scanner.nextLine(); // Clear the buffer     //   hassan lw mhndl al input ha4lha
-
-
-            //htwl33333333333333333333333333333333333
-            //using a stream (a way to process collections like lists) to find a food item from the restaurant's menu.
-
-            //restaurant.getMenuItems()
-            //Gets the list of food items from the restaurant's menu.
-            //
-            //
-            //.stream()
-            //Turns the list into a stream, which allows you to process the list item by item.
-            //
-            //
-            //.filter(food -> food.getName().equalsIgnoreCase(itemName)):
-            //Filters the items in the list. It checks if the name of each FoodItem (using food.getName()) matches the input itemName.
-            //
-            //
-            //.findFirst():
-            //After filtering, it takes the first matching item from the list (if there's one).
-            //.orElse(null):
-            //
-            //If no matching item is found, it returns null instead of a valid FoodItem.
-            FoodItem item = restaurant.getMenuItems().stream()
-                    .filter(food -> food.getName().equalsIgnoreCase(itemName))
-                    .findFirst()
-                    .orElse(null);
-
-            if (item != null) {
-                for (int i = 0; i < quantity; i++) {
-                    selectedItems.add(item);
-                }
-                System.out.println(itemName + " added to the order.");
-            } else {
-                System.out.println("Item not found. Please try again.");
-            }
-
-            System.out.println("Do you want to add more items? (yes/no)");
-            String response = scanner.nextLine();            //   hassan lw mhndl al input ha4lha
-            addMoreItems = response.equalsIgnoreCase("yes");
-        }
-
-        System.out.println("Enter a location for this order:");
-        String orderLocation = scanner.nextLine();       //   hassan lw mhndl al input ha4lha
-
-        Order newOrder = new Order(orderHistory.size() + 1, 0, selectedItems); // awl paramter da hay3mlna unique id
-        newOrder.setOrderLocation(orderLocation); //da al location bta3 al order
-        orderHistory.add(newOrder); // bd5lo fl history bta3t al orders
-
-        System.out.println("Order created successfully!");
-    }
 
 
 
@@ -195,7 +145,7 @@ public class Customer extends Person {
     public void cancelOrder(int orderId) {
         // 4r7naha fo2 baa de al bt access al list ashan ams7o lw mawgod
         Order order = orderHistory.stream()
-                .filter(o -> o.getOrderId() == orderId)
+                .filter(o -> o.getOrderIDColumn() == orderId)
                 .findFirst()
                 .orElse(null);
 
@@ -212,13 +162,13 @@ public class Customer extends Person {
     public void updateOrder(int orderId, Restaurant restaurant) {
         // 4r7naha fo2 baa de al bt access al list
         Order order = orderHistory.stream()
-                .filter(o -> o.getOrderId() == orderId)
+                .filter(o -> o.getOrderIDColumn() == orderId)
                 .findFirst()
                 .orElse(null);
 
         if (order != null) {
             System.out.println("updating order " + orderId );
-            createOrder(restaurant); // b call method al create ashan y7sl update b3d ma y8yr al hwa 3ayzo
+            //createOrder(restaurant); // b call method al create ashan y7sl update b3d ma y8yr al hwa 3ayzo
         } else {
             System.out.println("order not found.");
         }
@@ -248,12 +198,12 @@ public class Customer extends Person {
     // View order state
     public void checkOrderState(int orderId) {
         Order order = orderHistory.stream()
-                .filter(o -> o.getOrderId() == orderId)
+                .filter(o -> o.getOrderIDColumn() == orderId)
                 .findFirst()
                 .orElse(null);
 
         if (order != null) {
-            System.out.println("Order " + orderId + " state: " + order.getOrderState());
+            System.out.println("Order " + orderId + " state: " + order.getOrderStatusColumn());
         } else {
             System.out.println("Order not found.");
         }
@@ -267,7 +217,7 @@ public class Customer extends Person {
         } else {
             System.out.println("Your orders:");
             for (Order order : orderHistory) {
-                System.out.println(" Order ID: " + order.getOrderId() + ", Total Price: " + order.TotalOrderPrice() + ", Location: " + order.getOrderLocation());
+                System.out.println(" Order ID: " + order.getOrderIDColumn() + ", Total Price: " + order.TotalOrderPrice() + ", Location: " + order.getOrderLocation());
             }
         }
     }

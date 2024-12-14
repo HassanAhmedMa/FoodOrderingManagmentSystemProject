@@ -1,8 +1,10 @@
 package com.example.demo1;
 
 import Entities.FoodItem;
+import Entities.Order;
 import Entities.Restaurant;
 import Personchild.Customer;
+import Personchild.DeliveryStaff;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
 
 
 import java.awt.*;
@@ -23,7 +26,11 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class HelloApplication extends Application {
+
+    public static Integer orderID = 1;
+
     @FXML
+
 
 
     public static void main(String[] args) {
@@ -52,17 +59,36 @@ public class HelloApplication extends Application {
         //Files.GetMenuItemsForEachRestaurant();
         Files.loadListOfCustomers("src/main/resources/CustomerData.txt");
         //Files.printCustomersData();
+        Files.setDeliveryStaffList("src/main/resources/deliveryStaff.txt");
 
-        System.out.println(SignupController.users);
+//        System.out.println(SignupController.users);
+//        for(DeliveryStaff staff : Files.deliveryStaffList)
+//        {
+//            System.out.println(staff.getFirstName());
+//            System.out.println(staff.getLocation());
+//            for(Order order : staff.getOrders())
+//            {
+//                System.out.println("Order Price : " + order.getOrderPrice());
+//                System.out.println(order.getOrderId());
+//                System.out.println(order.getOrderState());
+//                for(FoodItem foodItem : order.getOrderedFoodItems())
+//                {
+//                    System.out.println(foodItem.getName());
+//                    System.out.println(foodItem.getPrice());
+//                    System.out.println("Food quanitity : " + foodItem.getQuantityInCart());
+//
+//                }
+//            }
+//        }
 
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("deliveryStaff.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
-        Customer customer = Files.returnCustomerByName("ziad");
-        Restaurant restaurant = Files.restaurants.get(1);
-        customer.addFoodItemToCart(restaurant.getMenuItems().get(1));
+        //Customer customer = Files.returnCustomerByName("ziad");
+        //Restaurant restaurant = Files.restaurants.get(1);
+        //customer.addFoodItemToCart(restaurant.getMenuItems().get(1));
 
 
 
