@@ -33,6 +33,9 @@ public class AdminPage {
 
 
 
+
+
+
     public void switchToAddPage(MouseEvent event) throws IOException, IOException {
 
         root = FXMLLoader.load(getClass().getResource("addRestaurant.fxml"));
@@ -72,6 +75,14 @@ public class AdminPage {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    public void SwitchtoLogin(MouseEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
     }
 
 }

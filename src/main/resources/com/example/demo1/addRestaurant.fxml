@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
@@ -15,15 +15,12 @@
    <children>
       <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../Downloads/backgroundimage.png" />
+            <Image url="@../../../background.jpg" />
          </image>
       </ImageView>
-      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1920.0">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button blendMode="HARD_LIGHT" cache="true" mnemonicParsing="false" text="Add">
-               <StackPane.margin>
-                  <Insets bottom="100.0" top="600.0" />
-               </StackPane.margin>
+            <Button blendMode="HARD_LIGHT" cache="true" layoutX="762.0" layoutY="922.0" mnemonicParsing="false" onAction="#addRestaurant" text="Add">
                <font>
                   <Font name="Arial Black" size="38.0" />
                </font>
@@ -35,7 +32,39 @@
                   </InnerShadow>
                </effect>
             </Button>
-            <TextField fx:id="textToAddRestaurant" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0" promptText="type the name of the resturant you want to add">
+            <TextField fx:id="NameToAddRestaurant" alignment="CENTER" layoutX="82.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="342.0" promptText="Type the name of the restaurant">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="7.0" layoutY="7.0" onMousePressed="#backToAdminPage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <TextField fx:id="GovernorateToAddRestaurant" alignment="CENTER" layoutX="490.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="403.0" promptText="Type the Governorate of the restaurant">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="AreasToAddRestaurant" alignment="CENTER" layoutX="1012.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="342.0" promptText="Type the Areas of the restaurant">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="CategoriesToAddRestaurant" alignment="CENTER" layoutX="1435.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="403.0" promptText="Type the Category of the restaurant">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -44,14 +73,6 @@
                </font>
             </TextField>
          </children>
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
-      </StackPane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" onMousePressed="#backToAdminPage" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
-         <image>
-            <Image url="@../../../../../../../../Downloads/backButton.png" />
-         </image>
-      </ImageView>
+      </AnchorPane>
    </children>
 </StackPane>

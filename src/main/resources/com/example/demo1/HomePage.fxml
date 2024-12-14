@@ -61,7 +61,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Label>
-                              <TextField prefHeight="45.0" prefWidth="1148.0" promptText="Governorate" style="-fx-border-radius: 35; -fx-background-radius: 35; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);;" stylesheets="@myStyle.css" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                              <TextField fx:id="SearchGovernorate" prefHeight="45.0" prefWidth="1148.0" promptText="Governorate" style="-fx-border-radius: 35; -fx-background-radius: 35; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);;" stylesheets="@myStyle.css" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
