@@ -25,20 +25,25 @@
                   <Font size="29.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1252.0" layoutY="422.0" prefHeight="79.0" prefWidth="433.0" text="Total Price :">
+            <Label fx:id="TotalPrice" alignment="CENTER" contentDisplay="CENTER" layoutX="1252.0" layoutY="422.0" prefHeight="79.0" prefWidth="433.0" text="Total Price :">
                <font>
                   <Font name="System Bold" size="35.0" />
                </font>
             </Label>
-            <ScrollPane layoutX="260.0" layoutY="148.0" prefHeight="802.0" prefWidth="824.0" style="-fx-background: none;">
+            <ScrollPane fx:id="scroll" layoutX="219.0" layoutY="148.0" prefHeight="802.0" prefWidth="901.0" style="-fx-background: none;">
                <content>
-                  <GridPane prefHeight="0.0" prefWidth="0.0">
+                  <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                   </GridPane>
                </content>
             </ScrollPane>
+            <ImageView fx:id="backToRestaurants" fitHeight="79.0" fitWidth="96.0" onMousePressed="#backToRestaurants" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

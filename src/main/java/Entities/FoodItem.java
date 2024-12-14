@@ -4,11 +4,16 @@ public class FoodItem {
     private String name;
     private String type;
     private float price;
-
+    private int quantityInCart = 1;
     public String getImageSrc() {
         return ImageSrc;
     }
-
+    public void incrementQuantityInCart() {
+        quantityInCart++;
+    }
+    public void decrementQuantityInCart() {
+        quantityInCart--;
+    }
     public void setImageSrc(String imageSrc) {
         ImageSrc = imageSrc;
     }
@@ -37,5 +42,13 @@ public class FoodItem {
 
     public String getType() {
         return type;
+    }
+
+    public int getQuantityInCart() {
+        return quantityInCart;
+    }
+
+    public void setQuantityInCart(int quantityInCart) {
+        this.quantityInCart = quantityInCart;
     }
 }

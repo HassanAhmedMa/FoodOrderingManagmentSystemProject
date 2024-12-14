@@ -11,6 +11,71 @@ public class Customer extends Person {
     private List<Order> orderHistory;
     private userCart usercart;
     private userCart TempuserCart; // hatkon temporary b7es lma al order ytlb a3rf afadyha.
+    private List<FoodItem> cart = new ArrayList<>();
+
+    public Float getTotal() {
+        return total;
+    }
+
+    public void DecrementFromTotal(String foodName) {
+        for(FoodItem foodItem : cart)
+        {
+            if(foodItem.getName().equalsIgnoreCase(foodName))
+            {
+                foodItem.decrementQuantityInCart();
+
+            }
+        }
+        calculateTotal();
+
+    }
+    public void IncrementFromTotal(String foodName) {
+        for(FoodItem foodItem : cart)
+        {
+            if(foodItem.getName().equalsIgnoreCase(foodName))
+            {
+                foodItem.incrementQuantityInCart();
+            }
+        }
+        calculateTotal();
+    }
+
+    private Float total = calculateTotal();
+    public Float calculateTotal()
+    {
+        Float total = 0.0f;
+        for(FoodItem item : cart )
+        {
+            total+=item.getPrice()* item.getQuantityInCart();
+        }
+        return total;
+    }
+
+
+    public void addFoodItemToCart(FoodItem fooditem)
+    {
+        cart.add(fooditem);
+    }
+    public List<FoodItem> getCart() {
+        return cart;
+    }
+
+    public void setCart(List<FoodItem> cart) {
+        this.cart = cart;
+    }
+    public boolean checkIfFoodIsInCart(FoodItem fooditem)
+    {
+        for(FoodItem food : cart)
+        {
+            if(food.getName().equals(fooditem.getName()))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
     public Customer(String username, String password, String firstName, String lastName, String email, String phoneNumber) {
         super(firstName, lastName, email, phoneNumber);

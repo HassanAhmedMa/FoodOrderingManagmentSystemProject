@@ -86,7 +86,18 @@ public class Files {
         }
 
     }
+    public static Customer returnCustomerByName(String customerName)
+    {
+        for(Customer customer : listOfCustomers)
+        {
+            if(customer.getUsername().equals(customerName))
+            {
+                return customer;
+            }
+        }
+        return null;
 
+    }
     public static List<Customer> listOfCustomers = new ArrayList<>();
 
     public static void loadListOfCustomers(String fileName) throws FileNotFoundException {
@@ -125,7 +136,7 @@ public class Files {
 
 
                     listOfCustomers.add(customerToAdd);
-
+                    SignupController.users.put(customerToAdd.getUsername(), customerToAdd.getPassword());
 
                 }
 

@@ -63,13 +63,14 @@ public class selectedrestrauntpageController implements Initializable {
     }
 
     public void goToCart(MouseEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("cartPage.fxml"));
+        root = FXMLLoader.load(getClass().getResource("CartPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setFullScreen(true);
         stage.show();
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

@@ -2,6 +2,7 @@ package com.example.demo1;
 
 import Entities.FoodItem;
 import Entities.Restaurant;
+import Personchild.Customer;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,15 +41,34 @@ public class HelloApplication extends Application {
             e.printStackTrace();
 
         }
+
+
+
+
+
+
         //Files.setRestaurantNamesList();
         Files.setFoodItems("src/main/resources/FoodItems.txt");
         //Files.GetMenuItemsForEachRestaurant();
         Files.loadListOfCustomers("src/main/resources/CustomerData.txt");
-        Files.printCustomersData();
+        //Files.printCustomersData();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login .fxml"));
+        System.out.println(SignupController.users);
+
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
+        Customer customer = Files.returnCustomerByName("ziad");
+        Restaurant restaurant = Files.restaurants.get(1);
+        customer.addFoodItemToCart(restaurant.getMenuItems().get(1));
+
+
+
+
+
+
 
 
         scene.setOnKeyPressed(event -> {
@@ -64,6 +84,11 @@ public class HelloApplication extends Application {
 
 
         stage.resizableProperty().setValue(Boolean.FALSE);
+
+
+
+
+
 
         stage.show();
 

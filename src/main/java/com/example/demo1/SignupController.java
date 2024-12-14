@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import Personchild.Customer;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -105,6 +106,7 @@ public class SignupController {
         if (isValid) {
             // Proceed with user creation and scene switch
             users.put(Username.getText(), Password.getText());
+            Files.listOfCustomers.add(new Customer(Username.getText(),Password.getText(),"No First Name","No Last Name",Email.getText(),PhoneNumber.getText()));
             root = FXMLLoader.load(getClass().getResource("login.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -164,7 +166,12 @@ public class SignupController {
         if (Username.getText().isEmpty()) {
             usernameError.setText("Username cannot be empty.");
             usernameError.setVisible(true);
-        } else {
+        }
+        else if(users.containsKey(Username.getText())) {
+            usernameError.setText("Username already exists.");
+            usernameError.setVisible(true);
+        }
+        else {
             usernameError.setVisible(false);
         }
     }
