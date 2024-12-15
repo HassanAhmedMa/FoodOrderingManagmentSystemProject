@@ -40,7 +40,7 @@ public class DeliveryStaff extends Person {
     public void assignedOrders(List<Order> orders) {
     for (Order order : orders) {
         System.out.println("Processing order: " + order.getOrderIDColumn());
-        System.out.println("Order state: " + order.getOrderStatusColumn());
+        System.out.println("Order state: " + order.getOrderStatus());
         System.out.println("Order Total price: " + order.TotalOrderPrice());
     }
 
@@ -53,13 +53,13 @@ public void changeOrderStatus(List<Order> orders, int orderId)
 {
     for(Order order: orders)
     {   if(order.getOrderIDColumn()==orderId) {
-        Integer orderState = order.getOrderStatusColumn();
+        Integer orderState = order.getOrderStatus();
         if (orderState != null && orderState == 1) { // 1:on progress
             System.out.println("in progress");
-            order.setOrderStatusColumn(2); // 2:on his way
+            order.setOrderStatus(2); // 2:on his way
             System.out.println("on his way");
         } else if (orderState == 2) {
-            order.setOrderStatusColumn(3);//3:delivered
+            order.setOrderStatus(3);//3:delivered
             System.out.println("delivered");
         }
     }
@@ -69,7 +69,7 @@ public void changeOrderStatus(List<Order> orders, int orderId)
 public void Reviews(List<Order>orders)
 {   for(Order order: orders)
 {
-    Integer orderState = order.getOrderStatusColumn();
+    Integer orderState = order.getOrderStatus();
     if(orderState==3)
     {
         System.out.println("customer review delivery staff");

@@ -203,7 +203,7 @@ public class Customer extends Person {
                 .orElse(null);
 
         if (order != null) {
-            System.out.println("Order " + orderId + " state: " + order.getOrderStatusColumn());
+            System.out.println("Order " + orderId + " state: " + order.getOrderStatus());
         } else {
             System.out.println("Order not found.");
         }

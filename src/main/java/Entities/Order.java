@@ -1,27 +1,28 @@
 package Entities;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 
 import java.util.List;
 import java.util.ArrayList;
 public class Order{
     private int OrderIDColumn;
-    private int OrderStatusColumn; // Use an enum for better readability
+    private int OrderStatus; // Use an enum for better readability
 
-    public String getOrderID() {
-        return OrderID.get();
+
+    private IntegerProperty orderId = new SimpleIntegerProperty();
+    public int getOrderId(){
+        return orderId.get();
+    }
+    public void setorderId(int myInt){
+        orderId.set(myInt);
+
     }
 
-    public StringProperty orderIDProperty() {
-        return OrderID;
-    }
 
-    public void setOrderID(String orderID) {
-        this.OrderID.set(orderID);
-    }
 
-    private StringProperty OrderID = new SimpleStringProperty();
+
+
 
     public int getOrderIDColumn() {
         return OrderIDColumn;
@@ -31,12 +32,12 @@ public class Order{
         this.OrderIDColumn = orderIDColumn;
     }
 
-    public int getOrderStatusColumn() {
-        return OrderStatusColumn;
+    public int getOrderStatus() {
+        return OrderStatus;
     }
 
-    public void setOrderStatusColumn(int orderStatusColumn) {
-        this.OrderStatusColumn = orderStatusColumn;
+    public void setOrderStatus(int orderStatus) {
+        this.OrderStatus = orderStatus;
     }
 
     private int orderDate;
@@ -44,11 +45,20 @@ public class Order{
     private String orderLocation;
 
     private List<FoodItem> orderedFoodItems=new ArrayList<>();
+
+    public String getWhoOrdered() {
+        return whoOrdered;
+    }
+
+    public void setWhoOrdered(String whoOrdered) {
+        this.whoOrdered = whoOrdered;
+    }
+
     private String whoOrdered;
 
 public Order(int OrderIDColumn, int orderState, List<FoodItem> orderedFoodItems, String whoOrdered) {
         this.OrderIDColumn = OrderIDColumn;
-        this.OrderStatusColumn = orderState;
+        this.OrderStatus = orderState;
         this.orderedFoodItems = orderedFoodItems;
         this.whoOrdered = whoOrdered;
     }
@@ -115,7 +125,7 @@ public Order(int OrderIDColumn, int orderState, List<FoodItem> orderedFoodItems,
      */
  public float TotalOrderPrice() {
         if (orderedFoodItems==null){
-            return OrderStatusColumn;
+            return OrderStatus;
         }
         float totalPrice = 0;
         for (FoodItem foodItem : orderedFoodItems) {
