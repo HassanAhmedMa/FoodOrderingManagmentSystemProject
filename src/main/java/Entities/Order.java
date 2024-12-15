@@ -1,10 +1,27 @@
 package Entities;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.List;
 import java.util.ArrayList;
 public class Order{
     private int OrderIDColumn;
     private int OrderStatusColumn; // Use an enum for better readability
+
+    public String getOrderID() {
+        return OrderID.get();
+    }
+
+    public StringProperty orderIDProperty() {
+        return OrderID;
+    }
+
+    public void setOrderID(String orderID) {
+        this.OrderID.set(orderID);
+    }
+
+    private StringProperty OrderID = new SimpleStringProperty();
 
     public int getOrderIDColumn() {
         return OrderIDColumn;

@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import Entities.Restaurant;
 import com.fasterxml.jackson.core.JsonParser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -54,6 +55,9 @@ public class addRestaurant {
             Files.listOfGovernorate.add(restaurantGovernorate);
             Files.CategoriesList.add(new ArrayList<>(List.of(restaurantCategory)));
             Files.listOfAreas.add(new ArrayList<>(List.of(restaurantAreas)));
+            Files.listOfImagesPath.add("NoImageAvailable.png");
+            Files.restaurants.add(new Restaurant(restaurantName,restaurantGovernorate,List.of(restaurantAreas),List.of(restaurantCategory)));
+            Files.returnByName(restaurantName).setImgLocation("NoImageAvailable.png");
 
 
             showAlert("Success", "Restaurant added successfully.");
@@ -65,6 +69,7 @@ public class addRestaurant {
             System.out.println(Files.listOfGovernorate);
             System.out.println(Files.CategoriesList);
             System.out.println(Files.listOfAreas);
+
         }
     }
 

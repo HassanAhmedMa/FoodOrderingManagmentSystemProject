@@ -275,11 +275,11 @@ public class Files {
 
 
 
-
+    private static int i = 0;
     public static void setRestaurantNamesList() {
-        System.out.println(Files.RestaurantnamesList);
+        //System.out.println(Files.RestaurantnamesList);
         Restaurant restaurant;
-        int i = 0;
+
         for(String name : Files.RestaurantnamesList)
         {
 
@@ -287,6 +287,7 @@ public class Files {
             restaurant.setImgLocation(Files.listOfImagesPath.get(i));
             restaurants.add(restaurant);
             i++;
+            System.out.println("Added to system restraunt : " + name);
 
         }
     }

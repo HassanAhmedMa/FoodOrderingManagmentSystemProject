@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.deliveryStaffController">
+   <children>
+      <BorderPane prefHeight="720.0" prefWidth="1280.0">
+         <left>
+            <AnchorPane prefHeight="720.0" prefWidth="54.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="720.0" prefWidth="56.0">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" VBox.vgrow="ALWAYS">
+                           <image>
+                              <Image url="@../../../img.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" VBox.vgrow="ALWAYS">
+                           <image>
+                              <Image url="@../../../addtoCartButton.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="10.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" VBox.vgrow="ALWAYS">
+                           <image>
+                              <Image url="@../../../remove_14996547.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </VBox.margin>
+                        </ImageView>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

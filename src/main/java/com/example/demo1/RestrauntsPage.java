@@ -66,12 +66,11 @@ public class RestrauntsPage implements Initializable {
         int row = 0;
         int i = 0;
 
-            for (Restaurant restaurant : Files.getRestaurants())
+        for (Restaurant restaurant : Files.getRestaurants())
             {
                 listOfRestraunts.add(restaurant);
             }
 
-            System.out.println("File not found");
 
 
         try {
