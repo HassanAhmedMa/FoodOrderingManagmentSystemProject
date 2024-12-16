@@ -44,31 +44,75 @@ public class CartPage implements Initializable {
 
 
 
-
+    Customer customer = Files.returnCustomerByName(HelloApplication.LoggedInUserName);
     public void updateTotalPrice()
     {
-        Customer customer = Files.returnCustomerByName(HelloApplication.LoggedInUserName);
+
         System.out.println("Trying to update total price");
         TotalPrice.setText("Total Price : " + customer.calculateTotal().toString());
 
 
 
     }
+
     @FXML
     public void OrderNowAction(ActionEvent event) throws IOException {
         Order order = new Order(HelloApplication.orderID++,1,TempCustomer.getCart(),TempCustomer.getUsername());
-        Alert alert = new Alert(Alert.AlertType.INFORMATION); // You can use other types: CONFIRMATION, WARNING, ERROR
-        alert.setTitle("Order Alert");
-        alert.setHeaderText("Order is in progress");
-        alert.setContentText("Go check your orders !");
-        alert.showAndWait();
-        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
-        //Show the alert
+        order.setOrderPrice(customer.calculateTotal());
+        order.setOrderLocation(TempCustomer.getGovernorate() + ", " +   TempCustomer.getArea());
+        boolean available = true;
+        for(DeliveryStaff staff: Files.deliveryStaffList)
+        {
+            System.out.println(TempCustomer.getGovernorate());
+            System.out.println(TempCustomer.getArea());
+            System.out.println(staff.getAreas());
+            System.out.println(staff.getLocation());
+            if(TempCustomer.getGovernorate().equalsIgnoreCase(staff.getLocation()) && staff.getAreas().contains(TempCustomer.getArea().toLowerCase()))
+            {
+
+                staff.addOrder(order);
+
+                break;
+            }
+            else
+            {
+                available = false;
+            }
+        }
+
+
+        if(available)
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION); // You can use other types: CONFIRMATION, WARNING, ERROR
+            alert.setTitle("Order Alert");
+            alert.setHeaderText("Order is in progress");
+            alert.setContentText("Go check your orders !");
+            alert.showAndWait();
+            root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setFullScreen(true);
+            stage.show();
+            stage.setFullScreenExitHint(""); // Suppress the default ESC message
+            //Show the alert
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.WARNING); // You can use other types: CONFIRMATION, WARNING, ERROR
+            alert.setTitle("Order Alert");
+            alert.setHeaderText("NO ORDERS AVAILABLE FOR NOW");
+            alert.setContentText("no available derivers in your area for now");
+            alert.showAndWait();
+            root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setFullScreen(true);
+            stage.show();
+            stage.setFullScreenExitHint(""); // Suppress the default ESC message
+        }
+
+
 
 
     }
@@ -116,7 +160,9 @@ public class CartPage implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.setFullScreen(true);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
             stage.show();
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
 
     }
     Customer TempCustomer = Files.returnCustomerByName(HelloApplication.LoggedInUserName);

@@ -43,6 +43,7 @@ public class RestrauntsPage implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setFullScreen(true);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
 
     }
@@ -61,15 +62,25 @@ public class RestrauntsPage implements Initializable {
 
 
     public void initialize(URL location, ResourceBundle resources) {
-
+        if(HomePage.isGoingToShowAll)
+        {
+            for (Restaurant restaurant : Files.getRestaurants())
+            {
+                listOfRestraunts.add(restaurant);
+            }
+        }
+        else
+        {
+            for (Restaurant restaurant : HomePage.matchingRestaurants)
+            {
+                listOfRestraunts.add(restaurant);
+            }
+        }
         int column = 0;
         int row = 0;
         int i = 0;
 
-        for (Restaurant restaurant : Files.getRestaurants())
-            {
-                listOfRestraunts.add(restaurant);
-            }
+
 
 
 

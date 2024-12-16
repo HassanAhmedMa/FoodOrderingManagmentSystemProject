@@ -42,10 +42,11 @@
                               <RowConstraints maxHeight="516.0" minHeight="10.0" prefHeight="24.666671752929688" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="587.0" minHeight="0.0" prefHeight="74.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="673.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="755.0" minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="822.0" minHeight="0.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="896.0" minHeight="0.0" prefHeight="255.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="1165.0" minHeight="10.0" prefHeight="311.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="755.0" minHeight="10.0" prefHeight="187.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="822.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="896.0" minHeight="0.0" prefHeight="230.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="1165.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="1165.0" minHeight="10.0" prefHeight="279.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
                               <ImageView fitHeight="1980.0" fitWidth="2038.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="9" GridPane.rowSpan="2147483647">
@@ -72,7 +73,7 @@
                                     <Insets left="30.0" />
                                  </padding>
                               </TextField>
-                              <Button id="SearchHomePage" fx:id="HomePageGoButton" mnemonicParsing="false" onAction="#SwtichToRestraunts" prefHeight="52.0" prefWidth="333.0" stylesheets="@styles.css" text="Search" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                              <Button id="SearchHomePage" fx:id="HomePageGoButton" mnemonicParsing="false" onAction="#SearchbyGovernorate" prefHeight="52.0" prefWidth="333.0" stylesheets="@styles.css" text="Search" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                  <font>
                                     <Font size="31.0" />
                                  </font>
@@ -85,7 +86,7 @@
                                     <Font name="System Bold Italic" size="27.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="206.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                              <ImageView fx:id="pizaaQuickButton" fitHeight="206.0" fitWidth="233.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                                  <image>
                                     <Image url="@../../../PizzaQuickButton.png" />
                                  </image>
@@ -93,7 +94,7 @@
                                     <Rectangle2D />
                                  </viewport>
                               </ImageView>
-                              <ImageView fitHeight="206.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                              <ImageView fx:id="BurgerQuickButton" fitHeight="206.0" fitWidth="233.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                                  <image>
                                     <Image url="@../../../BurgerQuickButton.png" />
                                  </image>
@@ -101,7 +102,7 @@
                                     <Rectangle2D />
                                  </viewport>
                               </ImageView>
-                              <ImageView fitHeight="206.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                              <ImageView fx:id="SandwichQuickButton" fitHeight="206.0" fitWidth="233.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                                  <image>
                                     <Image url="@../../../sandwichQuickButton.png" />
                                  </image>
@@ -109,7 +110,7 @@
                                     <Rectangle2D />
                                  </viewport>
                               </ImageView>
-                              <ImageView fitHeight="206.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                              <ImageView fx:id="SushiQuickButton" fitHeight="206.0" fitWidth="233.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                                  <image>
                                     <Image url="@../../../SushiQuickButton.png" />
                                  </image>
@@ -117,7 +118,7 @@
                                     <Rectangle2D />
                                  </viewport>
                               </ImageView>
-                              <ImageView fitHeight="206.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                              <ImageView fx:id="SaladQuickbutton" fitHeight="206.0" fitWidth="233.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                                  <image>
                                     <Image url="@../../../AppetizersQuickButton.png" />
                                  </image>
@@ -133,6 +134,31 @@
                                     <Image url="@../../../hamburgerButton.png" />
                                  </image>
                               </ImageView>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Pizza" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font name="System Bold Italic" size="38.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Burger" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font name="System Bold Italic" size="38.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Sandwiches" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font name="System Bold Italic" size="38.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Sushi" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font name="System Bold Italic" size="38.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Salad" textFill="WHITE" GridPane.columnIndex="6" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font name="System Bold Italic" size="38.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </GridPane>
                      </content>

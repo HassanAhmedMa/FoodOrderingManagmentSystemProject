@@ -80,10 +80,27 @@ public class loginController {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.setFullScreen(true);
+            stage.setFullScreenExitHint(""); // Suppress the default ESC message
             stage.show();
 
         }
 
+
+
+
+    }
+
+
+    public void switchToDeliveryStaff(MouseEvent event) throws IOException {
+
+        root = FXMLLoader.load(getClass().getResource("whichDeliveryStaffPage.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setFullScreen(false);
+        HelloApplication.centerStage(stage);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
+        stage.show();
 
 
 
@@ -100,6 +117,7 @@ public class loginController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.setFullScreen(true);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
     }
 
@@ -110,6 +128,7 @@ public class loginController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.setFullScreen(true);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
     }
 

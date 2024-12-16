@@ -20,7 +20,7 @@
                <children>
                   <VBox prefHeight="720.0" prefWidth="56.0">
                      <children>
-                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" VBox.vgrow="ALWAYS">
+                        <ImageView fx:id="backButton" fitHeight="45.0" fitWidth="45.0" onMousePressed="#backButton" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" VBox.vgrow="ALWAYS">
                            <image>
                               <Image url="@../../../img.png" />
                            </image>

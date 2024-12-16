@@ -1,23 +1,31 @@
 package com.example.demo1;
 import Entities.*;
+import Personchild.DeliveryStaff;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class deliveryStaffController implements Initializable {
-
+    public static String deliveryStaffName;
+    public ImageView backButton;
     @FXML
     private ImageView BackOrderState;
     @FXML
@@ -34,13 +42,13 @@ public class deliveryStaffController implements Initializable {
 
     @FXML
     private TableView<Order> table;
-    ObservableList<Order> orders = FXCollections.observableArrayList(
-            Files.deliveryStaffList.get(1).getOrders()
-    );
+    ObservableList<Order> orders = FXCollections.observableArrayList(Files.getDeliveryStaff(deliveryStaffName).getOrders());
     @FXML
     private TableColumn<Order, String> locationColumn;
 
-
+    private Parent root;
+    private Scene scene;
+    private Stage stage;
 
 
 
@@ -65,5 +73,17 @@ public class deliveryStaffController implements Initializable {
             order.UpdateOrderStatus();
             table.refresh();
         }
+    }
+
+    public void backButton(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("whichDeliveryStaffPage.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setFullScreen(false);
+        HelloApplication.centerStage(stage);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
+        stage.show();
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
     }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 public class Restaurant {
     private final String Name;
     //private String Location; //location da al mafrod ykon fy governmenet wl address al costumer hy 7addhom ashan ytla3lo list of all avaliable resturants (ziad )
-    private String governorate;
+    private List<String> governorate;
     private List<String> area =  new ArrayList<>();
     private List<String> categories = new ArrayList<>();
     private List<FoodItem> MenuItems = new ArrayList<>();
@@ -40,7 +40,7 @@ public class Restaurant {
 
      * @param categories The category or type of the restaurant.
      */
-    public Restaurant(String name, String governorate, List<String> areas, List<String> categories) {
+    public Restaurant(String name, List<String> governorate, List<String> areas, List<String> categories) {
 
         this.Name = name;
         this.governorate = governorate;
@@ -78,11 +78,11 @@ public class Restaurant {
     }
 
 
-    public void setGovernorate(String governorate) {
+    public void setGovernorate(List<String> governorate) {
         this.governorate = governorate;
     }
 
-    public String getGovernorate() {
+    public List<String> getGovernorate() {
         return governorate;
     }
 

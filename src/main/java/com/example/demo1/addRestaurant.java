@@ -58,7 +58,7 @@ public class addRestaurant {
 
     public void addRestaurant() {
         String restaurantName = NameToAddRestaurant.getText();
-        String restaurantGovernorate= GovernorateToAddRestaurant.getText();
+        List<String> restaurantGovernorate= List.of(GovernorateToAddRestaurant.getText().split("\\S+"));
         String restaurantCategory = CategoriesToAddRestaurant.getText();
         String restaurantAreas = AreasToAddRestaurant.getText();
 
@@ -104,7 +104,9 @@ public class addRestaurant {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.setFullScreen(true);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
+
     }
     public void processAndAddAreas(String inputAreas) {
         List<List<String>> listOfAreas = new ArrayList<>();

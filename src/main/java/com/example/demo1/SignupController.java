@@ -112,6 +112,7 @@ public class SignupController {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.setFullScreen(true);
+            stage.setFullScreenExitHint(""); // Suppress the default ESC message
             stage.show();
 
 

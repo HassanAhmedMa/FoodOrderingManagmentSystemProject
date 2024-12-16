@@ -8,6 +8,7 @@ import Personchild.DeliveryStaff;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.*;
@@ -17,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
 
@@ -31,7 +33,21 @@ public class HelloApplication extends Application {
 
     @FXML
 
+    public static void centerStage(Stage stage) {
+        // Get primary screen bounds
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 
+        // Calculate the centered position
+        double stageWidth = stage.getWidth();
+        double stageHeight = stage.getHeight();
+
+        double centerX = (screenBounds.getWidth() - stageWidth) / 2;
+        double centerY = (screenBounds.getHeight() - stageHeight) / 2;
+
+        // Set the stage position
+        stage.setX(centerX);
+        stage.setY(centerY);
+    }
 
     public static void main(String[] args) {
         launch();
@@ -83,7 +99,7 @@ public class HelloApplication extends Application {
 
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("deliveryStaff.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         //Customer customer = Files.returnCustomerByName("ziad");

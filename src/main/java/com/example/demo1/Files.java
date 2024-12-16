@@ -41,15 +41,25 @@ public class Files {
 
         DeliveryStaff currentStaff = null;
         String location = "";
+        String[] MainParts = new String[2];
         try (Scanner scanner = new Scanner(new File(fileName))) {
             String line;
 
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine().trim();
 
+
                 if (line.startsWith("*")) {
-                    currentStaff = new DeliveryStaff(line.substring(1).split(" "));
+                    MainParts =  line.split("\\(", 2);
+                    MainParts[1] = MainParts[1].substring(0, MainParts[1].length() - 1);
+                    MainParts[0] = MainParts[0].toLowerCase();
+                    System.out.println("MAIN PART " + MainParts[0]);
+                    System.out.println("MAIN PART " + MainParts[1]);
+                    currentStaff = new DeliveryStaff(MainParts[0].split(" "));
                     deliveryStaffList.add(currentStaff);
+                    MainParts[1] = MainParts[1].toLowerCase();
+                    currentStaff.setAreas(List.of(MainParts[1].split(",")));
+                    System.out.println(currentStaff.getAreas());
                 }
                 else if (line.startsWith("=")) {
                     String[] parts = line.substring(1).split("\\s", 5);
@@ -104,7 +114,7 @@ public class Files {
 
     public static void setFoodItems(String fileName) throws FileNotFoundException
     {
-        Restaurant RestaurantToAddFoodItemsIn = new Restaurant("","",List.of("",""),List.of("",""));
+        Restaurant RestaurantToAddFoodItemsIn = new Restaurant("",List.of(""),List.of("",""),List.of("",""));
         FoodItem FoodItemToAdd = null;
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName)))
         {
@@ -317,13 +327,16 @@ public class Files {
         }
 
     }
-    public static List<String> listOfGovernorate = new ArrayList<>();
+    public static List<List<String>> listOfGovernorate = new ArrayList<>();
     public static void loadGovernorate(String fileName) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(fileName));
 
-        ArrayList<String> governorateNames = new ArrayList<String>();
+        ArrayList<List<String>> governorateNames = new ArrayList<List<String>>();
+        int i = 0;
         while (sc.hasNextLine()) {
-            governorateNames.add(sc.nextLine());
+            String line = sc.nextLine();
+            String[] governorates = line.split("\\s+");
+            governorateNames.add(List.of(governorates));
         }
         listOfGovernorate.addAll(governorateNames);
 
@@ -387,8 +400,10 @@ public class Files {
 
     public static void printGovernorateList() {
         int i = 0;
-        for (String governorate : listOfGovernorate) {
-            System.out.println(governorate);
+        for (List<String> restaurantGovernorates : listOfGovernorate) {
+            for(String str : restaurantGovernorates) {
+                System.out.println(str);
+            }
         }
     }
 

@@ -10,6 +10,9 @@ public class DeliveryStaff extends Person {
     private String location;
     private String reviews;
     private List<Order> orders = new ArrayList<Order>();
+    private List<String> areas = new ArrayList<String>();
+
+
     public void addOrder(Order order) {
         orders.add(order);
     }
@@ -23,11 +26,14 @@ public class DeliveryStaff extends Person {
         this.location=location;
         this.reviews=reviews;
     }
+
     public DeliveryStaff(String[] parts)
     {
         super(parts[0],parts[1],parts[2],parts[3]);
         this.location=parts[4];
         this.reviews=parts[5];
+
+
     }
 
 
@@ -78,4 +84,11 @@ public void Reviews(List<Order>orders)
 
 }
 
+    public List<String> getAreas() {
+        return areas;
+    }
+
+    public void setAreas(List<String> areas) {
+        this.areas = areas;
+    }
 }

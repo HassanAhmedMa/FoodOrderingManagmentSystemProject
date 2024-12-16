@@ -25,7 +25,7 @@ public class Admin extends Person {
 //    }
 
     // Function to edit restaurant details
-    public void editRestaurant(String name, List<Restaurant> listOfRestaurants, String newLocation, List<String> newCategory) {
+    public void editRestaurant(String name, List<Restaurant> listOfRestaurants, List<String> newLocation, List<String> newCategory) {
         boolean isUpdated = false;
         for (Restaurant restaurant : listOfRestaurants) {
             if (name.equalsIgnoreCase(restaurant.getName())) {

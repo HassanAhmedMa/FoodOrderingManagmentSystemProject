@@ -68,6 +68,8 @@ public class selectedrestrauntpageController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setFullScreen(true);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
+
         stage.show();
     }
 
@@ -115,6 +117,7 @@ public class selectedrestrauntpageController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.setFullScreen(true);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
         //System.out.println("SelectedRestaurant Is Made Successfully");
     }

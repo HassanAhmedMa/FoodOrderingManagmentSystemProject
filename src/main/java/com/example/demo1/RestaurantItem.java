@@ -59,6 +59,7 @@ public class RestaurantItem implements Initializable {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setFullScreen(true);
+            stage.setFullScreenExitHint(""); // Suppress the default ESC message
             stage.show();
             //selectedRestaurantName = restaurantName.getText();
 

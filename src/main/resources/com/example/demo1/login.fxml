@@ -9,10 +9,18 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="1271.0" prefWidth="2032.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.loginController">
+<StackPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.loginController">
    <children>
-      <ImageView fx:id="background" blendMode="SRC_ATOP" fitHeight="1271.0" fitWidth="2032.0">
+      <ImageView fx:id="background" blendMode="SRC_ATOP" fitHeight="1080.0" fitWidth="1920.0">
          <Image url="@../../../supermarketBackGround.jpg" />
+      </ImageView>
+      <ImageView id="adminLogin" fx:id="adminLogin" fitHeight="77.0" fitWidth="119.0" onMousePressed="#SwitchToAdminPage" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" StackPane.alignment="BOTTOM_RIGHT">
+         <StackPane.margin>
+            <Insets bottom="20.0" right="20.0" />
+         </StackPane.margin>
+         <image>
+            <Image url="@../../../adminLoginButton.png" />
+         </image>
       </ImageView>
       <ImageView fx:id="rectangle" fitHeight="768.0" fitWidth="668.0" preserveRatio="true">
          <Image url="@../../../LoginRectangleBackGround.png" />
@@ -44,14 +52,6 @@
             <Font name="Cairo ExtraBold" size="20.0" />
          </font>
       </Button>
-      <ImageView id="adminLogin" fx:id="adminLogin" fitHeight="77.0" fitWidth="119.0" onMousePressed="#SwitchToAdminPage" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" StackPane.alignment="BOTTOM_RIGHT">
-         <StackPane.margin>
-            <Insets bottom="20.0" right="20.0" />
-         </StackPane.margin>
-         <image>
-            <Image url="@../../../adminLoginButton.png" />
-         </image>
-      </ImageView>
       <Button id="dontHaveAnAccount" fx:id="SignUpButton" mnemonicParsing="false" onAction="#SwitchToSignUp" prefHeight="16.0" prefWidth="171.0" style="-fx-background-color: transparent; -fx-cursor: hand;" stylesheets="@myStyle.css" text="Don't have an account?" StackPane.alignment="CENTER">
          <StackPane.margin>
             <Insets top="550.0" />
@@ -87,5 +87,13 @@
             <Insets top="350.0" />
          </StackPane.margin>
       </Label>
+      <ImageView fx:id="goToDelivery" fitHeight="99.0" fitWidth="116.0" onMousePressed="#switchToDeliveryStaff" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" StackPane.alignment="TOP_LEFT">
+         <image>
+            <Image url="@../../../truck-check_14703109.png" />
+         </image>
+         <StackPane.margin>
+            <Insets bottom="20.0" left="20.0" top="20.0" />
+         </StackPane.margin>
+      </ImageView>
    </children>
 </StackPane>
