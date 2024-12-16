@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 public class Order{
     private int OrderIDColumn;
-    private int OrderStatus; // Use an enum for better readability
+    private int OrderStatus = 1; // Use an enum for better readability
 
 
     private IntegerProperty orderId = new SimpleIntegerProperty();
@@ -42,6 +42,11 @@ public class Order{
 
     private int orderDate;
     private float orderPrice;
+
+    public void setOrderId(int orderId) {
+        this.orderId.set(orderId);
+    }
+
     private String orderLocation;
 
     private List<FoodItem> orderedFoodItems=new ArrayList<>();
@@ -58,15 +63,10 @@ public class Order{
 
 public Order(int OrderIDColumn, int orderState, List<FoodItem> orderedFoodItems, String whoOrdered) {
         this.OrderIDColumn = OrderIDColumn;
-        this.OrderStatus = orderState;
         this.orderedFoodItems = orderedFoodItems;
         this.whoOrdered = whoOrdered;
     }
-    enum status {
-        PREPARING,
-        DELIVERING,
-        DELIVERED
-    }
+
 
     // h3mlha switch case 3l enum
 //    Level myVar = Level.MEDIUM;
@@ -118,6 +118,50 @@ public Order(int OrderIDColumn, int orderState, List<FoodItem> orderedFoodItems,
     public void setOrderedFoodItems(List<FoodItem> orderedFoodItems) {
         this.orderedFoodItems = orderedFoodItems;
     }
+
+    public String getOrderStatusString() {
+        return orderStatusString;
+    }
+
+    public void setOrderStatusString(String orderStatusString) {
+        this.orderStatusString = orderStatusString;
+    }
+
+    private String orderStatusString = OrderStatusStringUpdate();
+    public void UpdateOrderStatus() {
+        int TempOrderStatus = getOrderStatus();
+        if(TempOrderStatus == 1){
+            setOrderStatus(2);
+        }
+        else if(TempOrderStatus == 2){
+            setOrderStatus(3);
+        }
+
+        orderStatusString =  OrderStatusStringUpdate();
+    }
+    public String OrderStatusStringUpdate()
+    {
+        int temp = getOrderStatus();
+        System.out.println("TEMP IS : " + temp);
+        if(temp == 1)
+        {
+            return "Order is being prepared";
+        }
+        else if(temp == 2)
+        {
+            return "Order is out for delivery";
+        }
+        else if(temp == 3)
+        {
+            return "Order is delivered successfully";
+        }
+        else {
+            return "Something went wrong";
+        }
+    }
+
+
+
     /////////////////////////////////////
     /**
      *

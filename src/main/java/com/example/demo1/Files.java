@@ -40,7 +40,7 @@ public class Files {
     public static void setDeliveryStaffList(String fileName) throws FileNotFoundException{
 
         DeliveryStaff currentStaff = null;
-
+        String location = "";
         try (Scanner scanner = new Scanner(new File(fileName))) {
             String line;
 
@@ -58,13 +58,6 @@ public class Files {
                     String foodData = parts[1].substring(1, parts[1].length() - 1); // Remove parentheses
                     List<FoodItem> foodItems = new ArrayList<>();
 
-                    //System.out.println("Order ID: " + orderId);
-                    //System.out.println("Food Data: " + foodData);
-                    //System.out.println("Customer Name: " + parts[2]);
-                    //System.out.println("Order Status: " + parts[3]);
-//
-// Parse food data//
-                    //System.out.println(foodData);
                     for (String item : foodData.split(",")) {
                         item = item.trim(); // Clean up whitespace around each food item
                         System.out.println("Raw Item: " + item); // Debugging
@@ -80,17 +73,18 @@ public class Files {
                         FoodItem foodItem = new FoodItem(name, price, type, "NoImageAvailable");
                         foodItem.setQuantityInCart(quantity);
                         foodItems.add(foodItem);
-
+                        location = returnCustomerByName(parts[2]).getGovernorate().concat(", " + returnCustomerByName(parts[2]).getArea());
                         //System.out.println("Parsed Food Item: " + name + ", " + price + ", " + type);
 
                     }
                     Order TempOrder = new Order(orderId,Integer.parseInt(parts[3]) ,foodItems,parts[2]);
                     TempOrder.setOrderPrice(Float.parseFloat(parts[4]));
+                    TempOrder.setOrderLocation(location);
                     currentStaff.addOrder(TempOrder);
 
                 }
 
-        }
+            }
             System.out.println(deliveryStaffList);
 
         }catch (FileNotFoundException e){
@@ -198,14 +192,18 @@ public class Files {
                 else if(line.startsWith("*") && !line.isEmpty())
                 {
                     String[] parts = line.substring(1).split(" ");
-                    if (parts.length >= 5) {
+                    if (parts.length >= 6) {
                         String Password = parts[0];
                         String firstName = parts[1];
                         String LastName = parts[2];
                         String email = parts[3];
                         String phoneNumber = parts[4];
+                        String governmentName = parts[5];
+                        String Area = parts[6];
 
                         customerToAdd = new Customer(TempUserName, Password, firstName, LastName, email, phoneNumber);
+                        customerToAdd.setGovernorate(governmentName);
+                        customerToAdd.setArea(Area);
                         TempUserName = "";
 
 

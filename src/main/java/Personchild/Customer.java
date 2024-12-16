@@ -12,6 +12,26 @@ public class Customer extends Person {
     private userCart TempuserCart; // hatkon temporary b7es lma al order ytlb a3rf afadyha.
     private List<FoodItem> cart = new ArrayList<>();
 
+    public String getGovernorate() {
+        return governorate;
+    }
+
+    public void setGovernorate(String governorate) {
+        this.governorate = governorate;
+    }
+
+    private String governorate;
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    private String area;
+
     private void removeFromCart(FoodItem item)
     {
         if(item.getQuantityInCart() == 1)
