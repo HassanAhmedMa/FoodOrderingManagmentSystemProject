@@ -83,7 +83,7 @@ public class HelloApplication extends Application {
 
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("deliveryStaffPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("deliveryStaff.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         //Customer customer = Files.returnCustomerByName("ziad");

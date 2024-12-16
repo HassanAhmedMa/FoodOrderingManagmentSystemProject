@@ -34,7 +34,7 @@ public class removeRestaurant {
         String restaurantName = restaurantNameField.getText();
         if (restaurantName.isEmpty()) {
             showAlert("Error", "Restaurant name cannot be empty.");
-//        } else if (AdminPage.restaurantList.remove(restaurantName)) {
+       } else if (Files.RestaurantnamesList.remove(restaurantName)) {
             showAlert("Success", "Restaurant removed successfully.");
             restaurantNameField.clear();
         } else {

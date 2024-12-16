@@ -24,7 +24,7 @@
          <children>
             <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0">
                <children>
-                  <TextField fx:id="restaurantNameField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="500.0" promptText="Enter Nmae Of Restuarant to Remove">
+                  <TextField fx:id="restaurantNameField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="500.0" promptText="Enter Name Of Restuarant to Remove">
                      <VBox.margin>
                         <Insets bottom="200.0" />
                      </VBox.margin>
@@ -32,7 +32,7 @@
                         <Font size="27.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="removeButton" mnemonicParsing="false" onMousePressed="#removeRestaurant" text="remove" textAlignment="CENTER">
+                  <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeRestaurant" text="Remove" textAlignment="CENTER">
                      <font>
                         <Font size="33.0" />
                      </font>

@@ -2,6 +2,7 @@ package com.example.demo1;
 
 import Entities.Restaurant;
 import com.fasterxml.jackson.core.JsonParser;
+//import com.sun.javafx.tk.quantum.PaintRenderJob;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,8 +11,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Paint;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -22,6 +25,9 @@ import javafx.scene.input.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static com.example.demo1.Files.listOfImagesPath;
+import static com.example.demo1.Files.restaurants;
 
 
 public class addRestaurant {
@@ -40,6 +46,15 @@ public class addRestaurant {
     @FXML
     private TextField AreasToAddRestaurant;
 
+    @FXML
+    private ImageView SelectedrestrauntImage;
+     private List<String> listOfImagesPath = new ArrayList<>(); // Store image paths
+
+    private Restaurant restaurant; // Restaurant object to store restaurant data
+
+
+
+
 
     public void addRestaurant() {
         String restaurantName = NameToAddRestaurant.getText();
@@ -47,7 +62,7 @@ public class addRestaurant {
         String restaurantCategory = CategoriesToAddRestaurant.getText();
         String restaurantAreas = AreasToAddRestaurant.getText();
 
-        if (restaurantName.isEmpty()||restaurantGovernorate.isEmpty()) {
+        if (restaurantName.isEmpty()||restaurantGovernorate.isEmpty()||restaurantCategory.isEmpty()||restaurantAreas.isEmpty()) {
             showAlert("Error", "Please fill all the fields.");
         } else {
 
@@ -55,9 +70,9 @@ public class addRestaurant {
             Files.listOfGovernorate.add(restaurantGovernorate);
             Files.CategoriesList.add(new ArrayList<>(List.of(restaurantCategory)));
             Files.listOfAreas.add(new ArrayList<>(List.of(restaurantAreas)));
-            Files.listOfImagesPath.add("NoImageAvailable.png");
+            listOfImagesPath.add(SelectedrestrauntImage.getImage().getUrl());
             Files.restaurants.add(new Restaurant(restaurantName,restaurantGovernorate,List.of(restaurantAreas),List.of(restaurantCategory)));
-            Files.returnByName(restaurantName).setImgLocation("NoImageAvailable.png");
+            Files.returnByName(restaurantName).setImgLocation(SelectedrestrauntImage.getImage().getUrl());
 
 
             showAlert("Success", "Restaurant added successfully.");
@@ -111,5 +126,38 @@ public class addRestaurant {
         Files.listOfAreas.add(areaList);
 
         showAlert("Success", "Areas have been successfully added.");
+    }
+    @FXML
+    public void Photoselection(MouseEvent event) throws IOException {
+        // Create a FileChooser instance
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select a Photo");
+
+        // Set the initial directory to the resources folder in your project
+        File resourcesFolder = new File("src/main/resources/photos"); // Adjust the path if necessary
+        if (resourcesFolder.exists() && resourcesFolder.isDirectory()) {
+            fileChooser.setInitialDirectory(resourcesFolder);
+        } else {
+            System.out.println("Resources folder not found!");
+        }
+
+        // Set file extension filters for image files
+        fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif")
+        );
+
+        // Open the FileChooser dialog
+        File selectedFile = fileChooser.showOpenDialog(SelectedrestrauntImage.getScene().getWindow());
+
+        if (selectedFile != null) {
+            // Display the selected image in the ImageView
+            Image image = new Image(selectedFile.toURI().toString());
+            SelectedrestrauntImage.setImage(image);
+
+
+            // Add the image path to the list
+            listOfImagesPath.add(selectedFile.getName());
+            System.out.println("Selected image path: " + selectedFile.getName());
+        }
     }
 }
