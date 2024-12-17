@@ -4,14 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant {
-    private final String Name;
+    public void setName(String name) {
+        Name = name;
+    }
+
+    private String Name;
     //private String Location; //location da al mafrod ykon fy governmenet wl address al costumer hy 7addhom ashan ytla3lo list of all avaliable resturants (ziad )
     private List<String> governorate;
     private List<String> area =  new ArrayList<>();
     private List<String> categories = new ArrayList<>();
     private List<FoodItem> MenuItems = new ArrayList<>();
     private String imgLocation;
-
+    public void setArea(List<String> area) {
+        this.area.clear();
+        this.area.addAll(area);
+    }
     public float getRating() {
         return rating;
     }
@@ -50,6 +57,16 @@ public class Restaurant {
         this.categories = new ArrayList<>(categories);
     }
 
+
+    public void removeCategory(String category) {
+        this.categories.remove(category);
+    }
+
+    public void addCategory(String category) {
+        this.categories.add(category);
+        System.out.println("Category added: " + category);
+    }
+
     /**
      * Gets the name of the restaurant.
      *
@@ -59,6 +76,10 @@ public class Restaurant {
         return Name;
     }
     /**
+
+
+
+
 
     /**
      * Gets the category of the restaurant (e.g., Fast Food, Fine Dining).
@@ -76,6 +97,8 @@ public class Restaurant {
     public void setCategories(List<String> categories) {
         this.categories = new ArrayList<>(categories);
     }
+
+
 
 
     public void setGovernorate(List<String> governorate) {
@@ -110,6 +133,11 @@ public class Restaurant {
         }
 
     };
+
+    public void editCategory(String categoryToEdit , String newCategory) {
+        categories.remove(categoryToEdit);
+        categories.add(newCategory);
+    }
 
     /**
      * Takes an object of Entities.FoodItem and adds it to the menu of the Entities.Restaurant

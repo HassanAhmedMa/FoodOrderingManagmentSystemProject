@@ -103,23 +103,56 @@ public class HomePage implements Initializable {
 
     public void SearchbyGovernorate(ActionEvent actionEvent) throws IOException {
         String governorate = SearchGovernorate.getText().trim();
+        System.out.println("GOVERNORATE NAME" + governorate);
+        String regex = "^[a-zA-Z]+,\\s*[a-zA-Z]+$";
         if (governorate.isEmpty()) {
             isGoingToShowAll=true;
             SwtichToRestraunts(actionEvent);
         }
-        else
-        {
-            matchingRestaurants = new ArrayList<>();
-            isGoingToShowAll = false;
-            for (Restaurant restaurant : Files.restaurants) {
-                for(String governorateName : restaurant.getGovernorate())
-                {
-                    if(governorateName.equalsIgnoreCase(governorate))
+
+        if(governorate.matches(regex))
+            {
+                String[] parts = governorate.split(",");
+                parts[0] = parts[0].trim();
+                parts[1] =  parts[1].trim();
+                parts[1] = parts[1].toLowerCase();
+                parts[0] = parts[0].toLowerCase();
+                matchingRestaurants = new ArrayList<>();
+                List<Restaurant> tempMatchingRestaurantsUsingArea = new ArrayList<>();
+                isGoingToShowAll = false;
+                for (Restaurant restaurant : Files.restaurants) {
+                    for(String governorateName : restaurant.getGovernorate())
                     {
-                        matchingRestaurants.add(restaurant);
+                        if(governorateName.equalsIgnoreCase(parts[0]))
+                        {
+                            matchingRestaurants.add(restaurant);
+                        }
+                        else
+                        {
+                            System.out.println("NO MATCH");
+                        }
                     }
+
                 }
+                for(Restaurant restaurant : matchingRestaurants)
+                {
+                    for(String areaName : restaurant.getArea())
+                    {
+                        if(areaName.equalsIgnoreCase(parts[1]))
+                        {
+                            tempMatchingRestaurantsUsingArea.add(restaurant);
+                        }
+                    }
+
+                }
+                matchingRestaurants = new ArrayList<>();
+                matchingRestaurants.addAll(tempMatchingRestaurantsUsingArea);
+
             }
+        else {
+            isGoingToShowAll=true;
+        }
+
             root = FXMLLoader.load(getClass().getResource("restrauntsPage.fxml"));
             stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -127,14 +160,16 @@ public class HomePage implements Initializable {
             stage.setFullScreen(true);
             stage.setFullScreenExitHint(""); // Suppress the default ESC message
             stage.show();
+
+
+
+
+
+
+
         }
 
 
-
-
-
-
-    }
 
     public void quickSearch(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         ImageView Image = (ImageView) mouseEvent.getSource();

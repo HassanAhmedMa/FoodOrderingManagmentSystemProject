@@ -88,7 +88,7 @@ public class HelloApplication extends Application {
 
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("EditRestaurant.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         //Customer customer = Files.returnCustomerByName("ziad");
@@ -109,7 +109,7 @@ public class HelloApplication extends Application {
         });
         stage.setTitle("Hello!");
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
 
 
 

@@ -10,73 +10,106 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="$CONTROLLER_NAME$">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.EditRestaurant">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../../../background.jpg" />
          </image>
       </ImageView>
-      <ComboBox layoutX="117.0" layoutY="82.0" prefHeight="37.0" prefWidth="232.0" />
-      <Label alignment="CENTER" layoutX="120.0" layoutY="25.0" prefHeight="49.0" prefWidth="226.0" text="Restaurants " textFill="WHITE">
+      <ComboBox fx:id="restaurantsComboBox" layoutX="117.0" layoutY="178.0" onAction="#onSelection" prefHeight="37.0" prefWidth="232.0" />
+      <Label alignment="CENTER" layoutX="120.0" layoutY="129.0" prefHeight="49.0" prefWidth="226.0" text="Restaurants " textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField alignment="CENTER" layoutX="575.0" layoutY="105.0" prefHeight="46.0" prefWidth="200.0" />
-      <TextField alignment="CENTER" layoutX="866.0" layoutY="100.0" prefHeight="46.0" prefWidth="200.0" />
-      <TextField alignment="CENTER" layoutX="557.0" layoutY="245.0" prefHeight="46.0" prefWidth="200.0" />
-      <TextField alignment="CENTER" layoutX="888.0" layoutY="235.0" prefHeight="46.0" prefWidth="200.0" />
-      <Label alignment="CENTER" layoutX="661.0" layoutY="66.0" text="Name " textFill="WHITE">
+      <TextField fx:id="RestaurantNameTextField" alignment="CENTER" layoutX="575.0" layoutY="105.0" prefHeight="46.0" prefWidth="230.0" promptText="McDonald's" AnchorPane.rightAnchor="473.0">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <TextField fx:id="governorateTextField" alignment="CENTER" layoutX="557.0" layoutY="245.0" prefHeight="46.0" prefWidth="230.0" promptText="Cairo, Giza, Alexandria" AnchorPane.rightAnchor="473.0">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <TextField fx:id="areasTextField" alignment="CENTER" layoutX="950.0" layoutY="242.0" prefHeight="46.0" prefWidth="230.0" promptText="Alf-Maskan, Nozha, Sheraton" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <Label alignment="CENTER" layoutX="575.0" layoutY="66.0" prefHeight="35.0" prefWidth="232.0" text="Name " textFill="WHITE" AnchorPane.rightAnchor="473.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="920.0" layoutY="59.0" text="Catogries" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="950.0" layoutY="66.0" prefHeight="35.0" prefWidth="230.0" text="Catogries" textFill="WHITE" AnchorPane.rightAnchor="100.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="574.0" layoutY="205.0" text="Government " textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="559.0" layoutY="205.0" prefHeight="35.0" prefWidth="230.0" text="Governorate" textFill="WHITE" AnchorPane.rightAnchor="473.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="955.0" layoutY="189.0" text="Area" textFill="#fff7f7">
+      <Label alignment="CENTER" layoutX="950.0" layoutY="196.0" prefHeight="35.0" prefWidth="230.0" text="Area" textFill="#fff7f7" AnchorPane.rightAnchor="100.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ComboBox layoutX="113.0" layoutY="458.0" prefHeight="37.0" prefWidth="232.0" />
-      <Label alignment="CENTER" layoutX="110.0" layoutY="396.0" prefHeight="49.0" prefWidth="226.0" text="Menu" textFill="WHITE">
+      <ComboBox layoutX="117.0" layoutY="475.0" prefHeight="37.0" prefWidth="232.0" />
+      <Label alignment="CENTER" layoutX="120.0" layoutY="419.0" prefHeight="49.0" prefWidth="226.0" text="Menu" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff4f1f" height="18.0" layoutX="-7.0" layoutY="331.0" stroke="BLACK" strokeType="INSIDE" width="1273.0" />
-      <TextField alignment="CENTER" layoutX="581.0" layoutY="420.0" prefHeight="46.0" prefWidth="200.0" />
-      <TextField alignment="CENTER" layoutX="928.0" layoutY="413.0" prefHeight="46.0" prefWidth="200.0" />
-      <TextField alignment="CENTER" layoutX="568.0" layoutY="548.0" prefHeight="46.0" prefWidth="200.0" />
-      <Label alignment="CENTER" layoutX="637.0" layoutY="372.0" text="ItemName" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="5.0" layoutX="-7.0" layoutY="331.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1286.0" />
+      <TextField alignment="CENTER" layoutX="581.0" layoutY="420.0" prefHeight="46.0" prefWidth="230.0" promptText="Big-Mac" AnchorPane.rightAnchor="469.0">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <TextField alignment="CENTER" layoutX="928.0" layoutY="413.0" prefHeight="46.0" prefWidth="230.0" promptText="Burger" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <TextField alignment="CENTER" layoutX="568.0" layoutY="548.0" prefHeight="46.0" prefWidth="230.0" promptText="119.99" AnchorPane.rightAnchor="469.0">
+         <font>
+            <Font size="19.0" />
+         </font></TextField>
+      <Label alignment="CENTER" layoutX="640.0" layoutY="379.0" text="ItemName" textFill="WHITE" AnchorPane.rightAnchor="528.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="991.0" layoutY="365.0" text="Type " textFill="WHITE">
+      <Label alignment="CENTER" layoutX="991.0" layoutY="365.0" prefHeight="35.0" prefWidth="230.0" text="Type " textFill="WHITE" AnchorPane.rightAnchor="100.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="647.0" layoutY="499.0" text="Price " textFill="WHITE">
+      <Label alignment="CENTER" layoutX="667.0" layoutY="512.0" text="Price " textFill="WHITE" AnchorPane.rightAnchor="555.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="913.0" layoutY="529.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="230.0" text="New Photo Upload ">
+      <ComboBox fx:id="restaurantCategoriesComboBox" layoutX="949.0" layoutY="110.0" prefHeight="37.0" prefWidth="232.0" promptText="Restaurant Categories" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="965.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../McDonalds-logo.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="958.0" layoutY="631.0" text="Click to change icon" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
-      </Button>
+      </Label>
+      <Button layoutX="30.0" layoutY="653.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Submit Item Edit" />
+      <Button fx:id="submitRestaurantChanges" layoutX="30.0" layoutY="291.0" mnemonicParsing="false" onAction="#submitRestaurantChanged" prefHeight="26.0" prefWidth="150.0" text="Submit Restaurant Edit" />
+      <ImageView fx:id="backToAdminButton" fitHeight="61.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="removeCategoryButton" layoutX="1188.0" layoutY="117.0" mnemonicParsing="false" onAction="#removeCategory" style="-fx-background-color: red;" text="remove" />
+      <Button fx:id="updateCategoryButton" layoutX="1127.0" layoutY="154.0" mnemonicParsing="false" onAction="#updateCategory" style="-fx-background-color: yellow;" text="update" />
+      <Button fx:id="addCategoryButton" layoutX="1080.0" layoutY="154.0" mnemonicParsing="false" onAction="#addCategory" style="-fx-background-color: green;" text="add" />
+      <TextField fx:id="categoryTextField" layoutX="947.0" layoutY="154.0" prefHeight="25.0" prefWidth="125.0" />
    </children>
 </AnchorPane>
