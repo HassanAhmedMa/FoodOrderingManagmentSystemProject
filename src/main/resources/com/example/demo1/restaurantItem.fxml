@@ -5,62 +5,50 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#myFunction" prefHeight="244.0" prefWidth="1326.0" style="-fx-cursor: hand;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.RestaurantItem">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#myFunction" prefHeight="163.0" prefWidth="884.0" style="-fx-cursor: hand;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.RestaurantItem">
    <children>
-      <ImageView fitHeight="244.0" fitWidth="1326.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="244.0" fitWidth="884.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../rectangle.png" />
          </image>
       </ImageView>
-      <HBox prefHeight="244.0" prefWidth="1326.0">
+      <ImageView fx:id="restrauntImage" fitHeight="102.0" fitWidth="157.0" layoutX="14.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../ImageResources/McDonalds-logo.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="158.0" prefHeight="154.0" prefWidth="683.0">
          <children>
-            <VBox prefHeight="309.0" prefWidth="265.0">
-               <children>
-                  <ImageView fx:id="restrauntImage" fitHeight="234.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../ImageResources/McDonalds-logo.png" />
-                     </image>
-                     <VBox.margin>
-                        <Insets top="40.0" />
-                     </VBox.margin>
-                  </ImageView>
-               </children>
-            </VBox>
-            <VBox prefHeight="244.0" prefWidth="1133.0">
-               <children>
-                  <Label fx:id="restaurantName" prefHeight="17.0" prefWidth="666.0" text="Mc Donald's">
-                     <font>
-                        <Font name="System Bold" size="35.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="28.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="category" prefHeight="17.0" prefWidth="666.0" text="Burger, Salad">
-                     <font>
-                        <Font size="29.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="rating" prefHeight="17.0" prefWidth="666.0" text="Amazing">
-                     <font>
-                        <Font size="29.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="Area" prefHeight="17.0" prefWidth="388.0" text="Meow">
-                     <font>
-                        <Font size="22.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
+            <Label fx:id="restaurantName" prefHeight="17.0" prefWidth="666.0" text="Mc Donald's">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="category" prefHeight="17.0" prefWidth="666.0" text="Burger, Salad">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="rating" prefHeight="17.0" prefWidth="666.0" text="Amazing">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="Area" prefHeight="17.0" prefWidth="388.0" text="Area">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
          </children>
-      </HBox>
+      </VBox>
    </children>
 </AnchorPane>

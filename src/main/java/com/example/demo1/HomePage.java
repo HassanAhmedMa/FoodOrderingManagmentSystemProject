@@ -65,7 +65,7 @@ public class HomePage implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         HelloApplication.centerStage(stage);
-        stage.setFullScreen(false);
+        stage.setFullScreen(false); HelloApplication.centerStage(stage);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
     }
@@ -83,7 +83,7 @@ public class HomePage implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         HelloApplication.centerStage(stage);
-        stage.setFullScreen(false);
+        stage.setFullScreen(false); HelloApplication.centerStage(stage);
         HelloApplication.LoggedInUserName = "";
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
@@ -149,20 +149,14 @@ public class HomePage implements Initializable {
                 }
                 matchingRestaurants = new ArrayList<>();
                 matchingRestaurants.addAll(tempMatchingRestaurantsUsingArea);
-
+                SwtichToRestraunts(actionEvent);
             }
         else {
             isGoingToShowAll=true;
+            SwtichToRestraunts(actionEvent);
         }
 
-            root = FXMLLoader.load(getClass().getResource("restrauntsPage.fxml"));
-            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            HelloApplication.centerStage(stage);
-            stage.setFullScreen(false);
-            stage.setFullScreenExitHint(""); // Suppress the default ESC message
-            stage.show();
+
 
 
 
@@ -257,7 +251,7 @@ public class HomePage implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         HelloApplication.centerStage(stage);
-        stage.setFullScreen(false);
+        stage.setFullScreen(false); HelloApplication.centerStage(stage);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
     }

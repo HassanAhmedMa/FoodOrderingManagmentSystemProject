@@ -6,34 +6,34 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="124.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.FooditemController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.FooditemController">
     <children>
-        <ImageView fitHeight="141.0" fitWidth="1270.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="82.0" fitWidth="888.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../RectangleFoodItem.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="FoodItemPicture" fitHeight="89.0" fitWidth="124.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="21.53125" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="1132.0" AnchorPane.topAnchor="24.0">
+        <ImageView fx:id="FoodItemPicture" fitHeight="52.0" fitWidth="109.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="750.8271636962891" AnchorPane.topAnchor="14.0">
             <image>
                 <Image url="@../../../pngwing.com.png" />
             </image>
         </ImageView>
-        <Label fx:id="FoodName" layoutX="166.0" layoutY="16.0" prefHeight="47.0" prefWidth="855.0" text="Potato wedges">
+        <Label fx:id="FoodName" layoutX="124.0" layoutY="14.0" prefHeight="47.0" prefWidth="855.0" text="Potato wedges">
             <font>
                 <Font name="Cairo Bold" size="24.0" />
             </font>
         </Label>
-        <Label fx:id="FoodPrice" layoutX="1091.0" layoutY="30.0" prefHeight="47.0" prefWidth="878.0" text="\$10.00">
+        <Label fx:id="FoodPrice" layoutX="685.0" layoutY="18.0" prefHeight="47.0" prefWidth="878.0" text="\$10.00">
             <font>
                 <Font name="Cairo Bold" size="21.0" />
             </font>
         </Label>
-      <Label fx:id="FoodType" layoutX="166.0" layoutY="54.0" prefHeight="47.0" prefWidth="878.0" text="\$10.00">
+      <Label fx:id="FoodType" layoutX="124.0" layoutY="38.0" prefHeight="47.0" prefWidth="878.0" text="\$10.00">
          <font>
             <Font name="Cairo SemiBold" size="15.0" />
          </font>
       </Label>
-        <ImageView fx:id="AddButton" fitHeight="58.0" fitWidth="52.0" layoutX="1204.0" layoutY="27.0" onMousePressed="#addToCart" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+        <ImageView fx:id="AddButton" fitHeight="58.0" fitWidth="52.0" layoutX="775.0" layoutY="15.0" onMousePressed="#addToCart" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
             <image>
                 <Image url="@../../../addtoCartButton.png" />
             </image>

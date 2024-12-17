@@ -29,7 +29,7 @@ import java.util.Objects;
 
 public class HelloApplication extends Application {
 
-    public static Integer orderID = 1;
+    public static Integer orderID = 3;
 
     @FXML
 
@@ -110,6 +110,18 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.setFullScreen(false);
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+
+        // Calculate the centered position
+        double stageWidth = stage.getWidth();
+        double stageHeight = stage.getHeight();
+
+        double centerX = (screenBounds.getWidth() - stageWidth) / 2;
+        double centerY = (screenBounds.getHeight() - stageHeight) / 2;
+
+        // Set the stage position
+        stage.setX(centerX);
+        stage.setY(centerY);
 
 
 
@@ -121,7 +133,7 @@ public class HelloApplication extends Application {
 
 
 
-        centerStage(stage);
+
         stage.show();
 
 

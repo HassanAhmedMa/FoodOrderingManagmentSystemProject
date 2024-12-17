@@ -111,7 +111,7 @@ public class SignupController {
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(false);
+            stage.setFullScreen(false); HelloApplication.centerStage(stage);
             stage.setFullScreenExitHint(""); // Suppress the default ESC message
             stage.show();
 
@@ -212,7 +212,7 @@ public class SignupController {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(false);
+        stage.setFullScreen(false); HelloApplication.centerStage(stage);
         stage.show();
 
 

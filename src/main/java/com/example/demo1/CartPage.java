@@ -49,7 +49,7 @@ public class CartPage implements Initializable {
     {
 
         System.out.println("Trying to update total price");
-        TotalPrice.setText("Total Price : " + customer.calculateTotal().toString());
+        TotalPrice.setText("Total Price : " + String.format("%.2f" , customer.calculateTotal()));
 
 
 
@@ -93,7 +93,7 @@ public class CartPage implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             HelloApplication.centerStage(stage);
-            stage.setFullScreen(false);
+            stage.setFullScreen(false); HelloApplication.centerStage(stage);
             stage.show();
             stage.setFullScreenExitHint(""); // Suppress the default ESC message
             //Show the alert
@@ -109,7 +109,7 @@ public class CartPage implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             HelloApplication.centerStage(stage);
-            stage.setFullScreen(false);
+            stage.setFullScreen(false); HelloApplication.centerStage(stage);
             stage.show();
             stage.setFullScreenExitHint(""); // Suppress the default ESC message
         }
@@ -130,6 +130,7 @@ public class CartPage implements Initializable {
                 CartFoodItem controller = (CartFoodItem) pane.getUserData(); // Assuming you set the controller as user data
                 if (controller != null && controller.foodItem.getName().equalsIgnoreCase(foodItem.getName())) {
                     grid.getChildren().remove(pane);
+                    break;
                 }
             }
         }
@@ -162,7 +163,7 @@ public class CartPage implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             HelloApplication.centerStage(stage);
-            stage.setFullScreen(false);
+            stage.setFullScreen(false); HelloApplication.centerStage(stage);
             stage.setFullScreenExitHint(""); // Suppress the default ESC message
             stage.show();
 

@@ -7,40 +7,40 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="110.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.CartFoodItem">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.CartFoodItem">
    <children>
-      <ImageView fitHeight="110.0" fitWidth="858.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="73.0" fitWidth="572.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../cartItem.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="ItemImage" fitHeight="77.0" fitWidth="71.0" layoutX="16.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ItemImage" fitHeight="77.0" fitWidth="71.0" layoutX="16.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.040321350097656" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="485.0" AnchorPane.topAnchor="11.0">
          <image>
             <Image url="@../../../BBQChickenPizza.png" />
          </image>
       </ImageView>
-      <Label fx:id="ItemName" layoutX="102.0" layoutY="9.0" prefHeight="35.0" prefWidth="586.0" text="FoodItem">
+      <Label fx:id="ItemName" layoutX="106.0" prefHeight="30.0" prefWidth="273.0" text="FoodItem">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="Price" layoutX="102.0" layoutY="39.0" prefHeight="35.0" prefWidth="534.0" text="FoodItem">
+      <Label fx:id="Price" layoutX="106.0" layoutY="29.0" prefHeight="22.0" prefWidth="272.0" text="FoodItem">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fx:id="plus" fitHeight="53.0" fitWidth="59.0" layoutX="770.0" layoutY="33.0" onMousePressed="#incrementQt" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+      <ImageView fx:id="plus" fitHeight="53.0" fitWidth="59.0" layoutX="502.0" layoutY="12.0" onMousePressed="#incrementQt" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
          <image>
             <Image url="@../../../addtoCartButton.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="76.0" layoutX="748.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="2.0" />
-      <ImageView fx:id="minus" fitHeight="53.0" fitWidth="59.0" layoutX="674.0" layoutY="34.0" onMousePressed="#decrementQt" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="54.0" layoutX="475.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="3.0" />
+      <ImageView fx:id="minus" fitHeight="53.0" fitWidth="59.0" layoutX="394.0" layoutY="14.0" onMousePressed="#decrementQt" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
          <image>
             <Image url="@../../../remove_14996547.png" />
          </image>
       </ImageView>
-      <Label fx:id="quantity" layoutX="102.0" layoutY="67.0" prefHeight="27.0" prefWidth="538.0" text="Qt : ">
+      <Label fx:id="quantity" layoutX="106.0" layoutY="50.0" prefHeight="27.0" prefWidth="271.0" text="Qt : ">
          <font>
             <Font size="18.0" />
          </font>

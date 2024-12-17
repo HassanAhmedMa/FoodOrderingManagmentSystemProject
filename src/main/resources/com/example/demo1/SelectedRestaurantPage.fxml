@@ -8,23 +8,23 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="firstScrollPane_id" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.selectedrestrauntpageController">
+<StackPane fx:id="firstScrollPane_id" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.selectedrestrauntpageController">
     <children>
-        <ImageView fx:id="backGround_id" fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="backGround_id" fitHeight="1128.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../background.jpg" />
             </image>
         </ImageView>
         <StackPane fx:id="secondStackPane_id" prefHeight="150.0" prefWidth="200.0" StackPane.alignment="CENTER">
             <children>
-                <ImageView fx:id="square_id" fitHeight="800.0" fitWidth="1400.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="square_id" fitHeight="800.0" fitWidth="934.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../img_2.png" />
                     </image>
                 </ImageView>
-                <ScrollPane fx:id="scroll_id" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="1284.0" stylesheets="@myStyle.css" vbarPolicy="ALWAYS" StackPane.alignment="CENTER">
+                <ScrollPane fx:id="scroll_id" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="866.0" stylesheets="@myStyle.css" vbarPolicy="ALWAYS" StackPane.alignment="CENTER">
                     <StackPane.margin>
-                        <Insets top="70.0" />
+                        <Insets top="60.0" />
                     </StackPane.margin>
                     <content>
                         <GridPane fx:id="grid_id" prefHeight="0.0" prefWidth="0.0">
@@ -34,7 +34,7 @@
                         </GridPane>
                     </content>
                 </ScrollPane>
-            <ImageView fx:id="cart" fitHeight="81.0" fitWidth="81.0" onMousePressed="#goToCart" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+            <ImageView fx:id="cart" fitHeight="52.0" fitWidth="56.0" onMousePressed="#goToCart" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
                <image>
                   <Image url="@../../../img_1.png" />
                </image>
@@ -44,12 +44,12 @@
             </ImageView>
             </children>
         </StackPane>
-        <ImageView fx:id="ReturnButton" fitHeight="91.0" fitWidth="91.0" onMousePressed="#ReturnToResturant" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+        <ImageView fx:id="ReturnButton" fitHeight="91.0" fitWidth="56.0" onMousePressed="#ReturnToResturant" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
             <image>
                 <Image url="@../../../img.png" />
             </image>
          <StackPane.margin>
-            <Insets top="10.0" />
+            <Insets left="20.0" top="20.0" />
          </StackPane.margin>
         </ImageView>
     </children>

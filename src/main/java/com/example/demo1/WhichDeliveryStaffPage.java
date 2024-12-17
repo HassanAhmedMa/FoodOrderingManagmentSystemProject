@@ -33,7 +33,7 @@ public class WhichDeliveryStaffPage implements Initializable {
         scene = new Scene(root);
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(false);
+        stage.setFullScreen(false); HelloApplication.centerStage(stage);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
 
@@ -45,7 +45,7 @@ public class WhichDeliveryStaffPage implements Initializable {
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(false);
+        stage.setFullScreen(false); HelloApplication.centerStage(stage);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
         stage.setFullScreenExitHint(""); // Suppress the default ESC message

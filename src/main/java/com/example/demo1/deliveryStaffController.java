@@ -80,7 +80,7 @@ public class deliveryStaffController implements Initializable {
         scene = new Scene(root);
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(false);
+        stage.setFullScreen(false); HelloApplication.centerStage(stage);
         HelloApplication.centerStage(stage);
 
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
