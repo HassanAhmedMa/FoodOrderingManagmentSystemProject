@@ -58,24 +58,13 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
 
         try{
-            Files.loadAll("src/main/resources/RestaurantNames.txt","src/main/resources/RestaurantCategories.txt","src/main/resources/Governorate.txt","src/main/resources/Areas.txt","src/main/resources/RestaurantsImages.txt");
+            Files.loadAll("src/main/resources/RestaurantNames.txt","src/main/resources/RestaurantCategories.txt","src/main/resources/Governorate.txt","src/main/resources/Areas.txt","src/main/resources/RestaurantsImages.txt","src/main/resources/FoodItems.txt","src/main/resources/CustomerData.txt","src/main/resources/deliveryStaff.txt");
             //Files.printALlData();
         }catch (IOException e){
             e.printStackTrace();
-
         }
 
 
-
-
-
-
-        //Files.setRestaurantNamesList();
-        Files.setFoodItems("src/main/resources/FoodItems.txt");
-        //Files.GetMenuItemsForEachRestaurant();
-        Files.loadListOfCustomers("src/main/resources/CustomerData.txt");
-        //Files.printCustomersData();
-        Files.setDeliveryStaffList("src/main/resources/deliveryStaff.txt");
 
 //        System.out.println(SignupController.users);
 //        for(DeliveryStaff staff : Files.deliveryStaffList)
@@ -120,7 +109,7 @@ public class HelloApplication extends Application {
         });
         stage.setTitle("Hello!");
         stage.setScene(scene);
-        stage.setFullScreen(false);
+        stage.setFullScreen(true);
 
 
 

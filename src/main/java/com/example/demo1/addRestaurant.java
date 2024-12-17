@@ -57,21 +57,52 @@ public class addRestaurant {
 
 
     public void addRestaurant() {
-        String restaurantName = NameToAddRestaurant.getText();
-        List<String> restaurantGovernorate= List.of(GovernorateToAddRestaurant.getText().split("\\S+"));
-        String restaurantCategory = CategoriesToAddRestaurant.getText();
-        String restaurantAreas = AreasToAddRestaurant.getText();
-
-        if (restaurantName.isEmpty()||restaurantGovernorate.isEmpty()||restaurantCategory.isEmpty()||restaurantAreas.isEmpty()) {
+        String restaurantName = "";
+        List<String> restaurantCategory = new ArrayList<>();
+        List<String> restaurantAreas= new ArrayList<>();
+        List<String> restaurantGovernorate= new ArrayList<>();
+        if(!NameToAddRestaurant.getText().contains(" "))
+        {
+            restaurantName = NameToAddRestaurant.getText();
+        }
+        else
+        {
+            showAlert("Error", "Error in name field cannot contain spaces");
+        }
+        if (NameToAddRestaurant.getText().isEmpty()||CategoriesToAddRestaurant.getText().isEmpty()||GovernorateToAddRestaurant.getText().isEmpty()||AreasToAddRestaurant.getText().isEmpty()) {
             showAlert("Error", "Please fill all the fields.");
         } else {
 
+            if(!CategoriesToAddRestaurant.getText().contains(" "))
+            {
+                restaurantCategory.add(CategoriesToAddRestaurant.getText());
+            }
+            else{
+                restaurantCategory.addAll(List.of(CategoriesToAddRestaurant.getText().split("\\s+")));
+                System.out.println(restaurantCategory);
+            }
+            if(!AreasToAddRestaurant.getText().contains(" "))
+            {
+                restaurantCategory.add(AreasToAddRestaurant.getText());
+            }
+            else{
+                restaurantAreas.addAll(List.of(AreasToAddRestaurant.getText().split("\\s+")));
+                System.out.println(restaurantCategory);
+            }
+            if(!GovernorateToAddRestaurant.getText().contains(" "))
+            {
+                restaurantGovernorate.add(GovernorateToAddRestaurant.getText());
+            }
+            else{
+                restaurantGovernorate.addAll(List.of(GovernorateToAddRestaurant.getText().split("\\s+")));
+                System.out.println(restaurantCategory);
+            }
             Files.RestaurantnamesList.add(restaurantName);
             Files.listOfGovernorate.add(restaurantGovernorate);
-            Files.CategoriesList.add(new ArrayList<>(List.of(restaurantCategory)));
-            Files.listOfAreas.add(new ArrayList<>(List.of(restaurantAreas)));
+            Files.CategoriesList.add(restaurantCategory);
+            Files.listOfAreas.add(restaurantAreas);
             listOfImagesPath.add(SelectedrestrauntImage.getImage().getUrl());
-            Files.restaurants.add(new Restaurant(restaurantName,restaurantGovernorate,List.of(restaurantAreas),List.of(restaurantCategory)));
+            restaurants.add(new Restaurant(restaurantName,restaurantGovernorate,restaurantAreas,restaurantCategory));
             Files.returnByName(restaurantName).setImgLocation(SelectedrestrauntImage.getImage().getUrl());
 
 

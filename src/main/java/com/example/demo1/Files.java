@@ -365,13 +365,17 @@ public class Files {
 
     }
 
-    public static void loadAll(String namesLocation,String CategoriesLocation,String GovernorateLocation,String AreaLocation,String ImagesLocation) throws FileNotFoundException {
+    public static void loadAll(String namesLocation,String CategoriesLocation,String GovernorateLocation,String AreaLocation,String ImagesLocation, String FoodItemLocation,String CustomerFileLocation, String DeliveryStaffLocation ) throws FileNotFoundException {
         loadNames(namesLocation);
         loadCategories(CategoriesLocation);
         loadGovernorate(GovernorateLocation);
         loadAreas(AreaLocation);
         loadImages(ImagesLocation);
         setRestaurantNamesList();
+        setFoodItems(FoodItemLocation);
+        loadListOfCustomers(CustomerFileLocation);
+        setDeliveryStaffList(DeliveryStaffLocation);
+
 
 
 

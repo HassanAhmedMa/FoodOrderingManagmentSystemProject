@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import Entities.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -34,11 +35,15 @@ public class removeRestaurant {
         String restaurantName = restaurantNameField.getText();
         if (restaurantName.isEmpty()) {
             showAlert("Error", "Restaurant name cannot be empty.");
-       } else if (Files.RestaurantnamesList.remove(restaurantName)) {
-            showAlert("Success", "Restaurant removed successfully.");
-            restaurantNameField.clear();
-        } else {
-            showAlert("Error", "Restaurant not found.");
+       } else {
+            if(Files.returnByName(restaurantName) != null) {
+                Restaurant restaurant = Files.returnByName(restaurantName);
+                Files.restaurants.remove(restaurant);
+            }
+            else
+            {
+                showAlert("Error", "Restaurant does not exist.");
+            }
         }
     }
 
