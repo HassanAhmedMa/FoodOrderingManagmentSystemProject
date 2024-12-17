@@ -114,13 +114,14 @@ public class HelloApplication extends Application {
 
 
 
+
         stage.resizableProperty().setValue(Boolean.FALSE);
 
 
 
 
 
-
+        centerStage(stage);
         stage.show();
 
 

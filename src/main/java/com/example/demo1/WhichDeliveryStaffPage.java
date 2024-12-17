@@ -33,7 +33,7 @@ public class WhichDeliveryStaffPage implements Initializable {
         scene = new Scene(root);
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
 

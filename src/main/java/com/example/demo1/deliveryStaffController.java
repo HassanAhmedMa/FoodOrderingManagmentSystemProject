@@ -82,6 +82,7 @@ public class deliveryStaffController implements Initializable {
         stage.setScene(scene);
         stage.setFullScreen(false);
         HelloApplication.centerStage(stage);
+
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
         stage.setFullScreenExitHint(""); // Suppress the default ESC message

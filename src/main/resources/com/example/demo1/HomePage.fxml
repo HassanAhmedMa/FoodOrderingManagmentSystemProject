@@ -16,45 +16,45 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HomePage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HomePage">
    <children>
-      <VBox layoutX="910.0" layoutY="434.0" prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox layoutX="910.0" layoutY="434.0" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox prefHeight="1080.0" prefWidth="1920.0" VBox.vgrow="ALWAYS">
+            <HBox prefHeight="720.0" prefWidth="1280.0" VBox.vgrow="ALWAYS">
                <children>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="1080.0" prefWidth="2044.0" vbarPolicy="NEVER">
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="720.0" prefWidth="1280.0" vbarPolicy="NEVER">
                      <content>
-                        <GridPane prefHeight="1078.0" prefWidth="1920.0">
+                        <GridPane prefHeight="720.0" prefWidth="1026.0">
                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="1810.0" minWidth="10.0" prefWidth="161.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="1810.0" minWidth="0.0" percentWidth="0.0" prefWidth="300.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="0.0" percentWidth="0.0" prefWidth="300.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="0.0" percentWidth="0.0" prefWidth="300.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="0.0" percentWidth="0.0" prefWidth="300.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="236.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="236.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="236.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="236.0" />
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="0.0" percentWidth="0.0" prefWidth="0.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="10.0" percentWidth="0.0" prefWidth="300.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="10.0" prefWidth="54.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="236.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
                           </columnConstraints>
                           <rowConstraints>
                               <RowConstraints maxHeight="307.0" minHeight="10.0" prefHeight="125.99999618530273" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="307.0" minHeight="0.0" prefHeight="18.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="307.0" minHeight="0.0" prefHeight="120.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="516.0" minHeight="10.0" prefHeight="24.666671752929688" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="587.0" minHeight="0.0" prefHeight="74.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="673.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="755.0" minHeight="10.0" prefHeight="187.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="516.0" minHeight="10.0" prefHeight="60.66667175292969" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="587.0" minHeight="0.0" prefHeight="1.3333282470703125" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="673.0" minHeight="0.0" prefHeight="70.66665649414062" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="755.0" minHeight="10.0" prefHeight="88.33334350585938" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="822.0" minHeight="0.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="896.0" minHeight="0.0" prefHeight="230.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="1165.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="1165.0" minHeight="10.0" prefHeight="279.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="896.0" minHeight="0.0" prefHeight="199.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="1165.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="1165.0" minHeight="10.0" prefHeight="154.33334350585938" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ImageView fitHeight="1980.0" fitWidth="2038.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="9" GridPane.rowSpan="2147483647">
+                              <ImageView fitHeight="720.0" fitWidth="1638.0" pickOnBounds="true" preserveRatio="true" GridPane.rowSpan="2147483647">
                                  <image>
-                                    <Image url="@../../../homePage.jpg" />
+                                    <Image url="@../../../background.jpg" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="HomePageUserName" text="Hello {UserName}" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                              <Label fx:id="HomePageUserName" text="Hello {UserName}" textFill="WHITE" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold Italic" size="71.0" />
                                  </font>
@@ -62,7 +62,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Label>
-                              <TextField fx:id="SearchGovernorate" prefHeight="45.0" prefWidth="1148.0" promptText="Governorate" style="-fx-border-radius: 35; -fx-background-radius: 35; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);;" stylesheets="@myStyle.css" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                              <TextField fx:id="SearchGovernorate" prefHeight="40.0" prefWidth="899.0" promptText="Governorate" style="-fx-border-radius: 35; -fx-background-radius: 35; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);;" stylesheets="@myStyle.css" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
@@ -73,7 +73,7 @@
                                     <Insets left="30.0" />
                                  </padding>
                               </TextField>
-                              <Button id="SearchHomePage" fx:id="HomePageGoButton" mnemonicParsing="false" onAction="#SearchbyGovernorate" prefHeight="52.0" prefWidth="333.0" stylesheets="@styles.css" text="Search" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                              <Button id="SearchHomePage" fx:id="HomePageGoButton" mnemonicParsing="false" onAction="#SearchbyGovernorate" prefHeight="52.0" prefWidth="333.0" stylesheets="@styles.css" text="Search" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                  <font>
                                     <Font size="31.0" />
                                  </font>
@@ -81,12 +81,15 @@
                                     <Insets left="50.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Label text="What are you craving today?" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+                              <Label text="What are you craving today?" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold Italic" size="27.0" />
                                  </font>
+                                 <padding>
+                                    <Insets left="45.0" />
+                                 </padding>
                               </Label>
-                              <ImageView fx:id="pizaaQuickButton" fitHeight="206.0" fitWidth="233.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                              <ImageView fx:id="pizaaQuickButton" fitHeight="137.0" fitWidth="155.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                                  <image>
                                     <Image url="@../../../PizzaQuickButton.png" />
                                  </image>
@@ -94,7 +97,7 @@
                                     <Rectangle2D />
                                  </viewport>
                               </ImageView>
-                              <ImageView fx:id="BurgerQuickButton" fitHeight="206.0" fitWidth="233.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                              <ImageView fx:id="BurgerQuickButton" fitHeight="137.0" fitWidth="155.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                                  <image>
                                     <Image url="@../../../BurgerQuickButton.png" />
                                  </image>
@@ -102,7 +105,7 @@
                                     <Rectangle2D />
                                  </viewport>
                               </ImageView>
-                              <ImageView fx:id="SandwichQuickButton" fitHeight="206.0" fitWidth="233.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                              <ImageView fx:id="SandwichQuickButton" fitHeight="137.0" fitWidth="155.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                                  <image>
                                     <Image url="@../../../sandwichQuickButton.png" />
                                  </image>
@@ -110,7 +113,7 @@
                                     <Rectangle2D />
                                  </viewport>
                               </ImageView>
-                              <ImageView fx:id="SushiQuickButton" fitHeight="206.0" fitWidth="233.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                              <ImageView fx:id="SushiQuickButton" fitHeight="137.0" fitWidth="155.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                                  <image>
                                     <Image url="@../../../SushiQuickButton.png" />
                                  </image>
@@ -118,7 +121,7 @@
                                     <Rectangle2D />
                                  </viewport>
                               </ImageView>
-                              <ImageView fx:id="SaladQuickbutton" fitHeight="206.0" fitWidth="233.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                              <ImageView fx:id="SaladQuickbutton" fitHeight="137.0" fitWidth="155.0" onMousePressed="#quickSearch" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                                  <image>
                                     <Image url="@../../../AppetizersQuickButton.png" />
                                  </image>
@@ -126,7 +129,7 @@
                                     <Rectangle2D />
                                  </viewport>
                               </ImageView>
-                              <ImageView fx:id="logout" fitHeight="61.0" fitWidth="77.0" onMousePressed="#logout" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.halignment="LEFT" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                              <ImageView fx:id="logout" fitHeight="42.0" fitWidth="57.0" onMousePressed="#logout" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" GridPane.halignment="LEFT" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
                                  <GridPane.margin>
                                     <Insets bottom="20.0" left="20.0" top="20.0" />
                                  </GridPane.margin>
@@ -134,27 +137,27 @@
                                     <Image url="@../../../hamburgerButton.png" />
                                  </image>
                               </ImageView>
-                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Pizza" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Pizza" textFill="WHITE" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.vgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold Italic" size="38.0" />
                                  </font>
                               </Label>
-                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Burger" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Burger" textFill="WHITE" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.vgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold Italic" size="38.0" />
                                  </font>
                               </Label>
-                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Sandwiches" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="9">
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Sandwiches" textFill="WHITE" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.vgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold Italic" size="38.0" />
                                  </font>
                               </Label>
-                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Sushi" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="9">
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Sushi" textFill="WHITE" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.vgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold Italic" size="38.0" />
                                  </font>
                               </Label>
-                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Salad" textFill="WHITE" GridPane.columnIndex="6" GridPane.rowIndex="9">
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="75.0" prefWidth="316.0" text="Salad" textFill="WHITE" GridPane.columnIndex="6" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.vgrow="ALWAYS">
                                  <font>
                                     <Font name="System Bold Italic" size="38.0" />
                                  </font>

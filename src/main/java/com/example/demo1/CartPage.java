@@ -92,7 +92,8 @@ public class CartPage implements Initializable {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
+            HelloApplication.centerStage(stage);
+            stage.setFullScreen(false);
             stage.show();
             stage.setFullScreenExitHint(""); // Suppress the default ESC message
             //Show the alert
@@ -107,7 +108,8 @@ public class CartPage implements Initializable {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
+            HelloApplication.centerStage(stage);
+            stage.setFullScreen(false);
             stage.show();
             stage.setFullScreenExitHint(""); // Suppress the default ESC message
         }
@@ -159,10 +161,11 @@ public class CartPage implements Initializable {
             stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
-        stage.setFullScreenExitHint(""); // Suppress the default ESC message
+            HelloApplication.centerStage(stage);
+            stage.setFullScreen(false);
+            stage.setFullScreenExitHint(""); // Suppress the default ESC message
             stage.show();
-        stage.setFullScreenExitHint(""); // Suppress the default ESC message
+
 
     }
     Customer TempCustomer = Files.returnCustomerByName(HelloApplication.LoggedInUserName);

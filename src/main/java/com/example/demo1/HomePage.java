@@ -64,7 +64,8 @@ public class HomePage implements Initializable {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        HelloApplication.centerStage(stage);
+        stage.setFullScreen(false);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
     }
@@ -81,7 +82,8 @@ public class HomePage implements Initializable {
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        HelloApplication.centerStage(stage);
+        stage.setFullScreen(false);
         HelloApplication.LoggedInUserName = "";
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
@@ -157,7 +159,8 @@ public class HomePage implements Initializable {
             stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
+            HelloApplication.centerStage(stage);
+            stage.setFullScreen(false);
             stage.setFullScreenExitHint(""); // Suppress the default ESC message
             stage.show();
 
@@ -253,7 +256,8 @@ public class HomePage implements Initializable {
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        HelloApplication.centerStage(stage);
+        stage.setFullScreen(false);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
     }

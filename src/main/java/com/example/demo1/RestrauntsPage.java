@@ -42,8 +42,9 @@ public class RestrauntsPage implements Initializable {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
+        HelloApplication.centerStage(stage);
         stage.show();
 
     }

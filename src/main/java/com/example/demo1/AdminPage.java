@@ -57,7 +57,7 @@ public class AdminPage {
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
         stage.show();
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
     }
@@ -69,7 +69,7 @@ public class AdminPage {
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
 
@@ -87,7 +87,7 @@ public class AdminPage {
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
 

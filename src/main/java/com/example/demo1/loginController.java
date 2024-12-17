@@ -79,8 +79,9 @@ public class loginController {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.setFullScreen(true);
+            stage.setFullScreen(false);
             stage.setFullScreenExitHint(""); // Suppress the default ESC message
+            HelloApplication.centerStage(stage);
             stage.show();
 
         }
@@ -116,7 +117,7 @@ public class loginController {
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
     }
@@ -127,7 +128,7 @@ public class loginController {
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
     }

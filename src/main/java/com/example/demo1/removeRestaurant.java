@@ -62,7 +62,8 @@ public class removeRestaurant {
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        HelloApplication.centerStage(stage);
+        stage.setFullScreen(false);
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
     }
