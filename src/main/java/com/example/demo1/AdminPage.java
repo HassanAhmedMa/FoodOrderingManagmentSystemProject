@@ -42,9 +42,11 @@ public class AdminPage {
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setFullScreen(true);
+        stage.setFullScreen(false);
+        HelloApplication.centerStage(stage);
         stage.show();
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
+
 
     }
 

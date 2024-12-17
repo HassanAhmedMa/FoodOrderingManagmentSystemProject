@@ -12,16 +12,16 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.addRestaurant">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.addRestaurant">
    <children>
-      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../background.jpg" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button blendMode="HARD_LIGHT" cache="true" layoutX="828.0" layoutY="607.0" mnemonicParsing="false" onAction="#addRestaurant" text="Add">
+            <Button cache="true" layoutX="1108.0" layoutY="219.0" mnemonicParsing="false" onAction="#addRestaurant" text="Add">
                <font>
                   <Font name="Arial Black" size="38.0" />
                </font>
@@ -33,7 +33,7 @@
                   </InnerShadow>
                </effect>
             </Button>
-            <TextField fx:id="NameToAddRestaurant" alignment="CENTER" layoutX="82.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="342.0" promptText="Type the name of the restaurant">
+            <TextField fx:id="NameToAddRestaurant" alignment="CENTER" layoutX="106.0" layoutY="215.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="200.0" promptText="Type the name of the restaurant">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -41,7 +41,7 @@
                   <Font name="Baskerville Old Face" size="24.0" />
                </font>
             </TextField>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="7.0" layoutY="7.0" onMousePressed="#backToAdminPage" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="77.0" fitWidth="74.0" layoutX="3.0" layoutY="15.0" onMousePressed="#backToAdminPage" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../img.png" />
                </image>
@@ -49,7 +49,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </ImageView>
-            <TextField fx:id="GovernorateToAddRestaurant" alignment="CENTER" layoutX="490.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="403.0" promptText="Type the Governorate of the restaurant">
+            <TextField fx:id="GovernorateToAddRestaurant" alignment="CENTER" layoutX="366.0" layoutY="217.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="200.0" promptText="Type the Governorate of the restaurant">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -57,7 +57,7 @@
                   <Font name="Baskerville Old Face" size="24.0" />
                </font>
             </TextField>
-            <TextField fx:id="AreasToAddRestaurant" alignment="CENTER" layoutX="1012.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="342.0" promptText="Type the Areas of the restaurant">
+            <TextField fx:id="AreasToAddRestaurant" alignment="CENTER" layoutX="601.0" layoutY="217.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="200.0" promptText="Type the Areas of the restaurant">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -65,7 +65,7 @@
                   <Font name="Baskerville Old Face" size="24.0" />
                </font>
             </TextField>
-            <TextField fx:id="CategoriesToAddRestaurant" alignment="CENTER" layoutX="1435.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="403.0" promptText="Type the Category of the restaurant">
+            <TextField fx:id="CategoriesToAddRestaurant" alignment="CENTER" layoutX="851.0" layoutY="217.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="200.0" promptText="Type the Category of the restaurant">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -73,12 +73,12 @@
                   <Font name="Baskerville Old Face" size="24.0" />
                </font>
             </TextField>
-            <ImageView fx:id="SelectedrestrauntImage" fitHeight="161.0" fitWidth="174.0" layoutX="806.0" layoutY="763.0" onMousePressed="#Photoselection" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="SelectedrestrauntImage" fitHeight="161.0" fitWidth="174.0" layoutX="575.0" layoutY="455.0" onMousePressed="#Photoselection" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../select%20a%20photo.png" />
                </image>
             </ImageView>
-            <Label layoutX="782.0" layoutY="970.0" prefHeight="54.0" prefWidth="295.0" text=" Select a Restaurant Photo" textFill="#fcf9f9">
+            <Label layoutX="524.0" layoutY="643.0" prefHeight="54.0" prefWidth="295.0" text=" Select a Restaurant Photo" textFill="#fcf9f9">
                <font>
                   <Font name="Cairo Bold" size="24.0" />
                </font>
