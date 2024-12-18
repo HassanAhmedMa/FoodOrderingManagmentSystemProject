@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import Entities.FoodItem;
 import Entities.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,6 +40,16 @@ public class EditRestaurant implements Initializable {
 
     @FXML
     private Button submitRestaurantChanges;
+    @FXML
+    private TextField Price;
+
+    @FXML
+    private TextField Type;
+    @FXML
+    private ComboBox<String> menu;
+    @FXML
+    private TextField itemName;
+
 
     private void setRestaurantTextPrompt(Restaurant restaurant)
     {
@@ -47,7 +58,16 @@ public class EditRestaurant implements Initializable {
         governorateTextField.setPromptText(restaurant.getGovernorate().toString());
 
     }
+    private void setFooditemTextPrompt(FoodItem FoodItem)
+    {
+        Price.setPromptText(String.valueOf(FoodItem.getPrice()));
+        Type.setPromptText(FoodItem.getType());
+        itemName.setPromptText(FoodItem.getName());
+
+
+    }
     private Restaurant restaurant;
+    private FoodItem selectedfoodItem;
     public void onSelection(ActionEvent actionEvent)
     {
         restaurant = Files.returnByName(restaurantsComboBox.getSelectionModel().getSelectedItem());
@@ -59,7 +79,24 @@ public class EditRestaurant implements Initializable {
         {
             restaurantCategoriesComboBox.getItems().add(category);
         }
+        for(FoodItem foodItem : restaurant.getMenuItems()){
+            menu.getItems().add(foodItem.getName());
+
+        }
+
+                }
+    public void onSelectionFoodItem (ActionEvent actionEvent) {
+        String selectedFoodName = menu.getSelectionModel().getSelectedItem();
+        if (selectedFoodName != null) {
+
+            for (FoodItem foodItem : restaurant.getMenuItems()) {
+                if (foodItem.getName().equals(selectedFoodName)) {
+                    selectedfoodItem = foodItem;
+                    setFooditemTextPrompt(selectedfoodItem);
+                    break;
+                }}}
     }
+
     public void updateCategory(ActionEvent actionEvent)
     {
         restaurant.editCategory(restaurantCategoriesComboBox.getSelectionModel().getSelectedItem(),categoryTextField.getText());
@@ -82,6 +119,87 @@ public class EditRestaurant implements Initializable {
 
         restaurant.removeCategory(restaurantCategoriesComboBox.getSelectionModel().getSelectedItem());
         restaurantCategoriesComboBox.getItems().remove(restaurantCategoriesComboBox.getSelectionModel().getSelectedItem());
+    }
+    public void updateFoodItemName(ActionEvent actionEvent) {
+        if (selectedfoodItem == null) {
+            showAlert("Error", "Please select a food item to update.");
+            return;
+        }
+
+        String newName = itemName.getText().trim();
+
+        if (newName.isEmpty()) {
+            showAlert("Error", "Name cannot be empty.");
+            return;
+        }
+
+        // Update the name
+        selectedfoodItem.setName(newName);
+
+        // Refresh the menu ComboBox
+        refreshMenuItems();
+
+        showAlert("Success", "Food item name updated successfully!");
+
+        // Clear the input field
+        itemName.clear();
+    }
+    public void updateFoodItemType(ActionEvent actionEvent) {
+        if (selectedfoodItem == null) {
+            showAlert("Error", "Please select a food item to update.");
+            return;
+        }
+
+        String newType = Type.getText().trim();
+
+        if (newType.isEmpty()) {
+            showAlert("Error", "Type cannot be empty.");
+            return;
+        }
+
+        // Update the type
+        selectedfoodItem.setType(newType);
+
+        showAlert("Success", "Food item type updated successfully!");
+
+        // Clear the input field
+        Type.clear();
+    }
+    public void updateFoodItemPrice(ActionEvent actionEvent) {
+        if (selectedfoodItem == null) {
+            showAlert("Error", "Please select a food item to update.");
+            return;
+        }
+
+        String priceText = Price.getText().trim();
+
+        if (priceText.isEmpty()) {
+            showAlert("Error", "Price cannot be empty.");
+            return;
+        }
+
+        float newPrice;
+        try {
+            newPrice = Float.parseFloat(priceText); // Parse price to float
+        } catch (NumberFormatException e) {
+            showAlert("Error", "Please enter a valid price.");
+            return;
+        }
+
+        // Update the price
+        selectedfoodItem.setPrice(newPrice);
+
+        showAlert("Success", "Food item price updated successfully!");
+
+        // Clear the input field
+        Price.clear();
+    }
+
+    private void refreshMenuItems() {
+        menu.getItems().clear();
+        for (FoodItem foodItem : restaurant.getMenuItems()) {
+            menu.getItems().add(foodItem.getName());
+        }
     }
 
     @Override

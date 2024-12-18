@@ -52,6 +52,16 @@ public class HomePage implements Initializable {
     @FXML
     private ImageView pizaaQuickButton;
 
+    @FXML
+    private Button searchByRestaurantButton;
+
+    @FXML
+    void SwitchToHomePage(MouseEvent event) {
+
+    }
+
+
+
     public static List<Restaurant> matchingRestaurants = new ArrayList<>();
     public static boolean isGoingToShowAll = true;
 
@@ -108,51 +118,42 @@ public class HomePage implements Initializable {
         System.out.println("GOVERNORATE NAME" + governorate);
         String regex = "^[a-zA-Z]+,\\s*[a-zA-Z]+$";
         if (governorate.isEmpty()) {
-            isGoingToShowAll=true;
+            isGoingToShowAll = true;
             SwtichToRestraunts(actionEvent);
         }
 
-        if(governorate.matches(regex))
-            {
-                String[] parts = governorate.split(",");
-                parts[0] = parts[0].trim();
-                parts[1] =  parts[1].trim();
-                parts[1] = parts[1].toLowerCase();
-                parts[0] = parts[0].toLowerCase();
-                matchingRestaurants = new ArrayList<>();
-                List<Restaurant> tempMatchingRestaurantsUsingArea = new ArrayList<>();
-                isGoingToShowAll = false;
-                for (Restaurant restaurant : Files.restaurants) {
-                    for(String governorateName : restaurant.getGovernorate())
-                    {
-                        if(governorateName.equalsIgnoreCase(parts[0]))
-                        {
-                            matchingRestaurants.add(restaurant);
-                        }
-                        else
-                        {
-                            System.out.println("NO MATCH");
-                        }
+        if (governorate.matches(regex)) {
+            String[] parts = governorate.split(",");
+            parts[0] = parts[0].trim();
+            parts[1] = parts[1].trim();
+            parts[1] = parts[1].toLowerCase();
+            parts[0] = parts[0].toLowerCase();
+            matchingRestaurants = new ArrayList<>();
+            List<Restaurant> tempMatchingRestaurantsUsingArea = new ArrayList<>();
+            isGoingToShowAll = false;
+            for (Restaurant restaurant : Files.restaurants) {
+                for (String governorateName : restaurant.getGovernorate()) {
+                    if (governorateName.equalsIgnoreCase(parts[0])) {
+                        matchingRestaurants.add(restaurant);
+                    } else {
+                        System.out.println("NO MATCH");
                     }
-
                 }
-                for(Restaurant restaurant : matchingRestaurants)
-                {
-                    for(String areaName : restaurant.getArea())
-                    {
-                        if(areaName.equalsIgnoreCase(parts[1]))
-                        {
-                            tempMatchingRestaurantsUsingArea.add(restaurant);
-                        }
-                    }
 
-                }
-                matchingRestaurants = new ArrayList<>();
-                matchingRestaurants.addAll(tempMatchingRestaurantsUsingArea);
-                SwtichToRestraunts(actionEvent);
             }
-        else {
-            isGoingToShowAll=true;
+            for (Restaurant restaurant : matchingRestaurants) {
+                for (String areaName : restaurant.getArea()) {
+                    if (areaName.equalsIgnoreCase(parts[1])) {
+                        tempMatchingRestaurantsUsingArea.add(restaurant);
+                    }
+                }
+
+            }
+            matchingRestaurants = new ArrayList<>();
+            matchingRestaurants.addAll(tempMatchingRestaurantsUsingArea);
+            SwtichToRestraunts(actionEvent);
+        } else {
+            isGoingToShowAll = true;
             SwtichToRestraunts(actionEvent);
         }
 
@@ -163,8 +164,9 @@ public class HomePage implements Initializable {
 
 
 
-
         }
+    // Search method by name
+
 
 
 

@@ -164,4 +164,22 @@ public class Restaurant {
         }
 
     }
+    public FoodItem searchFoodItemByName(String foodName) {
+        for (FoodItem foodItem : MenuItems) {
+            if (foodItem.getName().equalsIgnoreCase(foodName)) {
+                return foodItem; // Return the matching FoodItem
+            }
+        }
+        return null; // Return null if no match is found
+    }
+
+    // 2. Static Method: Search for a Restaurant by Name
+    public static Restaurant searchRestaurantByName(List<Restaurant> restaurants, String searchName) {
+        for (Restaurant restaurant : restaurants) {
+            if (restaurant.getName().equalsIgnoreCase(searchName)) {
+                return restaurant; // Return the matching Restaurant
+            }
+        }
+        return null; // Return null if no match is found
+    }
 }

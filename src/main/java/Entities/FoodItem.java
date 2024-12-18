@@ -28,6 +28,16 @@ public class FoodItem {
         this.ImageSrc = imageSrc;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    public void setPrice(float price) {
+        this.price = price;
+    }
 
     public String getName() {
         // Assuming you want to return the first name in the list, if not, modify this as needed
