@@ -208,6 +208,7 @@ public class EditRestaurant implements Initializable {
         refreshRestaurants();
 
 
+
     }
 
     public void submitRestaurantChanged()
