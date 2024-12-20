@@ -33,6 +33,15 @@ public class loginController {
     public ImageView adminLogin;
     public Button signUpButton;
 
+
+    public boolean isValidAdminEmail(String email) {
+        // Regular expression to match emails ending with @admin.com
+        String adminEmailRegex = "^[\\w.-]+@admin\\.com$";
+
+        // Return true if the email matches the regex, false otherwise
+        return email.matches(adminEmailRegex);
+    }
+
     public void initialize() {
 
         User.setStyle("-fx-background-color: transparent; -fx-border-color: transparent;");
@@ -123,14 +132,24 @@ public class loginController {
     }
 
 
+
     public void SwitchToAdminPage(MouseEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("AdminPage.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.setFullScreen(false); HelloApplication.centerStage(stage);
-        stage.setFullScreenExitHint(""); // Suppress the default ESC message
-        stage.show();
+        String email = User.getText(); // Get the email from the User TextField
+
+        if (isValidAdminEmail(email)) {
+            // Proceed to the AdminPage if the email is valid
+            root = FXMLLoader.load(getClass().getResource("AdminPage.fxml"));
+            scene = new Scene(root);
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setFullScreen(false);
+            HelloApplication.centerStage(stage);
+            stage.setFullScreenExitHint(""); // Suppress the default ESC message
+            stage.show();
+        } else {
+            // Display an error message if the email is invalid
+            System.out.println("Invalid email. Access denied.");
+        }
     }
 
 
