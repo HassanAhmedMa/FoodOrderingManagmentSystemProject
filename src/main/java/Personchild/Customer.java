@@ -7,10 +7,20 @@ import Entities.*;
 public class Customer extends Person {
     private String username;
     private String password;
+
+    public void setOrderHistory(List<Order> orderHistory) {
+        this.orderHistory = orderHistory;
+    }
+    public void addToOrderHistory(Order order) {
+        this.orderHistory.add(order);
+    }
+
     private List<Order> orderHistory;
     private userCart usercart;
     private userCart TempuserCart; // hatkon temporary b7es lma al order ytlb a3rf afadyha.
     private List<FoodItem> cart = new ArrayList<>();
+
+
 
     public String getGovernorate() {
         return governorate;

@@ -65,7 +65,7 @@ public class AdminPage {
 
     public void switchToUpdatePage(MouseEvent event) throws IOException {
 
-        root = FXMLLoader.load(getClass().getResource("updateRestaurant.fxml"));
+        root = FXMLLoader.load(getClass().getResource("EditRestaurant.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

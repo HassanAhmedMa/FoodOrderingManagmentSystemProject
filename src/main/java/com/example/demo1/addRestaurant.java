@@ -1,19 +1,14 @@
 package com.example.demo1;
 
 import Entities.Restaurant;
-import com.fasterxml.jackson.core.JsonParser;
 //import com.sun.javafx.tk.quantum.PaintRenderJob;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -26,7 +21,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.example.demo1.Files.listOfImagesPath;
 import static com.example.demo1.Files.restaurants;
 
 

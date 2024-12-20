@@ -47,7 +47,7 @@
                         <Image url="@../../../SearchResaurantRectangle.png" />
                      </image>
                   </ImageView>
-                  <VBox prefHeight="847.0" prefWidth="382.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                  <VBox fx:id="Vbox" prefHeight="847.0" prefWidth="382.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="309.0" text="Search Restaurant" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                            <font>
@@ -62,7 +62,7 @@
                               <Insets left="70.0" right="70.0" />
                            </VBox.margin>
                         </TextField>
-                        <Button id="GoButtonRestrauntSearch" fx:id="searchByRestaurantButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="29.0" prefWidth="101.0" text="GO" textFill="WHITE" VBox.vgrow="ALWAYS">
+                        <Button id="GoButtonRestrauntSearch" fx:id="searchByRestaurantButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#Search" prefHeight="29.0" prefWidth="101.0" text="GO" textFill="WHITE" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets left="100.0" top="10.0" />
                            </VBox.margin>
@@ -85,7 +85,7 @@
                               <Font name="Cairo SemiBold" size="25.0" />
                            </font>
                         </Label>
-                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="149.0" text="Pizza" VBox.vgrow="ALWAYS">
+                        <CheckBox fx:id="pizzacb" alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="149.0" text="Pizza" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font>
@@ -93,7 +93,7 @@
                               <Insets bottom="10.0" left="70.0" />
                            </VBox.margin>
                         </CheckBox>
-                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="230.0" text="Burger" VBox.vgrow="ALWAYS">
+                        <CheckBox fx:id="burgercb" alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="230.0" text="Burger" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font>
@@ -101,7 +101,7 @@
                               <Insets left="70.0" />
                            </VBox.margin>
                         </CheckBox>
-                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Shawerma" VBox.vgrow="ALWAYS">
+                        <CheckBox fx:id="shawermacb" alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Shawerma" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font>
@@ -109,7 +109,7 @@
                               <Insets left="70.0" />
                            </VBox.margin>
                         </CheckBox>
-                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Salad" VBox.vgrow="ALWAYS">
+                        <CheckBox fx:id="saladcb" alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Salad" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font>
@@ -117,7 +117,7 @@
                               <Insets left="70.0" />
                            </VBox.margin>
                         </CheckBox>
-                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Chiciken" VBox.vgrow="ALWAYS">
+                        <CheckBox fx:id="chickencb" alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Chicken" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font>
@@ -125,7 +125,7 @@
                               <Insets left="70.0" />
                            </VBox.margin>
                         </CheckBox>
-                        <CheckBox alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Meat" VBox.vgrow="ALWAYS">
+                        <CheckBox fx:id="meatcb" alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="258.0" text="Meat" VBox.vgrow="ALWAYS">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font>
@@ -133,7 +133,7 @@
                               <Insets left="70.0" />
                            </VBox.margin>
                         </CheckBox>
-                        <Button id="ApplyFilterButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="34.0" prefWidth="105.0" stylesheets="@styles.css" text="Apply" textFill="WHITE">
+                        <Button id="ApplyFilterButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#filterButton" prefHeight="34.0" prefWidth="105.0" stylesheets="@styles.css" text="Apply" textFill="WHITE">
                            <VBox.margin>
                               <Insets left="100.0" top="40.0" />
                            </VBox.margin>

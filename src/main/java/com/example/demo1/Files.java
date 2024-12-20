@@ -280,6 +280,22 @@ public class Files {
     }
 
 
+    public static List<Restaurant> returnRestaurantByType(String type)
+    {
+        List<Restaurant> listOfRestaurants = new ArrayList<>();
+        for(Restaurant tempRestaurant : restaurants)
+        {
+            for(String category : tempRestaurant.getCategories())
+            {
+                if(category.equalsIgnoreCase(type))
+                {
+                    listOfRestaurants.add(tempRestaurant);
+                }
+            }
+        }
+        return listOfRestaurants;
+    }
+
 
 
 

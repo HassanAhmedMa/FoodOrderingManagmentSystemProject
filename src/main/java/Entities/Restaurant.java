@@ -38,6 +38,19 @@ public class Restaurant {
 
 
 
+    public static boolean isRestaurantOfType(Restaurant restaurant, String type)
+    {
+        for(String category : restaurant.getCategories())
+        {
+            if(category.equalsIgnoreCase(type))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
 
     /**

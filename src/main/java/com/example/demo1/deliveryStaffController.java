@@ -67,6 +67,7 @@ public class deliveryStaffController implements Initializable {
 
     }
 
+
     public void UPchangeOrderState(javafx.scene.input.MouseEvent mouseEvent) {
         if(table.getSelectionModel().getSelectedItem() != null) {
             Order order = table.getSelectionModel().getSelectedItem();
@@ -86,5 +87,17 @@ public class deliveryStaffController implements Initializable {
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
         stage.show();
         stage.setFullScreenExitHint(""); // Suppress the default ESC message
+    }
+
+    public void clearDeliveredOrders(javafx.scene.input.MouseEvent mouseEvent) {
+        Iterator<Order> iterator = orders.iterator();
+        while (iterator.hasNext()) {
+            Order order = iterator.next();
+            if (order.getOrderStatus() == 3) {
+                System.out.println("FOUND ORDER WITH DELIVERED STATUS");
+                iterator.remove(); // Safely removes the current element
+            }
+        }
+        table.refresh();
     }
 }

@@ -4,13 +4,23 @@ import Entities.FoodItem;
 import Entities.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -28,6 +38,9 @@ public class EditRestaurant implements Initializable {
 
     @FXML
     private ImageView backToAdminButton;
+
+    @FXML
+    private ImageView restaurantImage;
 
     @FXML
     private TextField governorateTextField;
@@ -53,6 +66,7 @@ public class EditRestaurant implements Initializable {
 
     private void setRestaurantTextPrompt(Restaurant restaurant)
     {
+
         RestaurantNameTextField.setPromptText(restaurant.getName());
         areasTextField.setPromptText(restaurant.getArea().toString());
         governorateTextField.setPromptText(restaurant.getGovernorate().toString());
@@ -83,8 +97,10 @@ public class EditRestaurant implements Initializable {
             menu.getItems().add(foodItem.getName());
 
         }
+        Image image = new Image(restaurant.getImgLocation());
+        restaurantImage.setImage(image);
 
-                }
+    }
     public void onSelectionFoodItem (ActionEvent actionEvent) {
         String selectedFoodName = menu.getSelectionModel().getSelectedItem();
         if (selectedFoodName != null) {
@@ -193,6 +209,7 @@ public class EditRestaurant implements Initializable {
 
         // Clear the input field
         Price.clear();
+
     }
 
     private void refreshMenuItems() {
@@ -251,6 +268,8 @@ public class EditRestaurant implements Initializable {
         governorateTextField.clear();
         areasTextField.clear();
         RestaurantNameTextField.clear();
+        setRestaurantTextPrompt(restaurant);
+        restaurant.setImgLocation(restaurantImage.getImage().getUrl());
 
 
 
@@ -272,4 +291,98 @@ public class EditRestaurant implements Initializable {
     }
 
 
+    public void submitFoodItemChanges(ActionEvent actionEvent)
+    {
+        String tempString = "";
+//        updateFoodItemPrice(actionEvent);
+//        updateFoodItemType(actionEvent);
+//        updateFoodItemName(actionEvent);
+
+        if(selectedfoodItem != null)
+        {
+
+            if(!Type.getText().isEmpty()){
+                tempString = Type.getText().trim();
+                selectedfoodItem.setType(tempString);
+            }
+
+            if(!itemName.getText().isEmpty())
+            {
+                tempString = itemName.getText().trim();
+                selectedfoodItem.setName(tempString);
+            }
+            if(!Price.getText().isEmpty())
+            {
+                Float newPrice;
+                tempString = Price.getText().trim();
+                try{
+                    newPrice = Float.parseFloat(tempString);
+                }
+                catch(NumberFormatException e)
+                {
+                    showAlert("Error", "Price is not a valid number.");
+                    newPrice = selectedfoodItem.getPrice();
+                }
+
+
+
+                selectedfoodItem.setPrice(newPrice);
+            }
+
+
+
+        }
+        itemName.clear();
+        Price.clear();
+        Type.clear();
+        setFooditemTextPrompt(selectedfoodItem);
+
+    }
+
+
+
+
+    public void setRestaurantImage(javafx.scene.input.MouseEvent mouseEvent) {
+        // Create a FileChooser instance
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select a Photo");
+
+        // Set the initial directory to the resources folder in your project
+        File resourcesFolder = new File("src/main/resources"); // Adjust the path if necessary
+        if (resourcesFolder.exists() && resourcesFolder.isDirectory()) {
+            fileChooser.setInitialDirectory(resourcesFolder);
+        } else {
+            System.out.println("Resources folder not found!");
+        }
+
+        // Set file extension filters for image files
+        fileChooser.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif")
+        );
+
+        // Open the FileChooser dialog
+        File selectedFile = fileChooser.showOpenDialog(restaurantImage.getScene().getWindow());
+
+        if (selectedFile != null) {
+            // Display the selected image in the ImageView
+            Image image = new Image(selectedFile.toURI().toString());
+            restaurantImage.setImage(image);
+        }
+
+    }
+
+    Parent root;
+    Stage stage;
+    Scene scene;
+
+
+    public void returnToAdminPage(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("AdminPage.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setFullScreen(false); HelloApplication.centerStage(stage);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
+        stage.show();
+    }
 }

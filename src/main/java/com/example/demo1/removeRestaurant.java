@@ -46,8 +46,24 @@ public class removeRestaurant {
         } else {
             Restaurant restaurant = Files.returnByName(selectedRestaurantName); // Find restaurant by name
             if (restaurant != null) {
+
+                Files.RestaurantnamesList.remove(selectedRestaurantName);
+                int indexOfRestaurant = Files.restaurants.indexOf(restaurant);
+                Files.listOfGovernorate.remove(indexOfRestaurant);
+                Files.listOfAreas.remove(indexOfRestaurant);
+                Files.listOfImagesPath.remove(indexOfRestaurant);
+                Files.CategoriesList.remove(indexOfRestaurant);
+
+
+
+
                 Files.restaurants.remove(restaurant); // Remove the restaurant from the list
+
+
+
+
                 RevmoveRestaurantName.getItems().remove(selectedRestaurantName); // Update the ComboBox
+
                 showAlert("Success", "Restaurant and its items removed successfully.");
             } else {
                 showAlert("Error", "Restaurant does not exist.");

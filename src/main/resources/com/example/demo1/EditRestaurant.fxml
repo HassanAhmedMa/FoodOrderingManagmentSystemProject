@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -90,19 +91,23 @@
          </font>
       </Label>
       <ComboBox fx:id="restaurantCategoriesComboBox" layoutX="949.0" layoutY="110.0" prefHeight="37.0" prefWidth="232.0" promptText="Restaurant Categories" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="965.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../McDonalds-logo.png" />
-         </image>
-      </ImageView>
-      <Label alignment="CENTER" layoutX="958.0" layoutY="631.0" text="Click to change icon" textFill="WHITE">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button layoutX="30.0" layoutY="653.0" mnemonicParsing="false" onAction="#submitRestaurantChanged" prefHeight="26.0" prefWidth="150.0" text="Submit Item Edit" />
+      <VBox layoutX="958.0" layoutY="519.0">
+         <children>
+            <ImageView fx:id="restaurantImage" fitHeight="150.0" fitWidth="200.0" onMousePressed="#setRestaurantImage" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+               <image>
+                  <Image url="@../../../McDonalds-logo.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" text="Click to change icon" textFill="WHITE" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Button layoutX="30.0" layoutY="653.0" mnemonicParsing="false" onAction="#submitFoodItemChanges" prefHeight="26.0" prefWidth="150.0" text="Submit Item Edit" />
       <Button fx:id="submitRestaurantChanges" layoutX="30.0" layoutY="291.0" mnemonicParsing="false" onAction="#submitRestaurantChanged" prefHeight="26.0" prefWidth="150.0" text="Submit Restaurant Edit" />
-      <ImageView fx:id="backToAdminButton" fitHeight="61.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="backToAdminButton" fitHeight="61.0" fitWidth="69.0" onMousePressed="#returnToAdminPage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img.png" />
          </image>

@@ -1,5 +1,6 @@
 package Entities;
 
+import com.example.demo1.Files;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 
@@ -19,6 +20,15 @@ public class Order{
 
     }
 
+
+    public void addToHistory()
+    {
+        if(orderId.get() == 3)
+        {
+            Files.returnCustomerByName(whoOrdered).addToOrderHistory(this);
+
+        }
+    }
 
 
 
