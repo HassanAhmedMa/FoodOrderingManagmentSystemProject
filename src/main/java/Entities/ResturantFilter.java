@@ -34,7 +34,7 @@ public class ResturantFilter {
         return result;
     }
 
-    // Filter restaurants by location (could be governorate or area)
+    // Filter restaurants by location (could be governorateInterface or area)
    // public List<Restaurant> filterByLocation(String location) {
    //     List<Restaurant> result = new ArrayList<>();
    //     for (Restaurant restaurant : restaurants) {

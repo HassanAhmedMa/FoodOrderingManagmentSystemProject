@@ -18,8 +18,8 @@ public class Admin extends Person {
     }
 
     // Function to add a restaurant
-//    public void addRestaurant(String name, String governorate, String area, List<String> categories) {
-//        Restaurant newRestaurant = new Restaurant(name, governorate, area, categories);
+//    public void addRestaurant(String name, String governorateInterface, String area, List<String> categories) {
+//        Restaurant newRestaurant = new Restaurant(name, governorateInterface, area, categories);
 //        allRestaurants.add(newRestaurant);
 //        System.out.println("New restaurant added: " + name);
 //    }
@@ -30,7 +30,7 @@ public class Admin extends Person {
         for (Restaurant restaurant : listOfRestaurants) {
             if (name.equalsIgnoreCase(restaurant.getName())) {
                 restaurant.setCategories(newCategory); // Updating categories
-                restaurant.setGovernorate(newLocation); // Assuming "newLocation" is a governorate update
+                restaurant.setGovernorate(newLocation); // Assuming "newLocation" is a governorateInterface update
                 isUpdated = true;
                 System.out.println("Restaurant " + name + " has been updated.");
                 break;

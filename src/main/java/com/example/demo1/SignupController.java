@@ -5,20 +5,21 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.net.URL;
+import java.util.*;
 
-public class SignupController {
+public class SignupController implements Initializable {
     public Label phoneNumberError;
     public Label confirmPasswordError;
     public Label emailError;
@@ -107,6 +108,9 @@ public class SignupController {
             // Proceed with user creation and scene switch
             users.put(Username.getText(), Password.getText());
             Files.listOfCustomers.add(new Customer(Username.getText(),Password.getText(),"No First Name","No Last Name",Email.getText(),PhoneNumber.getText()));
+            Customer customer = Files.returnCustomerByName(Username.getText());
+            customer.setArea(Area.getSelectionModel().getSelectedItem());
+            customer.setGovernorate(governorate.getSelectionModel().getSelectedItem());
             root = FXMLLoader.load(getClass().getResource("login.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -216,5 +220,29 @@ public class SignupController {
         stage.show();
 
 
+    }
+    @FXML
+    private ComboBox<String> governorate;
+    @FXML
+    private ComboBox<String> Area;
+
+    public void addToAreaList()
+    {
+        Area.getItems().clear();
+        switch(governorate.getSelectionModel().getSelectedItem())
+        {
+            case "Cairo": Area.getItems().addAll(List.of("Nozha", "Sheraton" , "Matareya", "Maadi")); break;
+            case "Giza": Area.getItems().addAll(List.of("Abdeen", "Moski", "Boulaq")); break;
+            case "Alexandria": Area.getItems().addAll(List.of("Stanly", "smoha" ,"Omraneya" , "Bahary", "SidiBishr")); break;
+        }
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        governorate.getItems().addAll(List.of("Cairo", "Giza" , "Alexandria"));
+    }
+
+    public void areaSelect(ActionEvent actionEvent) {
     }
 }

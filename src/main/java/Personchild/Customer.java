@@ -205,10 +205,10 @@ public class Customer extends Person {
     }
 
     // View restaurants in a specific area
-//    public void viewRestaurants(List<Restaurant> restaurants, String governorate, String area) {
-//        System.out.println("Restaurants in " + governorate + ", " + area + ":");
+//    public void viewRestaurants(List<Restaurant> restaurants, String governorateInterface, String area) {
+//        System.out.println("Restaurants in " + governorateInterface + ", " + area + ":");
 //        for (Restaurant restaurant : restaurants) {
-//            if (restaurant.getGovernorate().equalsIgnoreCase(governorate) &&
+//            if (restaurant.getGovernorate().equalsIgnoreCase(governorateInterface) &&
 //                    restaurant.getArea().(area)) {
 //                System.out.println("- " + restaurant.getName() + " (" + String.join(", ", restaurant.getCategories()) + ")"); // al join de btzbt al 4kl bta3 al category bta3 al resuratnt msln httl3 kda [pizza, burger]
 //            }

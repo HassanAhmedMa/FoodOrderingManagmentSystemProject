@@ -60,24 +60,28 @@ public class CartPage implements Initializable {
         Order order = new Order(HelloApplication.orderID++,1,TempCustomer.getCart(),TempCustomer.getUsername());
         order.setOrderPrice(customer.calculateTotal());
         order.setOrderLocation(TempCustomer.getGovernorate() + ", " +   TempCustomer.getArea());
-        boolean available = true;
+        boolean available = false;
         for(DeliveryStaff staff: Files.deliveryStaffList)
         {
             System.out.println(TempCustomer.getGovernorate());
             System.out.println(TempCustomer.getArea());
             System.out.println(staff.getAreas());
             System.out.println(staff.getLocation());
-            if(TempCustomer.getGovernorate().equalsIgnoreCase(staff.getLocation()) && staff.getAreas().contains(TempCustomer.getArea().toLowerCase()))
+            if(TempCustomer.getGovernorate().equalsIgnoreCase(staff.getLocation()))
             {
+                for(String area :staff.getAreas())
+                {
+                    if(area.equalsIgnoreCase(TempCustomer.getArea()))
+                    {
+                        staff.addOrder(order);
+                        available = true;
+                        break;
+                    }
 
-                staff.addOrder(order);
+                }
 
-                break;
             }
-            else
-            {
-                available = false;
-            }
+
         }
 
 

@@ -26,9 +26,6 @@ public class RestaurantItem implements Initializable {
     private Label category;
 
     @FXML
-    private Label rating;
-
-    @FXML
     private Label restaurantName;
 
     @FXML
