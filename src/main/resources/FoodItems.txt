@@ -1,83 +1,84 @@
 #McDonald's
-*Big-Tastey 150f Burger bigTastey.png
-*Chicken-Nuggets 60f Appetizers nuggies.png
-*Fries 35f Appetizers fries.png
-*McFlurry 50f Dessert oreo.png
-*Cheeseburger 90f Burger +
-*Fish-O-Fillet 120f Burger +
-*Apple-Pie 50f Dessert applepie.png
-*Egg-McMuffin 70f Breakfast mcmuffin.png
-*Hash-Brown 90f Breakfast +
-*Chocolate-Shake 80f Drink chocolateMilkShakeMC.png
-.............................
+*Big-Tastey 150.0f Burger bigTastey.png
+*Chicken-Nuggets 60.0f Appetizers nuggies.png
+*Fries 35.0f Appetizers fries.png
+*McFlurry 50.0f Dessert oreo.png
+*Cheeseburger 90.0f Burger NoImageAvailable.png
+*Fish-O-Fillet 120.0f Burger NoImageAvailable.png
+*Apple-Pie 50.0f Dessert applepie.png
+*Egg-McMuffin 70.0f Breakfast mcmuffin.png
+*Hash-Brown 90.0f Breakfast NoImageAvailable.png
+*Chocolate-Shake 80.0f Drink chocolateMilkShakeMC.png
+-------------------------------------------------
 #PizzaHut
 *Pepperoni-Pizza 129.99f Pizza peperoni.png
 *Margherita-Pizza 109.99f Pizza Margherita.png
 *BBQ-Chicken-Pizza 139.99f Pizza BBQChickenPizza.png
-*Hawaiian-Pizza 119.99f Pizza +
+*Hawaiian-Pizza 119.99f Pizza NoImageAvailable.png
 *Veggie-Lovers 115.99f Pizza VeggiesLovers.png
-*Cheese-Sticks 49.99f Side +
+*Cheese-Sticks 49.99f Side NoImageAvailable.png
 *Garlic-Bread 39.99f Side GarlicBread.png
 *Chocolate-Lava-Cake 59.99f Dessert chocolateCake.png
 *Buffalo-Wings 84.99f Side buffaloWing.png
 *Pepsi 19.99f Drink pepsi.png
-.............................
+-------------------------------------------------
 #Cook-door
-*Chicken-Sub 99.99 Sandwich +
-*Beef-Sub 89.99 Sandwich +
-*Spicy-Fries 34.99 Side +
-*Coleslaw 19.99 Salad +
-*Chocolate-Milkshake 49.99 Drink +
-*Grilled-Chicken-Plate 129.99 Plate +
-*Buffalo-Wings 79.99 Side +
-*Caesar-Salad 59.99 Salad +
-*Garlic-Bread 29.99 Side +
-*Coke 19.99 Drink +
-.............................
+*Chicken-Sub 99.99f Sandwich NoImageAvailable.png
+*Beef-Sub 89.99f Sandwich NoImageAvailable.png
+*Spicy-Fries 34.99f Side NoImageAvailable.png
+*Coleslaw 19.99f Salad NoImageAvailable.png
+*Chocolate-Milkshake 49.99f Drink NoImageAvailable.png
+*Grilled-Chicken-Plate 129.99f Plate NoImageAvailable.png
+*Buffalo-Wings 79.99f Side NoImageAvailable.png
+*Caesar-Salad 59.99f Salad NoImageAvailable.png
+*Garlic-Bread 29.99f Side NoImageAvailable.png
+*Coke 19.99f Drink NoImageAvailable.png
+-------------------------------------------------
 #Hardee's
-*Thickburger 149.99 Burger +
-*Crispy-Chicken-Sandwich 119.99 Sandwich +
-*Curly-Fries 39.99 Side +
-*Onion-Rings 44.99 Side +
-*Vanilla-Milkshake 54.99 Drink +
-*Chicken-Strips 89.99 Side +
-*Big-Chicken-Bowl 129.99 Bowl +
-*Cheese-Fries 49.99 Side +
-*Root-Beer 24.99 Drink +
-*Chocolate-Chip-Cookie 29.99 Dessert +
-.............................
+*Thickburger 149.99f Burger NoImageAvailable.png
+*Crispy-Chicken-Sandwich 119.99f Sandwich NoImageAvailable.png
+*Curly-Fries 39.99f Side NoImageAvailable.png
+*Onion-Rings 44.99f Side NoImageAvailable.png
+*Vanilla-Milkshake 54.99f Drink NoImageAvailable.png
+*Chicken-Strips 89.99f Side NoImageAvailable.png
+*Big-Chicken-Bowl 129.99f Bowl NoImageAvailable.png
+*Cheese-Fries 49.99f Side NoImageAvailable.png
+*Root-Beer 24.99f Drink NoImageAvailable.png
+*Chocolate-Chip-Cookie 29.99f Dessert NoImageAvailable.png
+-------------------------------------------------
 #Krispy-Kreme
-*Original-Glazed 19.99 Donut +
-*Chocolate-Iced-Glazed 24.99 Donut +
-*Strawberry-Filled 29.99 Donut +
-*Apple-Fritter 34.99 Pastry +
-*Coffee 14.99 Drink +
-*Chocolate-Latte 24.99 Drink +
-*Blueberry-Muffin 29.99 Pastry +
-*Cinnamon-Roll 39.99 Pastry +
-*Hot-Chocolate 19.99 Drink +
-*Vanilla-Cream-Filled 24.99 Donut +
-.............................
+*Original-Glazed 19.99f Donut NoImageAvailable.png
+*Chocolate-Iced-Glazed 24.99f Donut NoImageAvailable.png
+*Strawberry-Filled 29.99f Donut NoImageAvailable.png
+*Apple-Fritter 34.99f Pastry NoImageAvailable.png
+*Coffee 14.99f Drink NoImageAvailable.png
+*Chocolate-Latte 24.99f Drink NoImageAvailable.png
+*Blueberry-Muffin 29.99f Pastry NoImageAvailable.png
+*Cinnamon-Roll 39.99f Pastry NoImageAvailable.png
+*Hot-Chocolate 19.99f Drink NoImageAvailable.png
+*Vanilla-Cream-Filled 24.99f Donut NoImageAvailable.png
+-------------------------------------------------
 #Garnell-Sushi
-*California-Roll 149.99 Sushi +
-*Spicy-Tuna-Roll 169.99 Sushi +
-*Dragon-Roll 199.99 Sushi +
-*Shrimp-Tempura-Roll 179.99 Sushi +
-*Miso-Soup 59.99 Soup +
-*Edamame 39.99 Appetizer +
-*Salmon-Sashimi 129.99 Sashimi +
-*Avocado-Salad 74.99 Salad +
-*Green-Tea 19.99 Drink +
-*Gyoza-Dumplings 89.99 Appetizer +
-.............................
+*California-Roll 149.99f Sushi NoImageAvailable.png
+*Spicy-Tuna-Roll 169.99f Sushi NoImageAvailable.png
+*Dragon-Roll 199.99f Sushi NoImageAvailable.png
+*Shrimp-Tempura-Roll 179.99f Sushi NoImageAvailable.png
+*Miso-Soup 59.99f Soup NoImageAvailable.png
+*Edamame 39.99f Appetizer NoImageAvailable.png
+*Salmon-Sashimi 129.99f Sashimi NoImageAvailable.png
+*Avocado-Salad 74.99f Salad NoImageAvailable.png
+*Green-Tea 19.99f Drink NoImageAvailable.png
+*Gyoza-Dumplings 89.99f Appetizer NoImageAvailable.png
+-------------------------------------------------
 #Karam-El-Sham
-*Chicken-Shawarma 79.99 Wrap +
-*Beef-Shawarma 89.99 Wrap +
-*Falafel 29.99 Side +
-*Hummus 39.99 Dip +
-*Fattoush 59.99 Salad +
-*Stuffed-Grape-Leaves 69.99 Appetizer +
-*Lentil-Soup 49.99 Soup +
-*Baklava 34.99 Dessert +
-*Mint-Lemonade 19.99 Drink +
-*Kunafa 39.99 Dessert +
+*Chicken-Shawarma 79.99f Wrap NoImageAvailable.png
+*Beef-Shawarma 89.99f Wrap NoImageAvailable.png
+*Falafel 29.99f Side NoImageAvailable.png
+*Hummus 39.99f Dip NoImageAvailable.png
+*Fattoush 59.99f Salad NoImageAvailable.png
+*Stuffed-Grape-Leaves 69.99f Appetizer NoImageAvailable.png
+*Lentil-Soup 49.99f Soup NoImageAvailable.png
+*Baklava 34.99f Dessert NoImageAvailable.png
+*Mint-Lemonade 19.99f Drink NoImageAvailable.png
+*Kunafa 39.99f Dessert NoImageAvailable.png
+-------------------------------------------------

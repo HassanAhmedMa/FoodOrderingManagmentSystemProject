@@ -1,5 +1,6 @@
 package Entities;
 
+import Personchild.Customer;
 import com.example.demo1.Files;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -9,6 +10,22 @@ import java.util.ArrayList;
 public class Order{
     private int OrderIDColumn;
     private int OrderStatus = 1; // Use an enum for better readability
+    private String RestaurantName;
+
+    private List<String> foodItemsName;
+    private String foodItemsNameString ="";
+    public String getFoodItemsNameString() {
+        return foodItemsNameString;
+    }
+    public void setfoodItemsNameString()
+    {
+        for(FoodItem foodItem : orderedFoodItems)
+        {
+            foodItemsNameString = foodItemsNameString.concat(foodItem.getName() + ", ");
+
+        }
+        foodItemsNameString = foodItemsNameString.substring(0,foodItemsNameString.length()-2);
+    }
 
 
     private IntegerProperty orderId = new SimpleIntegerProperty();
@@ -75,6 +92,8 @@ public Order(int OrderIDColumn, int orderState, List<FoodItem> orderedFoodItems,
         this.OrderIDColumn = OrderIDColumn;
         this.orderedFoodItems = orderedFoodItems;
         this.whoOrdered = whoOrdered;
+        setfoodItemsNameString();
+
     }
 
 
@@ -145,10 +164,12 @@ public Order(int OrderIDColumn, int orderState, List<FoodItem> orderedFoodItems,
         }
         else if(TempOrderStatus == 2){
             setOrderStatus(3);
+
         }
 
         orderStatusString =  OrderStatusStringUpdate();
     }
+
     public String OrderStatusStringUpdate()
     {
         int temp = getOrderStatus();
@@ -171,6 +192,15 @@ public Order(int OrderIDColumn, int orderState, List<FoodItem> orderedFoodItems,
     }
 
 
+    public String getDeliveryingStaff() {
+        return DeliveryingStaff;
+    }
+
+    public void setDeliveryingStaff(String deliveryingStaff) {
+        DeliveryingStaff = deliveryingStaff;
+    }
+
+    private String DeliveryingStaff;
 
     /////////////////////////////////////
     /**

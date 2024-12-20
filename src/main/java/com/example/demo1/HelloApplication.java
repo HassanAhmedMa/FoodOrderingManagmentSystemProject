@@ -20,6 +20,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
 
 
@@ -63,6 +64,7 @@ public class HelloApplication extends Application {
         }catch (IOException e){
             e.printStackTrace();
         }
+
 
 
 
@@ -124,7 +126,19 @@ public class HelloApplication extends Application {
         stage.setY(centerY);
 
 
+        stage.setOnCloseRequest((WindowEvent event) -> {
+            // This code is called when the user tries to close the window.
+            // You can add cleanup code, confirmation dialogs, or just print something.
+            try {
+                Files.writeToFiles("src/main/resources/deliveryStaff.txt" , "src/main/resources/Governorate.txt","src/main/resources/RestaurantCategories.txt","src/main/resources/Areas.txt","src/main/resources/CustomerData.txt","src/main/resources/FoodItems.txt","src/main/resources/RestaurantNames.txt","src/main/resources/RestaurantsImages.txt");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("Window is about to close!");
 
+            // If you want to prevent the window from closing, you can consume the event
+            // event.consume();
+        });
 
 
         stage.resizableProperty().setValue(Boolean.FALSE);

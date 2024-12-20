@@ -90,14 +90,24 @@ public class deliveryStaffController implements Initializable {
     }
 
     public void clearDeliveredOrders(javafx.scene.input.MouseEvent mouseEvent) {
-        Iterator<Order> iterator = orders.iterator();
-        while (iterator.hasNext()) {
-            Order order = iterator.next();
-            if (order.getOrderStatus() == 3) {
-                System.out.println("FOUND ORDER WITH DELIVERED STATUS");
-                iterator.remove(); // Safely removes the current element
+
+        DeliveryStaff staff = Files.getDeliveryStaff(deliveryStaffName);
+
+
+            for(Order order : orders)
+            {
+                if (order.getOrderStatus() == 3) {
+                    System.out.println("FOUND ORDER WITH DELIVERED STATUS");
+                    orders.remove(order);
+                    staff.getOrders().remove(order);
+
+                }
             }
-        }
+
+
+
+
+
         table.refresh();
     }
 }

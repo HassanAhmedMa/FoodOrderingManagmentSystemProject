@@ -6,6 +6,7 @@ import Entities.Restaurant;
 import Personchild.Customer;
 import Personchild.DeliveryStaff;
 
+import java.awt.geom.Area;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,7 @@ public class Files {
                     MainParts =  line.split("\\(", 2);
                     MainParts[1] = MainParts[1].substring(0, MainParts[1].length() - 1);
                     MainParts[0] = MainParts[0].toLowerCase();
+                    MainParts[0] = MainParts[0].substring(1, MainParts[0].length());
                     System.out.println("MAIN PART " + MainParts[0]);
                     System.out.println("MAIN PART " + MainParts[1]);
                     currentStaff = new DeliveryStaff(MainParts[0].split(" "));
@@ -75,11 +77,11 @@ public class Files {
                         // Use a regex to split the name, price, and type
                         String[] foodParts = item.split("\\|"); // Split on space before a number
 
-
+                        System.out.println("EERRRORRRR HERE : "  + foodParts[2]);
                         String name = foodParts[0].trim(); // First part is the name
                         float price = Float.parseFloat(foodParts[1].replace("f", ""));
                         String type = foodParts[2].trim();
-                        int quantity = Integer.parseInt(foodParts[3].trim());
+                        int quantity = Integer.parseInt(foodParts[2].trim());
                         FoodItem foodItem = new FoodItem(name, price, type, "NoImageAvailable");
                         foodItem.setQuantityInCart(quantity);
                         foodItems.add(foodItem);
@@ -398,7 +400,168 @@ public class Files {
     }
 
 
+    public static void writeToFiles(String deliverystaffLocation, String RestaurantGovernorateLocaiton , String RestaurantCategoriesLocation , String AreasLocation , String CustomerData, String FoodItemsLocation , String restaurantNames, String RestaurantImages  ) throws IOException
+    {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(deliverystaffLocation))) {
+            for(DeliveryStaff deliveryStaff : deliveryStaffList)
+            {
+                writer.print("*" + deliveryStaff.getFirstName() + ' ' + deliveryStaff.getLastName() + ' ' + deliveryStaff.getEmail() + ' ' + deliveryStaff.getPhoneNumber() + ' ' + deliveryStaff.getLocation() + ' ' + 3.1 + ' ');
+                writer.print("(");
+                String areas = "";
+                for(String area :   deliveryStaff.getAreas())
+                {
+                    areas = areas.concat(area + ',');
 
+                }
+                areas = areas.substring(0, areas.length() - 1);
+                writer.print(areas);
+                writer.print(")");
+                writer.println();
+
+
+
+                for(Order order : deliveryStaff.getOrders())
+                {
+                    writer.print("=");
+                    writer.print(order.getOrderId() + " ");
+                    writer.print("(");
+                    String FoodData = "";
+                    for(FoodItem foodItem : order.getOrderedFoodItems())
+                    {
+                        System.out.println(foodItem.getName());
+                         FoodData =  FoodData.concat (foodItem.getName() + "|");
+                         FoodData =  FoodData.concat (foodItem.getPrice() + "f|");
+                         FoodData =  FoodData.concat (foodItem.getQuantityInCart() + ",");
+                    }
+                    System.out.println(FoodData);
+                    FoodData = FoodData.substring(0, FoodData.length() - 1);
+
+                    writer.print(FoodData);
+                    writer.print(")" + " ");
+                    writer.print(order.getWhoOrdered());
+                    writer.print( " " + 1 + " ");
+                    writer.print(order.getOrderPrice());
+
+
+                    writer.println();
+                }
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace(); // Handle exceptions
+        }
+        try(PrintWriter writer = new PrintWriter(new FileWriter(RestaurantGovernorateLocaiton)))
+        {
+            for(List<String> RestaurantLocations : listOfGovernorate )
+            {
+                for(String RestaurantLocation : RestaurantLocations)
+                {
+                    writer.print(RestaurantLocation + " ");
+                }
+                writer.println();
+            }
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        try(PrintWriter writer = new PrintWriter(new FileWriter(RestaurantCategoriesLocation)))
+        {
+            for(Restaurant restaurant : restaurants)
+            {
+                for(String Category : restaurant.getCategories())
+                {
+                    writer.print(Category + " ");
+                }
+                writer.println();
+            }
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        try(PrintWriter writer = new PrintWriter(new FileWriter(AreasLocation)))
+        {
+            for(List<String> area : listOfAreas)
+            {
+                for(String Area : area)
+                {
+                    writer.print(Area + " ");
+                }
+                writer.println();
+            }
+
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        try(PrintWriter writer = new PrintWriter(new FileWriter(CustomerData)))
+        {
+            for(Customer customer : listOfCustomers)
+            {
+                writer.print("#" + customer.getUsername());
+                writer.println();
+                writer.print("*" + customer.getPassword() + " " + customer.getFirstName() + " " + customer.getLastName()+ " " + customer.getEmail() + " " + customer.getPhoneNumber() + " " + customer.getGovernorate() + " " + customer.getArea() );
+                writer.println();
+
+            }
+
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        try(PrintWriter writer = new PrintWriter(new FileWriter(restaurantNames)))
+        {
+            for(String restaurantName : RestaurantnamesList )
+            {
+                writer.println(restaurantName);
+            }
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        try(PrintWriter writer = new PrintWriter(new FileWriter(RestaurantImages)))
+        {
+
+            for(Restaurant restaurant : restaurants)
+            {
+                writer.println(restaurant.getImgLocation());
+
+            }
+
+        }catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
+        try(PrintWriter writer = new PrintWriter(new FileWriter(FoodItemsLocation)))
+        {
+
+                for(Restaurant restaurant : restaurants)
+                {
+                    writer.println("#" + restaurant.getName() );
+                    for(FoodItem fooditem : restaurant.getMenuItems())
+                    {
+                        writer.println("*" + fooditem.getName() + " " + fooditem.getPrice() + "f " + fooditem.getType() + " " + fooditem.getImageSrc());
+                    }
+                    writer.println("-------------------------------------------------");
+                }
+
+        }catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
+
+
+
+
+
+
+
+    }
 
 
 

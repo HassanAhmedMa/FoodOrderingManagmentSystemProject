@@ -60,7 +60,14 @@ public class CartPage implements Initializable {
         Order order = new Order(HelloApplication.orderID++,1,TempCustomer.getCart(),TempCustomer.getUsername());
         order.setOrderPrice(customer.calculateTotal());
         order.setOrderLocation(TempCustomer.getGovernorate() + ", " +   TempCustomer.getArea());
+        Customer customer = Files.returnCustomerByName(HelloApplication.LoggedInUserName);
+        customer.addToOrderHistory(order);
         boolean available = false;
+        customer.setCart(new ArrayList<>());
+
+
+
+
         for(DeliveryStaff staff: Files.deliveryStaffList)
         {
             System.out.println(TempCustomer.getGovernorate());
@@ -73,6 +80,7 @@ public class CartPage implements Initializable {
                 {
                     if(area.equalsIgnoreCase(TempCustomer.getArea()))
                     {
+                        order.setDeliveryingStaff("Your hero for today is " + staff.getFirstName());
                         staff.addOrder(order);
                         available = true;
                         break;

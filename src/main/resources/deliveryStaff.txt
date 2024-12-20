@@ -1,6 +1,6 @@
-*hassan ahmed hassanahmed9975@gmail.com 01122228646 Cairo 3.1 (alf-Maskan,nozha,matareya,helioplis)
-=2 (Pepperoni-Pizza|129.99f|Pizza|5,Hawaiian-Pizza|119.99f|Pizza|10) hassan 1 263.98
-*joo mahmoud Joooooo@gmail.com 011125128646 Giza 2.5 (abdeen,moski,Boulaq)
-=3 (Pepperoni-Pizza|129.99f|Pizza|2,Hawaiian-Pizza|119.99f|Pizza|3) hassan 1 263.98
-=4 (Pepperoni-Pizza|129.99f|Pizza|1,Hawaiian-Pizza|119.99f|Pizza|100) joo 1 2623.98
-*Karim fady karimfady@gmail.com 01187334918 Alexandria 4.1 (Stanly,smoha,Omraneya,Bahary,SidiBishr)
+*hassan ahmed hassanahmed9975@gmail.com 01122228646 cairo 3.1 (alf-maskan,nozha,matareya,helioplis)
+=0 (Chicken-Nuggets|60.0f|3) ziad 1 180.0
+*joo mahmoud joooooo@gmail.com 011125128646 giza 3.1 (abdeen,moski,boulaq)
+=0 (Pepperoni-Pizza|129.99f|2,Hawaiian-Pizza|119.99f|3) hassan 1 263.98
+=0 (Pepperoni-Pizza|129.99f|1,Hawaiian-Pizza|119.99f|100) joo 1 2623.98
+*karim fady karimfady@gmail.com 01187334918 alexandria 3.1 (stanly,smoha,omraneya,bahary,sidibishr)

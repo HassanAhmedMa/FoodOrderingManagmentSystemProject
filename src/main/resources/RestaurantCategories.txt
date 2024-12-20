@@ -1,7 +1,7 @@
-Burger Salad Appetizers Drinks
-Pizza Salad Appetizers
-Sandwich Chicken Appetizers Drinks
-Burger Salad Appetizers Drinks
-Doughnut Drinks Breakfast
-Sushi Noodles Salad
-Shawerma Salad Appetizers Drinks
+Burger Salad Appetizers Drinks 
+Pizza Salad Appetizers 
+Sandwich Chicken Appetizers Drinks 
+Burger Salad Appetizers Drinks 
+Doughnut Drinks Breakfast 
+Sushi Noodles Salad 
+Shawerma Salad Appetizers Drinks 

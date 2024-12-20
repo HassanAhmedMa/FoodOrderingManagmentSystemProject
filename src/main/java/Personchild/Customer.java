@@ -172,19 +172,18 @@ public class Customer extends Person {
 
 
     // cancel  order
-    public void cancelOrder(int orderId) {
+    public void cancelOrder(Order order) {
         // 4r7naha fo2 baa de al bt access al list ashan ams7o lw mawgod
-        Order order = orderHistory.stream()
-                .filter(o -> o.getOrderIDColumn() == orderId)
-                .findFirst()
-                .orElse(null);
 
-        if (order != null) {
-            orderHistory.remove(order); // hna hams7o
-            System.out.println("order " + orderId + " has been canceled.");
-        } else {
-            System.out.println("Order not found or invalid ID.");
+        if(orderHistory.contains(order))
+        {
+            orderHistory.remove(order);
+            System.out.println("Order cancelled");
         }
+        else {
+            System.out.println("Order does not exist");
+        }
+
     }
 
 

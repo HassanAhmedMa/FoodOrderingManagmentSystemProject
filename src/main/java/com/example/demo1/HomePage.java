@@ -75,6 +75,17 @@ public class HomePage implements Initializable {
         HomePageUserName.setText("Hello " + HelloApplication.LoggedInUserName);
     }
 
+    public void orderHistory(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("OrderHistory.fxml"));
+
+        stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        HelloApplication.centerStage(stage);
+        stage.setFullScreen(false); HelloApplication.centerStage(stage);
+        stage.setFullScreenExitHint(""); // Suppress the default ESC message
+        stage.show();
+    }
 
     public void logout(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         root = FXMLLoader.load(getClass().getResource("login.fxml"));
