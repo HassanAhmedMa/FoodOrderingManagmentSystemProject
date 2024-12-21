@@ -1,5 +1,4 @@
 *hassan ahmed hassanahmed9975@gmail.com 01122228646 cairo 3.1 (alf-maskan,nozha,matareya,helioplis)
-=0 (Chicken-Nuggets|60.0f|3) ziad 1 180.0
 *joo mahmoud joooooo@gmail.com 011125128646 giza 3.1 (abdeen,moski,boulaq)
 =0 (Pepperoni-Pizza|129.99f|2,Hawaiian-Pizza|119.99f|3) hassan 1 263.98
 =0 (Pepperoni-Pizza|129.99f|1,Hawaiian-Pizza|119.99f|100) joo 1 2623.98
